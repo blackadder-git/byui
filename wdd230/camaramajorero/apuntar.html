@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Apuntar | Cámara Majorero</title>
+    <meta name="description" content="Únete a Cámara Majorero. Conozca los cuatro niveles de membresía: Sin fines de lucro (100€), Bronce (200€), Plata (400€), Oro (1000€)">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Quicksand&display=swap">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script defer src="js/common.min.js"></script>
+</head>
+<body>
+    <header>
+        <img id="logo" src="images/logo.webp" alt="una cabra, el logo de Cámara Majorero">
+        <h1>Cámara Majorero</h1>
+    </header>
+    <nav>
+        <div class="burger menu magic">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> 
+        <ul class="navigation">
+            <li><a href="index.html">Inicio</a></li>        
+            <li><a href="tetir.html">Tetir</a></li>        
+            <li class="wayfinder"><a href="apuntar.html">Apuntar</a></li>        
+            <li><a href="directorio.html">Directorio</a></li>        
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="hero">
+            <picture>
+                <source
+                    srcset="images/herosmall3.webp"
+                    media="(min-width:30em) and (max-width:59.9em)">
+                <source
+                    srcset="images/herolarge3.webp"
+                    media="(min-width:60em)">
+                <img src="images/herolarge3.webp" alt="Casas en Tetir al lado de la escuela, Vega de Tetir">
+            </picture>
+            <div id="quote"></div>
+        </div>
+
+        <section>
+            <h2>Beneficios de la membresía</h2>
+            <div class="history column123">
+                <p>
+                    Si usted es el único trabajador del personal de su empresa o emplea a más de 500 trabajadores, unirse a su cámara de comercio local puede ofrecerle una gran lista de ventajas.
+                </p><p>
+                    Las cámaras a menudo se involucran en el gobierno local y pueden ayudar a que su empresa tenga una voz más fuerte en los problemas que le afectan a usted, a sus empleados y a sus clientes. Al trabajar juntos para alcanzar objetivos comunes y abogar colectivamente por la educación, la atención médica, los problemas de bonos y más, los miembros de la cámara también ayudan a mejorar la comunidad empresarial local en su conjunto.
+                </p><p>
+                    Unirse a su cámara local puede afectar positivamente las percepciones de otras organizaciones sobre su negocio, y también las opiniones de los consumidores. Las estadísticas muestran que el 63% de los consumidores tienen más probabilidades de comprar en una empresa que es miembro de la cámara de comercio, y es probable que el 44% vea esas empresas de manera más favorable. Además, algunas empresas también ofrecen descuentos para los miembros de la cámara, una gran ventaja para los pequeños o nuevos empresarios. La confiabilidad y la confianza que su empresa gana a través de la membresía de la cámara de comercio aumentará la percepción de su marca como líder de la industria y posiblemente le brinde el potencial para aumentar los ingresos.
+                </p>
+            </div>
+        </section>
+
+
+        <section>
+            <h2>Solicitud</h2>
+            <div class="application content">
+                <form action="confirmation.html" method="get">
+                    <fieldset>
+                        <legend>Información del contacto</legend>
+                        <label for="id_firstname">
+                            Primer nombre *
+                            <input type="text" id="id_firstname" name="firstname" pattern="[A-Za-z ]{3,}" title="Solo letras" required>
+                        </label>
+                        <label for="id_lastname">
+                            Primer apellido *
+                            <input type="text" id="id_lastname" name="lastname" pattern="[A-Za-z ]{3,}" title="Solo letras" required>
+                        </label>
+                        <label for="id_lastname2">
+                            Segunda apellido
+                            <input type="text" id="id_lastname2" name="lastname2" pattern="[A-Za-z ]{3,}" title="Solo letras">
+                        </label>
+                        <label for="id_title">
+                            Título
+                            <input type="text" id="id_title" name="title" pattern="[A-Za-z ]{2,}" title="Solo letras">
+                        </label>
+                        <label for="id_email">
+                            Correo *
+                            <input type="email" id="id_email" name="email" placeholder="empresa@tetir.com" required>
+                        </label>
+                        <label for="id_phone">
+                            Teléfono
+                            <input type="tel" id="id_phone" name="phone" pattern="[0-9]{6,}" title="Sólo números" maxlength="12">
+                        </label>                        
+                    </fieldset>
+                    <fieldset>
+                        <legend>Información de negocios</legend>
+                        <label for="id_business">
+                            Nombre del Negocio *
+                            <input type="text" id="id_business" name="business" pattern="[A-Za-z ]{5,}" title="Solo letras" required>
+                        </label>
+                        <label for="id_address">
+                            Dirección
+                            <input type="text" id="id_address" name="address">
+                        </label>
+                        <label for="id_website">
+                            Website
+                            <input type="url" id="id_website" name="website" title="Usa http" placeholder="https://example.com">
+                        </label>                                                
+                        <label for="id_description" class="comments">
+                            Descripción
+                            <textarea id="id_description" name="description"></textarea>
+                        </label>                        
+                    </fieldset>
+                    <fieldset>
+                        <legend>Afiliación - requerida* </legend>
+                        <span class="radio">
+                            <label for="id_np" id="np"><input type="radio" id="id_np" name="membership" value="np" title="Elije un programa para unirse" required> Sin lucro (100€)</label>
+                            <label for="id_bronze" id="bronze"><input type="radio" id="id_bronze" name="membership" value="bronze"> Bronce (200€)</label>
+                            <label for="id_silver" id="silver"><input type="radio" id="id_silver" name="membership" value="silver"> Plata (400€)</label>
+                            <label for="id_gold" id="gold"><input type="radio" id="id_gold" name="membership" value="gold"> Oro (1000€)</label>
+                        </span>                    
+                    </fieldset>
+                    <input type="submit" value="APUNTAR">
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <h2>Clave de membresía</h2>
+            <div class="keys">
+                <table class="membership">
+                    <thead>
+                        <tr>
+                            <th>Beneficio</th>
+                            <th>Sin lucro</th>
+                            <th>Bronce</th>
+                            <th>Plata</th>
+                            <th>Oro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Listados de directorio</td>
+                            <td>Si</td>
+                            <td>Si</td>
+                            <td>Si</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>Capacitaciones comerciales</td>
+                            <td>Si</td>
+                            <td>Si</td>
+                            <td>Si</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>Publicaciones en redes sociales</td>
+                            <td>X</td>
+                            <td>Si</td>
+                            <td>Si</td>
+                            <td>Si</td>
+                        </tr>
+                        <tr>
+                            <td>Entradas para el almuerzo</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>Si</td>
+                            <td>Si+</td>
+                        </tr>
+                        <tr>
+                            <td>Publicidad</td>
+                            <td>X</td>
+                            <td>X</td>
+                            <td>Si</td>
+                            <td>Si+</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Descripción de beneficios</h3>
+                <button class="accordion">Listados de directorio</button>
+                <div class="panel">
+                    Incluir su empresa en directorios de empresas en línea es una manera perfecta de construir una reputación en línea. Cuantos más compradores vean su marca junto con otras personas que conocen y en las que confían, mayor será la probabilidad de que consideren sus productos o soluciones.
+                </div>
+                
+                <button class="accordion">Capacitaciones comerciales</button>
+                <div class="panel">
+                    La cámara de comercio no solo aboga por sus miembros, sino que también reúne a los profesionales para aprender de sus fracasos y éxitos. Asistir a eventos de la cámara de comercio puede ayudarlo a mantenerse actualizado sobre los problemas que afectan a la comunidad, y los eventos pueden adoptar una variedad de formas y tamaños, con asistentes de todas las industrias y procedencias.
+                </div>
+                
+                <button class="accordion">Publicaciones en redes sociales</button>
+                <div class="panel">
+                    Publicar con regularidad en las redes sociales es importante porque ayuda a que su negocio sea una prioridad para los clientes. Es más probable que genere clientes potenciales utilizando las redes sociales cuando es memorable.
+                </div>
+
+                <button class="accordion">Entradas para el almuerzo</button>
+                <div class="panel">
+                    Cámara Majorero organiza almuerzos semanales entre sus reuniones mensuales regulares, animando a diversos miembros y otros profesionales de negocios a colaborar en el apoyo a la comunidad empresarial.
+                </div>
+
+                <button class="accordion">Publicidad</button>
+                <div class="panel">
+                    Los boletines, guías y otras publicaciones de la cámara de comercio pueden destacar su negocio y aumentar la visibilidad de su producto o servicio. Las cámaras también son una gran fuente de información para visitantes y residentes locales, y constantemente refieren clientes potenciales a sus miembros. Es más, al presentar a gente nueva en una variedad de industrias, los eventos de la cámara también le permiten comercializar su negocio a otros miembros, a quienes de otra manera nunca habría conocido.
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+        <h2>Cámera Majorero</h2>
+            <a href="attributions.html" aria-label="Visita la pagina de atribuciones">Atribuciones</a>
+            <br>
+            Política privada
+            <br>
+            <span id="currentdate"></span>
+        </div>
+        <img src="images/map.webp" alt="Mapa de Tetir">
+        <div>
+            Carretera de Jerez - Las Huesas, 2<br>
+            35215 Tetir - Fuerteventura<br>
+            Télefono 928 69 31 81<br>
+            Correo electrónico<br>
+            info@camaramajorero.com<br>
+            Horario: Lunes de 9 a 17:30h<br>
+            Martes a viernes de 9 a 14:00h<br>
+            <span class="social">
+                <a href="https://www.whatsapp.com/" rel="noreferrer" target="_blank" aria-label="Visita la pagina WhatsApp"><img src="images/whatsapp.png" alt="WhatsApp icon"></a>
+                <a href="https://pokemongolive.com/es/" rel="noreferrer" target="_blank" aria-label="Visita la pagina Pokémon Go"><img src="images/pokemon.png" alt="Pokémon icon"></a>
+                <a href="https://www.facebook.com/" rel="noreferrer" target="_blank" aria-label="Visita la pagina Facebook"><img src="images/facebook.png" alt="Facebook icon"></a>
+            </span>
+        </div>
+    </footer>
+
+    <div class="scroll">
+        <img src="images/scroll.png" alt="Vuelve al comienzo">
+    </div>
+</body>
+</html>

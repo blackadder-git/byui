@@ -1,0 +1,67 @@
+{
+  "business": [
+    {
+      "name": "Señalizaciones Barrera S.L.",
+      "email": "info@orbexcanarias.com",
+      "phone": "665 984 649",
+      "address": "Lugar, Tetir, 10, 35613 Tetir, Las Palmas",
+      "web": "https://www.orbexcanarias.com/orbexcanarias",
+      "logo": "street.webp",
+      "sector": "Construcion"
+    },
+    {
+      "name": "Bar-Cafetería Casa Fausto",
+      "email": "info@casafausto.com",
+      "phone": "928 94 78 75",
+      "web": "https://www.facebook.com/pages/category/Tapas-Bar---Restaurant/Bar-Cafeter%C3%ADa-Casa-Fausto-100466688162567/",
+      "address": "Plaza Domingo Jorge Manrique, 14 Tetir, Spain, 35613",
+      "logo": "fausto.webp",
+      "sector": "Comida"
+    },
+    {
+      "name": "MiniMarket",
+      "email": "info@minmarket.es",
+      "phone": "928 86 55 24",
+      "web": "https://www.yelp.com/biz/supermercados-inpescasa-tetir",
+      "address": "Carretera Corralejos, 130 ( En Tetir ), 35613 Tetir, Las Palmas",
+      "logo": "inpescasa.webp",
+      "sector": "Market"
+    },
+    {
+      "name": "Panadería Nieves",
+      "email": "into@panaderianieves.com",
+      "phone": "928 26 62 04",
+      "web": "https://es-es.facebook.com/nievespanaderia/",
+      "address": "Calle José Cascales López, 6, 35613 Tetir, Las Palmas",
+      "logo": "nieves.webp",
+      "sector": "Comida"
+    },
+    {
+      "name": "El Guachinche Corral de Carlos",
+      "email": "info@guanchinche.es",
+      "phone": "676 43 26 48",
+      "web": "https://www.facebook.com/GuachincheCorraldeCarlos/",
+      "address": "C. Puerto del Rosario, s/n, 35613 Tetir, Las Palmas",
+      "logo": "guachinche.webp",
+      "sector": "Comida"
+    },
+    {
+      "name": "Museo Activo del Gofio",
+      "email": "info@museogofio.es",
+      "phone": "639 75 48 48",
+      "web": "https://www.gofiodefuerteventura.com/",
+      "address": "Tetir, 16, 35613 Puerto del Rosario, Las Palmas",
+      "logo": "museo.webp",
+      "sector": "Museo"
+    },
+    {
+      "name": "Piensos El Italiano de Tetir. Agrimax sl",
+      "email": "info@piensoitaliano.es",
+      "phone": "928 37 07 18",
+      "web": "https://www.facebook.com/pages/category/Pet-Service/El-Italiano-de-Tetir-Agrimax-Piensos-1055187534513188/",
+      "address": "35613 Tetir, Las Palmas",
+      "logo": "pienso.webp",
+      "sector": "Pienso"
+    }
+  ]
+}    

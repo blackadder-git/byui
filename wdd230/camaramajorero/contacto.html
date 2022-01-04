@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contactar | Cámara Majorero</title>
+    <meta name="description" content="¿Tiene una pregunta? Contáctenos. Cámara Majorero tiene respuestas. Conozca nuestra junta directiva.">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Quicksand&display=swap">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script defer src="js/common.min.js"></script>
+</head>
+<body>
+    <header>
+        <img id="logo" src="images/logo.webp" alt="una cabra, el logo de Cámara Majorero">
+        <h1>Cámara Majorero</h1>
+    </header>
+    <nav>
+        <div class="burger menu magic">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> 
+        <ul class="navigation">
+            <li><a href="index.html">Inicio</a></li>        
+            <li><a href="tetir.html">Tetir</a></li>        
+            <li><a href="apuntar.html">Apuntar</a></li>        
+            <li><a href="directorio.html">Directorio</a></li>        
+            <li class="wayfinder"><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="hero">
+            <picture>
+                <source
+                    srcset="images/herosmall5.webp"
+                    media="(min-width:30em) and (max-width:59.9em)">
+                <source
+                    srcset="images/herolarge5.webp"
+                    media="(min-width:60em)">
+                <img src="images/herolarge5.webp" alt="Plantas tuneras y paisaje de la ciudad, Vega de Tetir">
+            </picture>
+            <div id="quote"></div>
+        </div>
+
+        <section>
+            <h2>Junta Directiva</h2>
+            <div class="board content">
+                <div>
+                    <picture>
+                        <img src="images/board1.webp" alt="Carlos Francisco Reyes, Presidente de la junta">
+                        Presidente de la junta
+                    </picture>
+                    <h3>Carlos Francisco Reyes</h3>
+                </div>
+                <div>
+                    <picture>
+                        <img src="images/board3.webp" alt="Mariana Barrera Valenciano, Vicepresidenta">
+                        Vicepresidenta
+                    </picture>
+                    <h3>Mariana Barrera Valenciano</h3>
+                </div>
+                <div>
+                    <picture>
+                        <img src="images/board2.webp" alt="Jose García Santana, Tesorera">
+                        Tesorera
+                    </picture>
+                    <h3>Jose García Santana</h3>
+                </div>
+                <div>
+                    <picture>
+                        <img src="images/board4.webp" alt="Isabella del la Costa, Secretaria">
+                        Secretaria
+                    </picture>
+                    <h3>Isabella del la Costa Reyes</h3>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Contacta con nosotras</h2>
+            <div class="contact content">
+                Estamos abiertos de lunes a viernes (8:00 - 17:00) | 928 69 31 81 | info@camaramajorero.com
+
+                <form action="confirmation.html" method="get">
+                    <fieldset>
+                        <legend>Información del contacto</legend>
+                        <label for="id_name">
+                            Nombre *
+                            <input id="id_name" type="text" name="name" pattern="[A-Za-z ]{3,}" title="Por lo menos 3 letras" placeholder="Solo letras" required>
+                        </label>
+                        <label for="id_email">
+                            Correo *
+                            <input id="id_email" type="email" name="email" placeholder="correo@domain.com" title="los correos electrónicos requieren una @ y un dominio" required>
+                        </label>
+                        <label for="id_phone">
+                            Teléfono *
+                            <input id="id_phone" type="tel" name="phone" pattern="[0-9]{9,}" title="Por lo menos 9 numeros" maxlength="12" required>
+                        </label>                        
+                        <label for="id_comment" class="comments">
+                            Commentario
+                            <textarea id="id_comment" name="comment"></textarea>
+                        </label>
+                    </fieldset>
+                    <input type="submit" value="CONTACTAR">
+                </form>
+            </div>
+        </section>
+
+        <section>
+            <h2>Ubicación</h2>
+            <div class="map content">
+                Ven a visitarnos a Carretera de Jerez - Las Huesas, 2 35215 Tetir (cerca de la plaza principal)
+                <div class="map-responsive">
+                    <iframe title="Mapa de Google de Tetir" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3505.2771675352046!2d-13.935334034951289!3d28.531387645402216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc47b7ea0ae91db9%3A0x2248be8b9a03b7db!2s35613%20Tetir%2C%20Las%20Palmas!5e0!3m2!1sen!2ses!4v1639522202590!5m2!1sen!2ses" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div>
+        <h2>Cámera Majorero</h2>
+            <a href="attributions.html" aria-label="Visita la pagina de atribuciones">Atribuciones</a>
+            <br>
+            Política privada
+            <br>
+            <span id="currentdate"></span>
+        </div>
+        <img src="images/map.webp" alt="Mapa de Tetir">
+        <div>
+            Carretera de Jerez - Las Huesas, 2<br>
+            35215 Tetir - Fuerteventura<br>
+            Télefono 928 69 31 81<br>
+            Correo electrónico<br>
+            info@camaramajorero.com<br>
+            Horario: Lunes de 9 a 17:30h<br>
+            Martes a viernes de 9 a 14:00h<br>
+            <span class="social">
+                <a href="https://www.whatsapp.com/" rel="noreferrer" target="_blank" aria-label="Visita la pagina WhatsApp"><img src="images/whatsapp.png" alt="WhatsApp icon"></a>
+                <a href="https://pokemongolive.com/es/" rel="noreferrer" target="_blank" aria-label="Visita la pagina Pokémon Go"><img src="images/pokemon.png" alt="Pokémon icon"></a>
+                <a href="https://www.facebook.com/" rel="noreferrer" target="_blank" aria-label="Visita la pagina Facebook"><img src="images/facebook.png" alt="Facebook icon"></a>
+            </span>
+        </div>
+    </footer>
+
+    <div class="scroll">
+        <img src="images/scroll.png" alt="Vuelve al comienzo">
+    </div>
+</body>
+</html>

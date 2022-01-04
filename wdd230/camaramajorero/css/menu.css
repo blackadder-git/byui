@@ -1,0 +1,59 @@
+.magic {
+    width: 35px;
+    height: 30px;
+    margin: 10px 10px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+  }
+  .magic span {
+    background-color: var(--primary-color);
+    position: absolute;
+    border-radius: 2px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+  }
+  .magic span:nth-child(1) {
+    width: 100%;
+    height:  4px;
+    display: block;
+    top: 0px;
+    left: 0px;
+  }
+  .magic span:nth-child(2) {
+    width: 100%;
+    height:  4px;
+    display: block;
+    top: 13px;
+    left: 0px;
+  }
+  .magic span:nth-child(3) {
+    width: 100%;
+    height:  4px;
+    display: block;
+    bottom: 0px;
+    left: 0px;
+  }
+  .magic.open span:nth-child(1) {
+    left: 3px;
+    top: 12px;
+    width: 30px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transform: rotate(90deg);
+    transition-delay: 150ms;
+  }
+  .magic.open span:nth-child(2) {
+    left: 2px;
+    top: 20px;
+    width: 20px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transform: rotate(45deg);
+    transition-delay: 50ms;
+  }
+  .magic.open span:nth-child(3) {
+    left: 14px;
+    top: 20px;
+    width: 20px;
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transform: rotate(-45deg);
+    transition-delay: 100ms;
+  }

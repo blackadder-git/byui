@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Inicio | Cámara Majorero</title>
+    <meta name="description" content="Cámara Majorero aglutina negocios en la ciudad de Tetir por el bien de la comunidad. Clima actual. Aspectos destacados de la empresa">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yuji+Boku&family=Quicksand&display=swap">
+    <link rel="stylesheet" href="css/style.min.css">
+    <script defer src="js/common.min.js"></script>
+    <script defer src="js/weather.min.js"></script>
+</head>
+<body>
+    <div id="alert"><span class="close">X Cerrar</span></div>
+    <header>
+        <img id="logo" src="images/logo.webp" alt="una cabra, el logo de Cámara Majorero">
+        <h1>Cámara Majorero</h1>
+    </header>
+    <nav>
+        <div class="burger menu magic">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div> 
+        <ul class="navigation">
+            <li class="wayfinder"><a href="index.html">Inicio</a></li>        
+            <li><a href="tetir.html">Tetir</a></li>        
+            <li><a href="apuntar.html">Apuntar</a></li>        
+            <li><a href="directorio.html">Directorio</a></li>        
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>    
+    <main>
+        <div class="hero">
+            <picture>
+                <source
+                    srcset="images/herosmall1.webp"
+                    media="(min-width:30em) and (max-width:59.9em)">
+                <source
+                    srcset="images/herolarge1.webp"
+                    media="(min-width:60em)">
+                <img src="images/herolarge1.webp" alt="Plaza de Juan Rodriguez, Vega de Tetir">
+            </picture>
+            <div id="quote"></div>
+        </div>
+
+        <section>
+            <h2>Propósito y Metas de Cámara Majorero</h2>
+            <div class="purpose content">
+                <div>
+                    <p>
+                        Si es miembro de su cámara de comercio local, probablemente haya visto un cambio positivo en su negocio. Si bien se necesita tiempo para involucrarse con su cámara local, asumir el compromiso brinda muchos beneficios para usted y sus empleados.
+                    </p><p>
+                        Si ha considerado unirse a su cámara local pero lo pospuso, es posible que lo haya hecho por varias razones. Como propietario de un negocio, puede temer que su apretada agenda le impida asistir a eventos y aprovechar al máximo su inversión. También puede tener la impresión de que su empresa debe tener un tamaño determinado para poder unirse. Sin embargo, en realidad, la mayoría de las cámaras ofrecen una gama amplia y flexible de eventos y oportunidades que respaldan a empresas de cualquier tamaño. Si usted es el único trabajador del personal de su empresa o emplea a más de 500 trabajadores, unirse a su cámara de comercio local puede ofrecerle una gran lista de ventajas.
+                    </p>
+                </div>
+                <div class="button">
+                    <a href="apuntar.html" aria-label="Visita la pagina para matricularse con Càmara Majorero">APUNTAR</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Empresas del Mes</h2>
+            <div class="highlight content">
+                <div class="company">
+                    <picture>
+                        <img src="images/spotlightmuseo.webp" alt="Museo del Gofio">
+                    </picture>
+                    <div class="business">
+                        <h3>Museo del Gofio</h3>
+                        El Museo del Gofio nace con la fé y la pasión de un molinero puestas en una ya Edesaparecida tradición: el puro arte de la molienda a viento y a motor.
+                    </div>
+                </div>
+                <div class="company">
+                    <picture>
+                        <img src="images/spotlightguanchinche.webp" alt="Guanchinche">
+                    </picture>
+                    <div class="business">
+                        <h3>El Guanchinche Corral de Carlos</h3>
+                        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature 
+                    </div>
+                </div>
+                <div class="company">
+                    <picture>
+                        <img src="images/spotlightnieves.webp" alt="Panaderia Nieves">
+                    </picture>
+                    <div class="business">
+                        <h3>Panadería Nieves</h3>
+                        Llegan las tradidiciones, las recetas familiares de toda la vida, los olores llenos de recuerdos, los sabores que nos trasladan a la navidad.
+                    </div>
+                </div>
+                <div class="company">
+                    <picture>
+                        <img src="images/spotlightsuempresa.webp" alt="Espacio para su negocio">
+                    </picture>
+                    <div class="business">
+                        <h3>Ve su negocio aqui</h3>
+                        Apuntate con Cámara Majorero para ver su empresa aqui.
+                    </div>
+                </div>                
+            </div>
+        </section>
+
+        <section id="weather"> 
+            <h2>Pronóstico de tres días</h2>
+            <div class="forecast content">
+                <div id="day1" class="day"></div>
+                <div id="day2" class="day"></div>
+                <div id="day3" class="day"></div>
+            </div>
+            <div class="weather">
+                <div id="temp"></div>
+                <div id="humidity"></div>
+                <div id="condition"></div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Próximos Eventos</h2>
+            <div class="events content">
+                <picture>
+                    <img src="images/carnaval.webp" alt="Carnaval blanco">
+                </picture>
+                <ul>
+                    <li>
+                        <h3>Mercado de Artesania</h3>
+                        24 Diciembre 10 @ 9 - 15:00h<br>
+                        Disfruta de un ambiente participativo con música popular y distintas actividades culturales.<br>
+                        <hr>
+                        Gratis
+                    </li>
+                    <li>
+                        <h3>SPIRIT OF NEW ORLEANS GOSPEL CHOIR en Fuerteventura</h3>
+                        18 Diciembre 24 @ 20:30h<br>
+                        Disfrutar de uno de los mejores coros de #Gospel del mundo en el Palacio de Formación y Congresos de Fuerteventura<br>
+                        <hr>
+                        20€
+                    </li>
+                    <li>
+                        <h3>Fundació Monserrat Caballé Concert de Nadal</h3>
+                        13 Diciembre @ 20:00h<br>
+                        Basílica Santa Maria del Mar. Pene Pati, Levy Sekgapane, Amioa Edris, Katerina Retyakova, mas.<br>
+                        <hr>
+                        Gratis
+                    </li>
+                    <li>
+                        <h3>Desayno para Dos</h3>
+                        Noviembre<br>
+                        Esta mes Panadería Nieves te ofrecemos, un festival de sabores saludables. Cuida tu salud y mima tu paladar.<br>
+                        <hr>
+                        Sorteo
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div>
+        <h2>Cámera Majorero</h2>
+            <a href="attributions.html" aria-label="Visita la pagina de atribuciones">Atribuciones</a>
+            <br>
+            Política privada
+            <br>
+            <span id="currentdate"></span>
+        </div>
+        <img src="images/map.webp" alt="Mapa de Tetir">
+        <div>
+            Carretera de Jerez - Las Huesas, 2<br>
+            35215 Tetir - Fuerteventura<br>
+            Télefono 928 69 31 81<br>
+            Correo electrónico<br>
+            info@camaramajorero.com<br>
+            Horario: Lunes de 9 a 17:30h<br>
+            Martes a viernes de 9 a 14:00h<br>
+            <span class="social">
+                <a href="https://www.whatsapp.com/" rel="noreferrer" target="_blank" aria-label="Visita la pagina WhatsApp"><img src="images/whatsapp.png" alt="WhatsApp icon"></a>
+                <a href="https://pokemongolive.com/es/" rel="noreferrer" target="_blank" aria-label="Visita la pagina Pokémon Go"><img src="images/pokemon.png" alt="Pokémon icon"></a>
+                <a href="https://www.facebook.com/" rel="noreferrer" target="_blank" aria-label="Visita la pagina Facebook"><img src="images/facebook.png" alt="Facebook icon"></a>
+            </span>
+        </div>
+    </footer>
+
+    <div class="scroll">
+        <img src="images/scroll.png" alt="Vuelve al comienzo">
+    </div>
+</body>
+</html>
