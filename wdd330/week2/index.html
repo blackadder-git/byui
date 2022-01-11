@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>wdd330 Portfolio</title>
-    <meta name="description" content="My WDD330 Projects">
+    <meta name="description" content="Week 2">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,17 +17,108 @@
 <body>
     <h1>WDD330 Portfolio</h1>
     <section class="weeklyItems">
-        <h2>Week 1</h2>
+        <h2>Week 2</h2>
         <ul>
             <li>Notes
                 <ul>
-                    <li></li>
-                    <li></li>
+                    <li>Chapter 2: Programming Basics
+                        <ul>
+                            <li><h3>Comments</h3></li>
+                            <li>Use // for single line, /* */ for multi-line</li>
+                            <li>Generate doc with 
+                                <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank" rel="noopener noreferrer">JSDoc</a>, 
+                                <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank" rel="noopener noreferrer"></a>Tooklit</a>, 
+                                <a href="http://jashkenas.github.io/docco/" target="_blank" rel="noopener noreferrer"></a>Docco</a>, 
+                                <a href="http://yui.github.io/yuidoc/" target="_blank" rel="noopener noreferrer"></a>YUIDoc</a>
+                            </li>
+                            <li><h3>Grammar</h3></li>
+                            <li>Best practice - separate each statement with a new line, terminate each with a semi-colon</li>
+                            <li>Reserved words - abstract, await, boolean, break, byte, case, catch, char, class, const, continue, debugger, default, delete, do, double, else, enum, export, extends, false, final, finally, float, for, function, goto, if, implements, import, in instanceof, int, interface, let, long, native, new, null, package, private, protected, public, return, short, static, super, switch, synchronized, this, throw, throws, transient, true, try, typeof, var, volatile, void, while, with, yield (not reserved but should be = undefined, NaN, Infinity)</li>
+                            <li><h3>Primative Data Types</h3></li>
+                            <li>String, Symbol, Number, Boolean, Undefined, Null (anything else = object e.g. array, function, object literal)</li>
+                            <li>Access properties of a primative type with dot notation (string.length) or bracket notation (string['length'])</li>
+                            <li><h3>Variables</h3></li>
+                            <li>const (fixed variables) vs let (fluid variable, may be reassigned later)</li>
+                            <li>If const is an object, data inside can change</li>
+                            <li>Best practice - use const whenever you can</li>
+                            <li>Separate variables with a comma to assign multiple variables at the same time</li>
+                            <li><h3>Scope</h3></li>
+                            <li>const and let have block scope; their values only exist inside the block in which they are declared</li>
+                            <li>global (everywhere) vs local (block)</li>
+                            <li>Not using let or const means the variable will have global scope</li>
+                            <li><h3>Naming</h3></li>
+                            <li>Case sensative, may begin with any letter, underscore (convention used for private) or $ (used by jQuery), may include numbers but can not start with them</li>
+                            <li>camelCase vs PascalCase vs snake_case</li>
+                            <li><h3>Assignment</h3></li>
+                            <li>Primative types assign values directly while non-primative types assign values by reference</li>
+                            <li>let a = 2; let b = a; b = 100;  a = 2, b = 100</li>
+                            <li>let a = {"honey"}; let b = a; b = {"bee"}; a = bee, b = bee</li>
+                            <li><h3>Strings</h3></li>
+                            <li>Common methods: toUpperCase(), toLowerCase(), charAt(), indexOf(), lastIndexOf(), includes(), startsWith(), endsWith(), concat(), repeat()</li>
+                            <li><h3>Template Literals</h3></li>
+                            <li>Begin and end with `, use ${} to interpolate (insert JavaScript code)</li>
+                            <li><h3>Symbols</h3></li>
+                            <li>Symbols are new primative data types created with Symbol(&lt;description&gt;)</li>
+                            <li><h3>Numbers</h3></li>
+                            <li>Numbers = integers (whole numbers) or floats</li>
+                            <li>Common methods: toFixed(), toPrecision()</li>
+                            <li>Built-in methods accessed with: .. e.g. 5..toExponential(), space . e.g. 5 .toExponential(), decimal form 5.0.toExponential(), parentheses (5).toExponential()</li>
+                            <li>JavaScript supports hex (0x...), octals (0o...) and binary (0b...)</li>
+                            <li><h3>Exponentials (multiply by 10 to the power of)</h3></li>
+                            <li>e.g. 1e6, 2E3, 10**3</li>
+                            <li><h3>Arithmetic Operations</h3></li>
+                            <li>add +, subtract -, multiply *, divide /, exponent **, 〜modulus % (result always has the same sign s the first number)</li>
+                            <li><h3>Infinity</h3></li>
+                            <li>Represents any number that is too big for the language to handle</li>
+                            <li>The biggist number in JavaScript is 1.7976931348623157e+308</li>
+                            <li>The smallest number (-Infinity) is -1.7976931348623157e+308</li>
+                            <li><h3>NaN</h3></li>
+                            <li>This error results from operanding something that is not a number e.g. "Hello" * "Matey"</li>
+                            <li>Use Number.isFinite(...) to verify the result is not Infinity, -Infinity, NaN</li>
+                            <li><h3>Convert Strings to Numbers or Numbers to Strings</h3></li>
+                            <li>Best practice is to use Number(...) or String(...)</li>
+                            <li>Alternatively, for numbers multipy a numeric string by 1 e.g. '5' * 1, put an operator before the string e.g. +'5'</li>
+                            <li>And for strings add empty e.g. 3 + '', or toString() e.g. 10..toString(), or parseInt('...', base)</li>
+                            <li><h3>Undefined and Null</h3></li>
+                            <li>Undefined = missing value, while Null = no value</li>
+                            <li><h3>Booleans</h3></li>
+                            <li>true and false (named after George Boole)</li>
+                            <li>Always false = "", '', ``, 0, -0, Nan, false, null, undefined</li>
+                            <li><h3>Logical Operators</h3></li>
+                            <li>! (NOT) before a value returns the opposite, !! returns false or true shorthand for Boolean(...)</li>
+                            <li>&& (AND) evaluates to true when all operands are true</li>
+                            <li>|| (OR )evaluates to true when one or more operands are true</li>
+                            <li><h3>Bitwise Operators</h3></li>
+                            <li>~ (NOT) flips all the bits in a  32-bit integer</li>
+                            <li>& (AND) combines two numbers and keeps all the 1's where both operands are 1</li>
+                            <li>| (OR) combines two numbers and keeps all the 1's where either operands is 1</li>
+                            <li>^ (XOR)  combines two numbers and keeps all the 1's where either operands is 1 but not both</li>
+                            <li><h3>Bitwise Shift Operators</h3></li>
+                            <li>&lt;&lt; multiply by power of 2</li>
+                            <li>&gt;&gt; divides by power of 2</li>
+                            <li>Use 2 when right hand number = 1, otherwise raise 2 by the right hand number then multiply or divide e.g. 5 &lt;&lt; 3 = (5 * 2**3) = 40</li>
+                            <li><h3>Comparison</h3></li>
+                            <li>== (soft equality), === (hard equality) checks type too, likewise, != and !== </li>
+                            <li>No hard and soft less than, greater than operators, instead use &lt; and &gt; || with === e.g. 8 &gt; '8' || 8 === '8'</li>
+                            <li>NaN === Nan is false, use Number.isNan(Nan) instead</li>
+                            <li>Strings can also be tested with upper-case letters &lt; lower-case letters</li>
+                        </ul>
+                    </li>
+                    <li>Chapter 3: Arrays, Logic and Loops
+                        <ul>
+                            <li><h3>Comments</h3></li>
+                        </ul>
+                    </li>
+                    <li>Chapter 4: Functions
+                        <ul>
+                            <li><h3>Comments</h3></li>
+                        </ul>
+                    </li>
                 </ul>
             </li>
             <li>Questions
                 <ul>
-                    <li></li>
+                    <li>When would bitwise operators be used in the real world especially with many systems being 64-bit now.</li>
                     <li></li>
                 </ul>
             </li>
