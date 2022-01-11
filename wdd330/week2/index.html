@@ -106,26 +106,82 @@
                     </li>
                     <li>Chapter 3: Arrays, Logic and Loops
                         <ul>
-                            <li><h3>Comments</h3></li>
+                            <li><h3>Arrays</h3></li>
+                            <li>Best practice is to create an array literal with []</li>
+                            <li>Values can be destructured from an array as follows: const [x, y] = [1, 2]</li>
+                            <li>Use indexOf() to search for a specific value or includes() which will return a boolean value</li>
+                            <li>JavaScript supports multidimensional arrays, use two indexes to access values</li>
+                            <li>... spread operator will flatten the values in a multidimensional array</li>
+                            <li><a href="https://www.sitepoint.com/quick-tip-create-manipulate-arrays-in-javascript/" target="_blank" rel="noopener noreferrer">Summary on Sitepoint</a></li>
+                            <li><h3>Sets</h3></li>
+                            <li>Sets are collections of unique data</li>
+                            <li>Create with new Set();</li>
+                            <li>Add with .add() or using [] in the constructor</li>
+                            <li>A set can contain duplicate values only if they are in the form of an array or object</li>
+                            <li>Common methods: size(), delete(), clear()</li>
+                            <li>If adding non-primatives to a set, use WeakSet() otherwise, memory leaks can occur as JavaScript may not be able to garbage collect elements inside of the set</li>
+                            <li>WeakSets don't know what they contain, use .has() to check for specifics</li>
+                            <li><h3>Maps</h3></li>
+                            <li>Key/value pairs, maps are similar to hashes or dictionaries</li>
+                            <li>While objects must use strings for keys, maps can use any data type</li>
+                            <li>Create with new Map();</li>
+                            <li>Add with set(&lt;key&gt;,&lt;value&gt;);, Map also accepts a nested array e.g. [ [&lt;key&gt;,&lt;value&gt;], [&lt;key&gt;,&lt;value&gt;] ]</li>
+                            <li>To retrieve data, use get(&lt;key&gt;), or has() which will return a boolean value</li>
+                            <li>delete() will remove a single item while clear() will remove all key/values</li>
+                            <li>WeakMaps work just like WeakSets, no primative values and auto garbage collection</li>
+                            <li><h3>Logic</h3></li>
+                            <li>JavaScript supports: if/else, (condition) ? (do if true) : (do if false), switch, while, do (while), for</li>
                         </ul>
                     </li>
                     <li>Chapter 4: Functions
                         <ul>
-                            <li><h3>Comments</h3></li>
+                            <li><h3>Function Declarations</h3></li>
+                            <li>function hello() {<br>
+                                ...<br>
+                            }</li>
+                            <li>Automatically hoisted</li>
+                            <li><h3>Expressions (literal, unnamed, anonymous)</h3></li>
+                            <li>const hello = function() {<br>
+                                ...<br>
+                            };</li>
+                            <li>Invoke a function which is assigned to a variable by adding parentheses e.g. hello();</li>
+                            <li><h3>Named Expressions</h3></li>
+                            <li>const hello = function greeting() {<br>
+                                ...<br>
+                            };</li>
+                            <li><h3>Arrow Functions</h3></li>
+                            <li>(x) => {<br>
+                                ...<br>
+                            };</li>
+                            <li>() => {<br>
+                                ...<br>
+                            };</li>
+                            <li>parameters appear between = signs</li>
+                            <li>Function parameters are defined in the function definition, function arguements are sent to the function when it is invoked</li>
+                            <li>Any arguement not provided to a function when it is invoked is set to undefined, extra arguments are ignored</li>
+                            <li>Because functions can accept any number of arguments, to collect them for review, place the rest operator ... before the last argument in the fuction</li>
+                            <li>Functions accept default parameters as hello(arg="world"), default parameters should come last</li>
+                            <li>Callbacks are functions passed as parameters to other functions</li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
                         </ul>
                     </li>
                 </ul>
             </li>
             <li>Questions
                 <ul>
-                    <li>When would bitwise operators be used in the real world especially with many systems being 64-bit now.</li>
-                    <li></li>
+                    <li>When would bitwise operators be used in the real world especially with many systems being 64-bit now?</li>
+                    <li>When deleting an array value, will the indexes be modified or will the deleted value retain its index but with the value of undefined?</li>
+                    <li>When would I use a callback function in the real world?</li>
                 </ul>
             </li>
             <li>Exercises
                 <ul>
-                    <li></li>
-                    <li></li>
+                    <li><a href="array.html">Array experimentation</a></li>
+                    <li><a href="loop.html">Loop experimentation</a></li>
                 </ul>
             </li>
         </ul>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loop</title>
+    <meta name="description" content="Loop example">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    <style>
+        /* DEVELOPMENT ONLY */
+        body {
+            font-size: 1.5em;
+        }
+        h1 {
+            background-color: aquamarine;
+            padding: 1em;
+        }
+        section {
+            margin-left: 1em;
+        }
+    </style>
+    <script>
+        // DEVELOPMENT ONLY
+        
+        // ARRAY
+        // initialize ... const is required for initialization
+        console.log("loop through an array with a for/of");
+        const superheros = ['batman', 'spiderman', 'iron man', 'antman'];
+        for (const value of superheros) {
+            console.log(`\t${value}`);
+        }
+
+        console.log("loop through an array with forEach");
+        const sidekicks = ['pacman', 'beetlejuice', 'donkey kong', 'qbert'];
+        sidekicks.forEach(item =>
+            console.log(`\t${item}`)
+        );
+        // can also pass a callback function name to forEach e.g. sidekicks.forEach(display);
+
+        console.log("loop through an array with for/in");
+        for (const index in sidekicks) {
+            console.log(`\t${index} ${sidekicks[index]}`)
+        }
+
+        // 🎂 this will replace each value in the cake array with the return value of the arrow function
+        superheros.map(item => console.log('yum ' + item));
+
+        // SET
+        console.log("loop through a set with a for/of");
+        const pie = new Set().add('apple').add('peach').add('apple').add('blueberry').add('cherry');
+        // convert set to array: const arrayPie = [...pie];
+        for (const value of pie) {
+            console.log(`\t${value}`);
+        }
+
+        // MAP
+        const cake = new Map().set(1, 'apple').set(2, 'peach').set(3, 'apple').set(4, 'blueberry').set(5, 'cherry');
+        // convert set to array: const arrayPie = [...pie];
+        console.log("loop through the map keys with a for/of");
+        for (const key of cake.keys()) {
+            console.log(`\t${key}`);
+        }
+        console.log("loop through map values with a for/of");
+        for (const value of cake.values()) {
+            console.log(`\t${value}`);
+        }
+        console.log("loop through a map with a for/of");
+        for (const [key, value] of cake.entries()) {
+            console.log(`\t${key} = ${value}`);
+        }
+
+    </script>
+</head>
+<body>
+    <h1><a href="../">Home</a> | <a href="../week2/">Week 2</a> | Arrays</h1>
+    <section id="lab">Check the console for output ...</section>
+</body>
+</html>
