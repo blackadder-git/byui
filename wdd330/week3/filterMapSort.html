@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Filter, Map, Sort</title>
+    <meta name="description" content="Filter, Map, Sort example">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    <style>
+        /* DEVELOPMENT ONLY */
+        body {
+            font-size: 1.5em;
+        }
+        h1 {
+            background-color: aquamarine;
+            padding: 1em;
+        }
+        section {
+            margin-left: 1em;
+        }
+    </style>
+    <script>
+        // DEVELOPMENT ONLY
+        
+        // FILTER
+        console.log("filter() returns an array subset");
+        const superheros = ['batman', 'spiderman', 'iron man', 'antman'];
+
+        const filterHeros = superheros.filter(hero => hero == 'spiderman'); // if item evaluates to true, include in new array
+        console.log(`\t${filterHeros}`);
+
+        // MAP
+        console.log("map() returns an array");
+        const mapHeros = superheros.map(hero => "super " + hero); // all items are returned but can be modified for the new array
+        console.log(`\t${mapHeros}`);
+
+        // SORT
+        console.log("sort() returns an array");
+        // sort takes two parameters, return + to sort the first param first, return - to sort the second param first
+        const sortHeros = superheros.sort((hero1, hero2) => {
+            if (hero1 > hero2) {
+                return 1; // hero1 should come first
+            }
+            else if (hero1 < hero2) {
+                return -1; // hero2 should come first
+            }
+            else {
+                return 0; // both heros are the same
+            }
+        });
+        console.log(`\t${sortHeros}`);
+
+
+    </script>
+</head>
+<body>
+    <h1><a href="../week3/">Week 3</a> | Filter, Map, Sort</h1>
+    <section id="lab">Check the console for output ...</section>
+</body>
+</html>
