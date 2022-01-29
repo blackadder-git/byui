@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tic-Tac-Toe</title>
+    <meta name="description" content="Week 4 Team Activity">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    <style>
+        body {
+            padding: 2% 30%;
+            text-align: center;
+        }
+        input {
+            margin-top: 10%;
+            padding: 1em 2em;
+        }
+        #board {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+        #board .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            text-align: center;
+        }
+        #cell2 {
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+        #cell4 {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        #cell5 {
+            border-left: 1px solid black;
+            border-right: 1px solid black;
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        #cell6 {
+            border-top: 1px solid black;
+            border-bottom: 1px solid black;
+        }
+        #cell8 {
+            border-right: 1px solid black;
+            border-left: 1px solid black;
+        }
+        .row div {
+            padding: 3em;
+        }
+        .win {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="winner">Game On</h1>
+    <div id="board">
+        <div class="row">
+            <div id="cell1"></div>
+            <div id="cell2"></div>
+            <div id="cell3"></div>
+        </div>
+        <div class="row">
+            <div id="cell4"></div>
+            <div id="cell5"></div>
+            <div id="cell6"></div>
+        </div>
+        <div class="row">
+            <div id="cell7"></div>
+            <div id="cell8"></div>
+            <div id="cell9"></div>
+        </div>
+    </div>
+    <!-- Reset buttons are generally considered poor for usability, 
+        as they are too easy to click and then wipe out all the data 
+        that’s been entered. So think very carefully before using 
+        one in a form.
+
+        button id="reset" type='reset'>Reset</button-->
+
+    <input id="reset" type="button" value="Reset Board">
+
+    <script>
+        let player1 = true;
+        let moves = 9;
+
+        function reset() {
+            player1 = true;
+            moves = 9;
+            for (i = 1; i < 10; i++) {
+                let cell = document.querySelector('#cell' + i); 
+                cell.textContent = '';
+                cell.classList.remove('win');
+            }
+            document.querySelector("#winner").textContent = "Game On";
+        }
+
+        // connect the reset button
+        document.querySelector('#reset').addEventListener('click', reset);
+
+        // connect the click, touchend events
+        document.querySelector('#board').addEventListener('click', function(e) {
+            if (moves > 0) {
+                const id = e.target.getAttribute('id');
+                switch(id) {
+                    case 'cell1':
+                        player1 = play(e, 1, player1);    
+                        break;
+                    case 'cell2':
+                    player1 = play(e, 2, player1);
+                        break;
+                    case 'cell3':
+                    player1 = play(e, 3, player1);
+                        break;
+                    case 'cell4':
+                    player1 = play(e, 4, player1);    
+                        break;
+                    case 'cell5':
+                    player1 = play(e, 5, player1);
+                        break;
+                    case 'cell6':
+                    player1 = play(e, 6, player1);
+                        break;
+                    case 'cell7':
+                    player1 = play(e, 7, player1);    
+                        break;
+                    case 'cell8':
+                    player1 = play(e, 8, player1);
+                        break;
+                    case 'cell9':
+                    player1 = play(e, 9, player1);
+                        break;
+                    default:
+                }
+            }
+            else {
+                document.querySelector("#winner").textContent = "Lets call it a draw :)";                
+            }
+        });
+
+        // add X or O if the square is empty
+        function play(e, id, player1) {
+            if (e.target.textContent != '') {
+                if ((e.target.textContent == 'x' && player1) || e.target.textContent == 'o' && !player1) {
+                    alert('you own this cell');
+                }
+                else if ((e.target.textContent == 'x' && !player1) || (e.target.textContent == 'o' && player1)) {
+                    alert('the other player owns this cell');
+                }                
+            }
+            else {
+                if (player1) {
+                    e.target.textContent = 'x';
+                    player1 = false;
+                    isWinner(id);
+                }
+                else {
+                    e.target.textContent = 'o';
+                    player1 = true;
+                    isWinner(id);
+                }
+            }
+            return player1;
+        }
+
+        // check line of cells for matching tokens   
+        function checkCell(c1, c2, c3) {
+            const cell1 = document.querySelector("#cell" + c1);
+            const cell2 = document.querySelector("#cell" + c2);
+            const cell3 = document.querySelector("#cell" + c3);
+
+            if (cell1.textContent == cell2.textContent && cell2.textContent == cell3.textContent && cell1.textContent == cell3.textContent) {
+                moves = 0;
+                cell1.classList.add('win');
+                cell2.classList.add('win');
+                cell3.classList.add('win');
+                const winner = player1 ? "Player 1" : "Player 2";
+                document.querySelector("#winner").textContent = winner + " Wins!";
+            }
+        }
+
+        // has someone one?
+        function isWinner(id) {
+            moves -= 1;
+            // alert(moves + ' = id: ' + id);
+
+            switch (id) {
+                case 1:
+                    win = checkCell(1,2,3); // row
+                    win = checkCell(1,4,7); // column
+                    win = checkCell(1,5,9); // diagonal
+                    break;
+                case 2:
+                    win = checkCell(1,2,3); // row
+                    win = checkCell(2,5,8); // column
+                    break;
+                case 3:
+                    win = checkCell(1,2,3); // row
+                    win = checkCell(3,6,9); // column
+                    win = checkCell(3,5,7); // diagonal
+                    break;
+                case 4:
+                    win = checkCell(4,5,6); // row
+                    win = checkCell(1,4,7); // column
+                    break;
+                case 5:
+                    win = checkCell(4,5,6); // row
+                    win = checkCell(2,5,8); // column
+                    win = checkCell(1,5,9); // diagonal
+                    win = checkCell(3,5,7); // diagonal
+                    break;
+                case 6:
+                    win = checkCell(4,5,6); // row
+                    win = checkCell(3,6,9); // column
+                    break;
+                case 7:
+                    win = checkCell(7,8,9); // row
+                    win = checkCell(1,4,7); // column
+                    win = checkCell(3,5,7); // diagonal
+                    break;
+                case 8:
+                    win = checkCell(7,8,9); // row
+                    win = checkCell(2,5,8); // column
+                    break;
+                case 9:
+                    win = checkCell(7,8,9); // row
+                    win = checkCell(3,6,9); // column
+                    win = checkCell(1,5,9); // diagonal
+                    break;
+            }
+         }
+    </script>
+</body>
+</html>
