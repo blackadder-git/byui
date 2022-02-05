@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Todo</title>
+    <meta name="description" content="Todo Activity List">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="main.js" type="module"></script>
+    <style type="text/css">
+        h1 {
+            text-align: center;
+        }
+        .filter:hover {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Todos</h1>
+    <div id="todos">
+        <div id="taskID">
+            <input type="checkbox">
+            <label>Task description</label>>
+            <span><button id="remove">X</button></span>
+        </div>
+    </div>
+    <div id="filter">
+        <span id="label">3 tasks left</span>
+        <span id="filterAll" class="filter">All.</span>
+        <span id="filterActive" class="filter">Active.</span>
+        <span id="filterComplete" class="filter">Completed</span>
+    </div>
+    <input type="text">
+    <button id="add">+</button>
+</body>
+</html>

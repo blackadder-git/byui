@@ -16,11 +16,15 @@ function addWeeks() {
         {
             label: "Week 4",
             url: "week4/index.html"
-        }        
+        },
+        {
+            label: "Week 5",
+            url: "week5/index.html"
+        }          
     ]
 
     // loop weeks
-    weeks.forEach ( link => {
+    weeks.forEach(link => {
         let week = document.createElement('li');
         week.innerHTML = `<a href="${link.url}">${link.label}</a>`;
         weekList.append(week);
