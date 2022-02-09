@@ -9,34 +9,107 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
     <link rel="stylesheet" href="styles.css">
     <script defer src="main.js" type="module"></script>
     <style type="text/css">
+        #app {
+            margin: 0 auto;
+            bbackground-color: pink;
+            background-image: linear-gradient(red, yellow);
+            font-family: Montserrat;
+            font-size: 1em;
+            padding: 1em;
+
+        }
         h1 {
-            text-align: center;
+            margin-top: 0;
+        }
+        ul {
+            padding-left: 0;
+        }
+        li {
+            list-style: none;
+            display:grid;
+            grid-template-columns: 1fr 3fr 1fr;
+            align-items: center;
+        }
+        input[type=checkbox] {
+            -ms-transform: scale(2); /* IE */
+            -moz-transform: scale(2); /* FF */
+            -webkit-transform: scale(2); /* Safari and Chrome */
+            -o-transform: scale(2); /* Opera */
+            transform: scale(2);
+            margin: .5em;
+        }
+        label {
+            margin-right: .5em;
+        }
+        .remove {
+            border-radius: 15px;
+        }
+        #task {
+            /* https://www.sanwebe.com/2014/08/css-html-forms-designs */
+            width: 70%;
+            border: 1px solid #e4e4e4;
+            display: inline-block;
+            padding: .5em;
+            border-radius:5px;
+        }
+        #addRow {
+            display: flex;
+            justify-content: space-between;
+        }
+        #description {
+            padding: .5em;
+            width: 100%;
+        }
+        #add {
+            width: 30%;
+            font-size: 2em;
+        }
+        #add:hover, .filter:hover, .remove:hover {
+            cursor: pointer;
+        }
+        input[type=checkbox]:checked + label.strikethrough {
+            text-decoration: line-through;
+        }
+        #filterRow {
+            margin-bottom: 1em;
+            display: flex;
+            justify-content: space-between;
         }
         .filter:hover {
-            border: 1px solid black;
+            background-color: yellow;
+            bborder-radius: 10px;
+        }
+        .filter, #numTasks {
+            padding: .2em;
+        }
+        /* > MOBILE */
+        @media only screen and (min-width: 33em) {
+            #app {
+                max-width: 300px;
+                margin-top: 2em;
+                box-shadow: 5px 10px 10px #888888;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Todos</h1>
-    <div id="todos">
-        <div id="taskID">
-            <input type="checkbox">
-            <label>Task description</label>>
-            <span><button id="remove">X</button></span>
+    <div id="app">
+        <h1>Todo List</h1>
+        <ul id="todos"><!-- add items here --></ul>
+        <div id="filterRow">
+            <span id="numTasks">3 tasks left</span>
+            <span id="filterAll" class="filter">All</span>
+            <span id="filterActive" class="filter">Active</span>
+            <span id="filterCompleted" class="filter">Completed</span>
+        </div>
+        <div id="addRow">
+            <input id="description" type="text">
+            <button id="add">+</button>
         </div>
     </div>
-    <div id="filter">
-        <span id="label">3 tasks left</span>
-        <span id="filterAll" class="filter">All.</span>
-        <span id="filterActive" class="filter">Active.</span>
-        <span id="filterComplete" class="filter">Completed</span>
-    </div>
-    <input type="text">
-    <button id="add">+</button>
 </body>
 </html>
