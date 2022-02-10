@@ -20,7 +20,11 @@ function addWeeks() {
         {
             label: "Week 5",
             url: "week5/index.html"
-        }          
+        },
+        {
+            label: "Week 6 (Todo App)",
+            url: "week6/todo/index.html"
+        }             
     ]
 
     // loop weeks
