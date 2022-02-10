@@ -2,7 +2,7 @@
 // The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. 
 // It directly manages the data, logic and rules of the application.
 
-const DEBUG = true;
+const DEBUG = false;
 
 /****************************************
  * MODEL CLASS
@@ -137,17 +137,24 @@ export default class TodoModel {
         });
 
         if (index !== -1) { 
-            // modify unfinished
-            if (this.todoList[index].completed == false) {
-                // TODO: in case of error, would this be better to run after the list is actually updated ?
-                this.removeUnfinishedTask(); // decrement unfinished tasks if unfinished is removed
+            const reset = this.todoList; // create backup copy
+            try {
+                // item found, remove from array
+                this.todoList.splice(index, 1);
+
+                // update list, save to local storage
+                this.writeToLocalStorage(this.todoList);
+
+                // modify unfinished
+                // in case of error, this should't happen
+                if (this.todoList[index].completed == false) {
+                    this.removeUnfinishedTask(); // decrement unfinished tasks if unfinished is removed
+                }
+            } 
+            catch (error) {
+                console.error(error);
+                this.todoList = reset; // restore the todoList
             }
-
-            // item found, remove from array
-            this.todoList.splice(index, 1);
-
-            // update list, save to local storage
-            this.writeToLocalStorage(this.todoList);
         }
     }
 

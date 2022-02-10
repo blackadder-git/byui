@@ -1,7 +1,7 @@
 // TODO APP Controller
 // Accepts input and converts it to commands for the model or view
 
-const DEBUG = true;
+const DEBUG = false;
 
 /****************************************
  * CONTROLLER CLASS
