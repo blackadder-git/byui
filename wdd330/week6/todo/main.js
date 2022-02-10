@@ -4,6 +4,7 @@
 /****************************************
 //  FEATURES
 //  - mobile first
+//  - Google fonts
 //  - shows task list
 //  - add new task
 //  - toggle task complete/incomplete
