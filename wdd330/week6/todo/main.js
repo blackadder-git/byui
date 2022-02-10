@@ -3,6 +3,7 @@
 
 /****************************************
 //  FEATURES
+//  - mobile first
 //  - shows task list
 //  - add new task
 //  - toggle task complete/incomplete
