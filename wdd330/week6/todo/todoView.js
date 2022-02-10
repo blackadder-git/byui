@@ -10,10 +10,10 @@ const DEBUG = false;
 export default class TodoView {
 
     /****************************************
-    // listElement identifies the ul where tasks are displayed
+    // constructor, listElement identifies the ul where tasks are displayed
     *****************************************/
     constructor(listElement) {
-        this.ul = document.querySelector(listElement);
+        this.ul = document.querySelector(listElement); // get ul element
     }
 
     /****************************************
@@ -37,6 +37,8 @@ export default class TodoView {
             li.innerHTML = `<input type="checkbox" id="description${index}" ${checked}>
                             <label for="description${index}" class="strikethrough">${task.content}</label>
                             <button class="remove">X</button>`;
+            
+            // add task to unordered list
             this.ul.appendChild(li);
         });
     }
@@ -47,7 +49,7 @@ export default class TodoView {
     renderTasksLeft(unfinished) {
         if (DEBUG) console.log('DEBUG: tasks left = ' + unfinished);
         
-        let tasksLeft = document.querySelector('#numTasks'); // TODO: better to pass in the id ?
+        let tasksLeft = document.querySelector('#numTasks'); // TODO: better to pass in the id as done with ul#id ?
 
         // only add s if there is more than 1 task to complete
         const plural = unfinished != 1 ? 's' : '';

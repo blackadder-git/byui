@@ -16,7 +16,6 @@
 //  - MVC architecture
 *****************************************/
 
-
 // import model, view, controller
 import Model from './todoModel.js';
 import View from './todoView.js';

@@ -9,7 +9,7 @@ const DEBUG = false;
 export default class Controller {
 
     /****************************************
-    //
+    // constructor
     *****************************************/
     constructor(model, view) {
         // model

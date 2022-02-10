@@ -10,10 +10,10 @@ const DEBUG = false;
 export default class TodoModel {
 
     /****************************************
-    //
+    // constructor, key used to access localStorage
     *****************************************/
     constructor(key) {
-        // number of completed tasks
+        // number of incomplete tasks
         this.unfinished = 0;
   
         // used to access localStorage
