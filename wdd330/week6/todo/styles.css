@@ -49,7 +49,7 @@ label {
     padding: .8em;
 }
 #add {
-    width: 30%;
+    width: 100%;
     font-size: 2em;
 }
 #add:hover, .filter:hover, .remove:hover {
