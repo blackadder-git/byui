@@ -30,7 +30,7 @@ const controller = new Controller(model, view);
 // Honestly, I don't know if it make more sense for listeners to be in the controller or not ???
 // Although not as self contained (disadvantage) the controller is easier to read (advantage) contains less code (advantage) and 
 // there is a bit more separation of responsibility (advantage)
-// Either way, it's interesting to see how it can be done both ways
+// Either way, it's interesting to see how it can be done differently
 
 // listen for add button
 document.querySelector('#add').addEventListener('click', addNewTask);
