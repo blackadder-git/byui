@@ -48,6 +48,7 @@ document.querySelector('#app').addEventListener('keydown', function(e) {
 *****************************************/
 function addNewTask() {
     let descriptionInput = document.querySelector('#description');
+    
     if (descriptionInput.value.trim()) {
         controller.addTodo(descriptionInput.value.trim());
 

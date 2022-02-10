@@ -79,7 +79,7 @@ export default class TodoModel {
     }
 
     /****************************************
-    // update complete
+    // update complete, id of task to toggle
     *****************************************/
     updateTodo(id) {
         // figure out what checkbox got checked (or unchecked)
@@ -113,10 +113,11 @@ export default class TodoModel {
     }
 
     /****************************************
-    // add task to array
+    // add task to array, task to add
     *****************************************/
     addTodo(todo) {
         if (DEBUG) console.log('DEBUG: addTodo in model: ', todo);
+
         // add item to todo list
         this.todoList.push(todo);
 
@@ -128,10 +129,11 @@ export default class TodoModel {
     }
 
     /****************************************
-    // remove task from array
+    // remove task from array, id of task to remove
     *****************************************/
     removeTodo(id) {
         if (DEBUG) console.log('DEBUG: removeTodo in model: ' +  id);
+
         const index = this.todoList.findIndex(function(todo) {
             return todo.id == id;
         });
@@ -165,7 +167,9 @@ export default class TodoModel {
     *****************************************/
     readFromLocalStorage() { 
         if (DEBUG) console.log('DEBUG: read from localStorage');
+
         let todoList = JSON.parse(localStorage.getItem(this.key));
+        
         if (todoList == null) {
             // make sure not to send back null
             todoList = []; 
@@ -180,6 +184,7 @@ export default class TodoModel {
     *****************************************/
     writeToLocalStorage(data) { 
         if (DEBUG) console.log('DEBUG: write to localStorage', data);
+
         localStorage.setItem(this.key, JSON.stringify(data));
     }    
 } // END CLASS

@@ -28,6 +28,7 @@ export default class TodoView {
         // rebuild list from current array
         list.forEach((task, index) => {
             const li = document.createElement('li');
+            
             li.setAttribute('id', task.id);
 
             // has task been completed
@@ -63,6 +64,7 @@ export default class TodoView {
     renderActiveFilter(filter) {
         // disactivate active filter style
         const filters = document.querySelectorAll('.filter');
+
         filters.forEach(filter => {
             filter.classList.remove('selected');
         });

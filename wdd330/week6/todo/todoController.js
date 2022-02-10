@@ -70,6 +70,7 @@ export default class Controller {
     *****************************************/
     addTodo(description) {
         if (DEBUG) console.log('DEBUG: this object contains:', this);
+        
         const todo = {id : Date.now(), content: description, completed: false };
 
         // add task to list
