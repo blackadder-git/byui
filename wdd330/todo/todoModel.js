@@ -1,66 +1,94 @@
+// TODO APP Module
+// The central component of the pattern. It is the application's dynamic data structure, independent of the user interface. 
+// It directly manages the data, logic and rules of the application.
+
+const DEBUG = true;
+
+/****************************************
+ * MODEL CLASS
+*****************************************/
 export default class TodoModel {
 
+    /****************************************
+    //
+    *****************************************/
     constructor(key) {
         // number of completed tasks
         this.unfinished = 0;
   
+        // used to access localStorage
         this.key = key;
-        this.todoList = this.readFromLocalStorage();
 
+        // array of tasks
+        this.todoList = this.readFromLocalStorage();
     }
 
-    getTodo() {
-        this.countUnfinishedTasks();
+    /****************************************
+    // filter on all tasks 
+    *****************************************/
+    getAllTodo() {
+        this.unfinished = this.getActiveTodoCount();
         return this.todoList;
     }
 
+    /****************************************
     // filter on unfinshed tasks
+    *****************************************/    
     getActiveTodo() {
         const active = this.todoList.filter(task => task.completed == false);
         this.unfinished = active.length;
         return active;
     }
 
+    /****************************************
     // filter on completed tasks
+    *****************************************/
     getCompletedTodo() {
         const completed = this.todoList.filter(task => task.completed == true);
         this.unfinished = 0;
         return completed;
     }
 
-    countUnfinishedTasks() {
+    /****************************************
+    // determine how many of the total tasks have yet to be completed, return count
+    *****************************************/
+    getActiveTodoCount() {
         this.unfinished = 0;
         this.todoList.forEach(task => {
             // task has not been marked as complete
             if (task.completed == false) {
                 this.addUnfinishedTask(); // increment unfinished tasks
             }
-        });        
-    }
+        });
 
-    getUnfinishedTasks() {
-        this.countUnfinishedTasks();
         return this.unfinished;
     }
     
+    /****************************************
     // increment unfinished tasks
+    *****************************************/    
     addUnfinishedTask() {
         this.unfinished++;
     }
     
+    /****************************************
     // decrement unfinished tasks
+    *****************************************/
     removeUnfinishedTask() {
         this.unfinished--;
     }
 
+    /****************************************
     // update complete
+    *****************************************/
     updateTodo(id) {
+        // figure out what checkbox got checked (or unchecked)
         const index = this.todoList.findIndex(function(todo) {
             return todo.id == id;
         });
 
         if (index !== -1) { 
-            console.log(id + ': ' + this.todoList[index].completed);
+            if (DEBUG) console.log('DEBUG:' + id + ': ' + this.todoList[index].completed);
 
             // toggle checkbox
             const checked = this.todoList[index].completed == true ? false : true;
@@ -77,28 +105,33 @@ export default class TodoModel {
             const updated = {id : this.todoList[index].id, content: this.todoList[index].content, completed: checked };
 
             this.todoList[index] = updated;
-            console.log(updated, this.todoList);
+
+            if (DEBUG) console.log('DEBUG:', updated, this.todoList);
 
             this.writeToLocalStorage(this.todoList);
         }
     }
 
-
+    /****************************************
     // add task to array
+    *****************************************/
     addTodo(todo) {
-        console.log('addTodo in model');
+        if (DEBUG) console.log('DEBUG: addTodo in model: ', todo);
         // add item to todo list
         this.todoList.push(todo);
 
-        this.addUnfinishedTask(); // increment unfinished tasks
+        // increment unfinished tasks
+        this.addUnfinishedTask();
 
         // update list, save to local storage
         this.writeToLocalStorage(this.todoList);
     }
 
+    /****************************************
     // remove task from array
+    *****************************************/
     removeTodo(id) {
-        console.log('removeTodo in model: ' +  id);
+        if (DEBUG) console.log('DEBUG: removeTodo in model: ' +  id);
         const index = this.todoList.findIndex(function(todo) {
             return todo.id == id;
         });
@@ -118,32 +151,28 @@ export default class TodoModel {
         }
     }
 
+    /****************************************
     // read from disc
+    // treat function like a black box, caller expects X return X that way implementation can be 
+    // changed without affecting the rest of the program
+    *****************************************/
     readFromLocalStorage() { 
-        //console.log('read from localStorage');
+        if (DEBUG) console.log('DEBUG: read from localStorage');
         let todoList = JSON.parse(localStorage.getItem(this.key));
         if (todoList == null) {
-            todoList = []; // make sure not to send back null
+            // make sure not to send back null
+            todoList = []; 
         }
-        /*
-        else {
-            this.countUnfinishedTasks();
-            /*
-            todoList.forEach(task => {
-                // task has not been marked as complete
-                if (task.completed == false) {
-                    this.addUnfinishedTask(); // increment unfinished tasks
-                }
-            });
-            * /
-        }*/
-        return todoList;
+
+        return todoList; // caller expects an array
     }
 
+    /****************************************
     // write to disc
+    // browser debug dev tools | Application | Storage
+    *****************************************/
     writeToLocalStorage(data) { 
-        //console.log('write to localStorage');
-        // Debug: to view, check dev tools | Application | Storage
+        if (DEBUG) console.log('DEBUG: write to localStorage', data);
         localStorage.setItem(this.key, JSON.stringify(data));
     }    
-}
+} // END CLASS

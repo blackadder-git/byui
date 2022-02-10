@@ -1,297 +1,178 @@
-// import localstorage helper functions
-import { readFromLS, writeToLS } from './ls.js';
-// import localstorage helper functions
-import { qs, onTouch } from './utilities.js';
+// controller
 
-// https://github.com/byui-cit/cit261/blob/gh-pages/solutions/week05/hikes.js
-// https://github.com/byui-cit/cit261/tree/gh-pages/solutions/week05/mvc
-
-
-// Add a variable to store our list of tasks
-let todoList = null;
+import Model from './todoModel.js';
+import View from './todoView.js';
 
 export default class Todo {
 
-    // elementId = ul where items should be added, lsKey = for localStorage
-    constructor(elementId, lsKey) {
-        this.listElement = document.querySelector(elementId);
+    /**
+     * class constructor
+     * @param  {String} key used to access localStorage
+     * @param  {String} listElement ul identifer
+     * @return none
+     */
+    constructor(key, listElement) {
+        // model
+        this.key = key;
+        this.model = new Model(this.key);
+        this.list = this.model.getTodo(); // get data
 
-        this.lsKey = lsKey;
+        // view
+        this.listElement = listElement;
+        this.view = new View(this.listElement);
+        this.view.renderTodoList(listElement, this.list); // show data
+        this.view.renderTasksLeft(this.model.getUnfinishedTasks()); // show tasks left
 
-        // get todo list
-        todoList = getTodos(lsKey);
-
-        this.listTodos();
+        // listeners
+        this.addListeners();
+        this.addAllListener(); // filter all
+        this.addActiveListener(); // filter incomplete
+        this.addCompletedListener(); // filter completed
+        this.addButtonListener(); // listen to add button
+        this.addEnterListener(); // listen for enter key
     }
 
-    /*
-    Complete Todos.listTodos()
-    Add a method to the Todos class called listTodos(). It should use the renderTodoList function to output our todo list when called.
-    It should get called when a todo is added, or removed, and when the Todos class is instantiated.
-    */
-    listTodos() {
-        renderTodoList(this.listElement, todoList);
+    // listen for the enter key
+    addEnterListener() {
+        document.querySelector('#app').addEventListener('keydown', function(e) {
+            if (e.keyCode === 13) {
+                console.log('ahoy');
+                // e.preventDefault();
+                // e.stopImmediatePropagation();
+                this.addTodo();
+            }
+
+        }.bind(this), false); // bind this object to addTodo()
+    }
+
+    // show all tasks
+    addAllListener() {
+        document.querySelector('#filterAll').addEventListener('click', function (e) {
+            // console.log('filter active');
+            const allTasks = this.model.getTodo();
+            this.view.renderTodoList(this.listElement, allTasks);
+            this.view.renderTasksLeft(this.model.getUnfinishedTasks()); // update tasks left
+            this.addListeners();
+
+        }.bind(this), false); // bind this object to removeTodo()
+    }
+
+    // show only incomplete tasks
+    addActiveListener() {
+        document.querySelector('#filterActive').addEventListener('click', function (e) {
+            // console.log('filter active');
+            const activeTasks = this.model.getActiveTodo();
+            this.view.renderTodoList(this.listElement, activeTasks);
+            this.view.renderTasksLeft(this.model.getUnfinishedTasks()); // update tasks left
+            this.addListeners();
+
+        }.bind(this), false); // bind this object to removeTodo()
+    }
+
+    // show only completed tasks
+    addCompletedListener() {
+        document.querySelector('#filterCompleted').addEventListener('click', function (e) {
+            // console.log('filter completed');
+            const completedTasks = this.model.getCompletedTodo();
+            this.view.renderTodoList(this.listElement, completedTasks);
+            this.view.renderTasksLeft(0); // update tasks left, completed is always 0
+            this.addListeners();
+
+        }.bind(this), false); // bind this object to removeTodo()
+    }
+
+    // add checkbox and remove button listeners
+    addListeners() {
+        this.addCheckboxListener();
         this.addRemoveListener();
-        // add remove listeners
     }
 
-    // Complete Todos.removeTodo()
-    removeTodo(id) {
-        alert('remove this' +  id);
-        let index = todoList.findIndex(function(object) {
-            return object.id == id;
+    // loop items, add checkbox listeners
+    addCheckboxListener() {
+        const checkboxes = document.querySelectorAll("input[type=checkbox]");
+
+        checkboxes.forEach(checkbox => {
+            // loop through each button and attach a listener to remove the item from the todoList array
+            checkbox.addEventListener('change', function (e) {
+                // get parent li id
+                let id = e.target.parentNode.id;
+                console.log('changed: ' + id);
+                this.model.updateTodo(id);
+                this.view.renderTasksLeft(this.model.getUnfinishedTasks()); // update tasks left
+
+            }.bind(this), false); // pass this object to removeTodo()
         });
-        // 
-        if (index !== -1) { 
-            // remove todo from array
-            todoList.splice(index, 1);
-            // update list
-            this.saveTodos()
-        }
 
-        // recreate the ui
-        this.listTodos();
     }
 
-    addRemoveListener() {
+    // loop items, add button listeners
+    addRemoveListener () {
         const buttons = document.querySelectorAll(".remove");
         buttons.forEach(button => {
-            // loop through each button and attach a listener to remove the item from the todoList array
+            // loop through each button and attach a listener, bind this object to removeTodo()
+            button.addEventListener('click', this.removeTodo.bind(this));
+
+            /*
+            // uses an anonymous function to do the same thing as above (remove item when button clicked)
             button.addEventListener('click', function (e) {
                 // get parent li id
                 let id = e.target.parentNode.id;
-                this.removeTodo(id);
-                /*
-                //alert(id);
-                // set index if 
-                let index = todoList.findIndex(function(object) {
-                    return object.id == id;
-                })
-                alert(index);
-                if (index !== -1) { 
-                    // remove todo from array
-                    todoList.splice(index, 1);
-    
-                    // todo has been removed, recreate list and reattach listeners
-                    renderTodoList(this.listElement, todoList);
-                }*/
-    
-            }.bind(this), false); // bind function to this
+                // pass id to model
+                this.model.removeTodo(id);
+
+                // list count has changed, show updated list
+                this.view.renderTodoList(this.listElement, this.list);
+                this.addListeners();
+
+            }.bind(this), false); // bind this object to removeTodo()
+            
+            WHY NOT USE AN ANONOMOUS FUNCTION ?
+            https://gomakethings.com/named-vs-anonymous-event-listener-functions/
+            */
         });
     }
 
-    // Complete Todos.removeTodo()
-    saveTodos() {
-        alert(this.lsKey);
-        writeToLS(this.lsKey, todoList);
+    // function is bound to this object in the event listener, called each time a remove button is clicked
+    removeTodo(e) {
+        // get target id
+        let id = e.target.parentNode.id;
+
+        // pass id to model
+        this.model.removeTodo(id);
+
+        // list count has changed, show updated list
+        this.view.renderTodoList(this.listElement, this.list);
+        this.view.renderTasksLeft(this.model.getUnfinishedTasks()); // update tasks left
+        this.addListeners();
     }
 
-} // end of class
-
-
-// End of class
-// methods responsible for building HTML.  Why aren't these in the class?  
-// They don't really need to be, and by moving them outside of the exported class, they cannot be called outside the module...
-// they become private.
-
-/*
-Create the renderTodoList(list, element) function
-/* foreach todo in list, build a li element for the todo, and append it to element
-@param {array} list The list of tasks to render to HTML @param {element} element The DOM element to insert our list elements into.
-*/
-function renderTodoList(parentList, list) {
-    // clear out list
-    parentList.innerHTML = '';
-
-    // buld new list
-    list.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.setAttribute('id', item.id);
-        const checked = (item.completed == true) ? 'checked' : '';
-        li.innerHTML = `<input type="checkbox" ${checked}  data-index="${index}">
-                        ${item.content}
-                        <button class="remove" data-index="${index}">X</button>`;
-        parentList.appendChild(li);
-    });
-
-    /*
-    // get a list of all remove buttons
-    const buttons = document.querySelectorAll(".remove");
-    buttons.forEach(button => {
-        // loop through each button and attach a listener to remove the item from the todoList array
-        button.addEventListener('click', function (e) {
-            // get parent li id
-            let id = e.target.parentNode.id;
-
-            //alert(id);
-            // set index if 
-            let index = todoList.findIndex(function(object) {
-                return object.id == id;
-            })
-            alert(index);
-            if (index !== -1) { 
-                // remove todo from array
-                todoList.splice(index, 1);
-
-                // todo has been removed, recreate list and reattach listeners
-                renderTodoList(parentList, todoList);
-            }
-
-        }, false);
-    });*/
-}
-
-
-/*
-Create saveTodo(task, key)
-In the Todo.js module, but not in the Todos class, create the following function
-/* build a todo object, add it to the todoList, and save the new list to local storage.
-@param {string} key The key under which the value is stored under in LS @param {string} task The text of the task to be saved.
-* /
-function saveTodo(key) { 
-    // save the new list to local storage
-    writeToLS(key, todoList);
-}*/
-
-
-/*
-In the Todos.js module, but not in the Todos class create the following function
-/* check the contents of todoList, a local variable containing a list of ToDos. 
-If it is null then pull the list of todos from localstorage, update the local variable, and return it
-@param {string} key The key under which the value is stored under in LS @return {array} The value as an array of objects
-*/
-function getTodos(key) { 
-    if (todoList == null) {
-        todoList = readFromLS(key);
-    }
-    return todoList;
-}
-
-/*Create saveTodo(task, key)
-In the Todo.js module, but not in the Todos class, create the following function
-/* build a todo object, add it to the todoList, and save the new list to local storage.
-@param {string} key The key under which the value is stored under in LS @param {string} task The text of the task to be saved.
-*/
-function saveTodo(task, key) { 
-    // alert(task + key)
-    // build a todo object: a todo should look like this: { id : timestamp, content: string, completed: bool }
-    const todo = {id : Date.now(), content: task, completed: false }
-    // alert(todo);
-    console.log(todo);
-
-    // add it to the list
-    todoList.push(todo);
-
-    // alert(todoList);
-    console.log(todoList);
-
-    // save the new list to local storage
-    writeToLS(key, todoList);
-}
-
-
-
-/*
-
-// Add a Todos class to the Todos.js file, and make it the default export for the module
-export default class Todo {
-    // in the constructor set a variable with the element our todo list will be built in, 
-    // and the key we will use to read/write from localStorage
-
-    constructor(element, key) {
-        // get reference to task element
-        this.parentList = document.querySelector(element);
-
-        // get todo list
-        todoList = getTodos(key);
-
-        // bind add button
-        document.querySelector('#add').addEventListener('click', this.addTodo.bind(this), false);
-
-        // bind completed checkbox
-        //document.querySelector('.completed').addEventListener('click', this.completeTodo.bind(this), false);
-
-        // bind remove button
-        //document.querySelector('.removed').addEventListener('click', this.removeTodo.bind(this), false);
-
-        // bind task input
-        this.task = document.querySelector('#task');
-
-        // save key
-        this.key = key;
-
-        this.listTodos();
+    // add listener to add item button
+    addButtonListener() {
+        document.querySelector('#add').addEventListener('click', this.addTodo.bind(this)); // bind this object to addTodo())
     }
 
-    /*
-    Complete Todos.listTodos()
-    Add a method to the Todos class called listTodos(). It should use the renderTodoList function to output our todo list when called.
-    It should get called when a todo is added, or removed, and when the Todos class is instantiated.
-    * /
-    listTodos() {
-        renderTodoList(this.parentList, todoList);
-    }
-
-    /*
-    Complete Todos.addTodo()
-    Add a method to the Todos class called addTodo. It should grab the input in the html where users enter the text of the task, 
-    then send that along with the key to a SaveTodo() function. Then update the display with the current list of tasks
-    * /
-    // Bind Todos.addTodo to the Add button on our add todo form in the html.
+    // function has access to object elements because it is bound to this in the event listener
     addTodo() {
-        this.task = document.querySelector('#task').value;
-        //alert(task.value);
-        saveTodo(this.task, this.key);
-        this.listTodos();
-    }
+        console.log('this object contains:', this);
+        let descriptionInput = document.querySelector('#description');
 
+        // check input for content
+        if (descriptionInput.value.trim()) {
+            const todo = {id : Date.now(), content: descriptionInput.value.trim(), completed: false };
 
-    // Complete Todos.completeTodo()
-    completeTodo(index) {
-        // alert('complete' + index);
-        // save the new list to local storage
-        writeToLS(key, todoList);        
-    }
+            // add task to list
+            this.model.addTodo(todo);
 
-    // Complete Todos.removeTodo()
-    removeTodo(index) {
-        alert('remove' +  index);
-        console.log(todoList);
-        todoList.splice(index, 1);
-        //writeToLS(key, todoList);        
-        
-        // show updated list
-        this.listTodos();
-    }
+            // clear text input field
+            descriptionInput.value = "";
 
-    // Complete Todos.filterTodos()
-    filterTodos() {
-
+            // list count has changed, show updated list
+            this.view.renderTodoList(this.listElement, this.list);
+            this.view.renderTasksLeft(this.model.getUnfinishedTasks()); // update tasks left
+            this.addListeners();
+        }
+        else {
+            console.log('looks empty to me');
+        }
     }
 }
-
-
-
-/*
-Create saveTodo(task, key)
-In the Todo.js module, but not in the Todos class, create the following function
-/* build a todo object, add it to the todoList, and save the new list to local storage.
-@param {string} key The key under which the value is stored under in LS @param {string} task The text of the task to be saved.
-* /
-function saveTodo(task, key) { 
-    // alert(task + key)
-    // build a todo object: a todo should look like this: { id : timestamp, content: string, completed: bool }
-    const todo = {id : Date.now(), content: task, completed: false }
-    // alert(todo);
-    console.log(todo);
-
-    // add it to the list
-    todoList.push(todo);
-
-    // alert(todoList);
-    console.log(todoList);
-
-    // save the new list to local storage
-    writeToLS(key, todoList);
-}
-*/
