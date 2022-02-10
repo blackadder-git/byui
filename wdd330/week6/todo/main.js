@@ -11,6 +11,7 @@
 //  - filter on all, active, completed tasks
 //  - does not allow empty task
 //  - listens for enter key 
+//  - corrects for singular (1) vs plural (> 1) tasks
 //  - MVC architecture
 *****************************************/
 
