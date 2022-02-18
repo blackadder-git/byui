@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>wdd330 Portfolio</title>
+    <meta name="description" content="Week 7">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h1>WDD330 Portfolio</h1>
+    <section class="weeklyItems">
+        <h2><a href="../">Home</a> | Week 7</h2>
+        <ul>
+            <li>Notes
+                <ul>
+                    <li><h3>Chapter 11: Further Functions</h3></li>
+                    <li>Functions in JavaScript are objects which can be passed around like other values</li>
+                    <li>Functions can have their own properties and methods</li>
+                    <li>All functions have at least a length property that returns the number of parameters the function accepts</li>
+                    <li>The call method can be used 'called' on a function to set the value (pass in) what should be used for this e.g. sayHello.call(bob); passes a bob object to the sayHello method.  Inside, bob could be used to access an name property e.g. this.name assuming that the bob object had such a property</li>
+                    <li>Additional parameters (used by the function) can be passed to call after this as well e.g. sayHello.call(bob, "Hello");</li>
+                    <li>If this isn't needed, null can be used as the first parameter</li>
+                    <li>The apply function works the same way only it uses an array to pass parameters</li>
+                    <li>Properties can be easily added to function as though it was an object ... which it is</li>
+                    <li><strong>Memoization</strong>
+                    <li>Memoization = result caching (TODO: REREAD THIS)</li>
+                    <li>Immediately Invoked Function Expression IIFE (iffy) - happens when you wrap an anonyomous function in parentheses and end it with parentheses e.g. (function() {...})();</li>
+                    <li>What benefit does an iffe have ? it keeps the global namespace from being polluted e.g. use when you only need a temp variable</li>
+                    <li>Best practice 'use strict' is to place all code inside an iffe</li>
+                    <li>Functions can redefine / and rewrite themselves if inside the function, a variable using name of the function is reassigned e.g. function doThis() { ... doThis = function() {...}} When called the second time, the second function will be called</li>
+                    <li>Any properties (including redefinitions) are lost when the function redefines itself</li>
+                    <li>Lazy Definition Pattern: used to do some initialization when first called, function is redefiend and called again with out the init code</li>
+                    <li>But I would never use this you say ... Ha, imagine a function that upon first run determines whether a specific featue is available and redefines itself to work specifically in that environment (Init-Time Branching)</li>
+                    <li><strong>Callbacks</strong>
+                    <li>Callbacks are functions passed to other functions</li>
+                    <li>JavaScript is a single-threaded environment meaning only one piece of code can run at a time</li>
+                    <li>Rather than wait for an even to occur, a callback can be invoked whenever an event happens</li>
+                    <li>setTimeout(callback, seconds * 1000); will invoke the timeout after a specified time</li>
+                    <li>Error-first callbacks (popularized by node) check for error with if and throw or continue based on return</li>
+                    <li>Promises represent the future result of an asyncronous operation</li>
+                    <li><strong>Promises</strong>
+                        <ul>
+                            <li>pending - when first created</li>
+                            <li>unsettled - while waiting</li>
+                            <li>settled - when complete
+                                <ul>
+                                    <li>resolved - success</li>
+                                    <li>rejected - failure or error</li>
+                                </ul>
+                            </li>                 
+                        </ul>
+                    </li>
+                    <li><a href="https://fullstackjournal.wordpress.com/2018/07/06/the-promise-js-explained-i-burger-party/" target="_blank" rel="noopener noreferrer">Burger Party</a></li>
+                    <li>
+                        const promise = new Promise( (resolve, reject) => {<br>
+                            &#09;// initialization code goes here (e.g. what you want to do)<br>
+                            &#09;// success below tests what you did above
+                            &#09;if (success) {<br>
+                                &#09;&#09;resolve(value);<br>
+                            &#09;} else {<br>
+                                &#09;reject(error);<br>
+                            &#09;}<br>
+                        });
+                    </li>
+                    <li>A promise accepts two functions as callbacks (resolve & reject)</li>
+                    <li>promise.then(result => { ... }); is used to handle resolve (success)</li>
+                    <li>promise.catch(result => { ... }); is used to handle reject (failure)</li>
+                    <li>.then() and .catch() can be chained to a promise and multiple promises can be chained to one another by adding more .then()s</li>
+                    <li>Async code (that does not wait) is created </li>
+                    <li>Use 'await' before a function (inside a function preceded by 'async' to keep each line (function) from executing until the previuos one has returned</li>
+                    <li>
+                        async function loadGame(userName) {<br>
+
+                            &#09;try {<br>
+                                &#09;&#09;const user = await login(userName);<br>
+                                &#09;&#09;const info = await getPlayerInfo (user.id);<br>
+                                &#09;&#09;// load the game using the returned info<br>
+                            &#09;}<br>
+                        
+                            &#09;catch (error){<br>
+                                &#09;&#09;throw error;<br>
+                            &#09;}<br>
+                        }
+                    </li>
+                    <li>Above, getPlayer waits for login. Any errors that occur are thrown to the catch block</li>
+                    <li>Functions that return functions need to assign the return to a variable which can then be invoked with () ... but why?</li>
+                    <li><strong>Closures</strong><li>
+                    <li>Closures are used to gain access to variables in an outer scope</li>
+                    <li>Closures are used to keep a variable alive after it would otherwise be erased from memory</li>
+                    <li>A closure is created when an outer function returns an inner function, the variable that receives the return value now has access to variables created inside both the inner and outer functions</li>
+                    <li>Using an anonyomous arrow function as the return will also create a closure</li>
+                    <li><strong>Generators</strong><li>
+                    <li>Defined by placing an asterisk after the function word e.g. function* example() { ... }</li>
+                    <li>Generator functions use a while with yield to return a value</li>
+                    <li>yield (unlike return) retains the state of the value returned</li>
+                    <li>After yield, the generator is paused until next() is called</li>
+                    <li>next() is called on the variable where the generator function is stored</li>
+                    <li><strong>Functional Programming</strong></li>
+                    <li>Return values of pure functions should only depend on the arguments provided to the function</li>
+                    <li>Pure functions don't change data anywhere else in a program (global)</li>
+                    <li>Pure functions need 1. at least one argument and 2. a return value</li>
+                    <li><a href="https://www.sitepoint.com/function-composition-building-blocks-for-maintainable-code/" target="_blank" rel="noopener noreferrer">Functional Decomposition</a></li>
+                    <li><li><strong>Currying</strong></li></li>
+                    <li>A function is 'curried' when a function is returned with some arguments expecting that ommitted arguments will still be provided</li>
+                    <li><h3>Chapter 13: Ajax</h3></li>
+                    <li>Ajax (Asynchronous JavaScript and XML) allows asyncronous updates to a webpage without the need to update the entire page</li>
+                    <li>Today, JSON is commonly used in place of XML</li>
+                    <li><h3>Fetch API</h3></li>
+                    <li>fetch uses promises with only one required argument</li>
+                    <li>
+                        fetch('https://example.com/data')<br>
+                        &#09;.then( // code that handles the response )<br>
+                        &#09;.catch( // code that runs if the server returns an error )
+                    </li>
+                    <li>The response object can be checked for ok (200 if success, 201 if resource created, 204 if success but no content returned) ok returns true if the status property 200 - 299</li>
+                    <li>
+                        fetch(url)<br>
+                        &#09;.then((response) => {<br>
+                        &#09;&#09;if(response.ok) {<br>
+                        &#09;&#09;&#09;return response;<br>
+                        &#09;&#09;}<br>
+                        &#09;throw Error(response.statusText);<br>
+                        })<br>
+                        .then( response => // do something with response )<br>
+                        .catch( error => console.log('There was an error!') )                        
+                    </li>
+                    <li>Other response object properties:
+                        <ul>
+                            <li>headers - </li>
+                            <li>url - </li>
+                            <li>redirected - bool, is the result of a redirect</li>
+                            <li>type - string 'basic', 'cors', 'error', 'opaque'</li>
+                        </ul>
+                    </li>
+                    <li>response object methods:
+                        <ul>
+                            <li>redirects() - currently no support in any browser</li>
+                            <li>text() - transforms the text stream into a JavaScript string e.g. response => response.text()</li>
+                            <li>file() - img, xls, etc transforms the data into a blob object e.g. response => response.blob()</li>
+                            <li>json() - transforms the JSON data into a JavaScript object e.g. response => response.json()</li>
+                        </ul>
+                    </li>                    
+                    <li>In addition, it is possible to create custom response objects<br>
+                        const response = new Response( 'Hello!', {<br>
+                        &#09;ok: true,<br>
+                        &#09;status: 200,<br>
+                        &#09;statusText: 'OK',<br>
+                        &#09;type: 'cors',<br>
+                        &#09;url: '/api'<br>
+                        });
+                    </li>
+                    <li>The request object (what gets passed to fetch()) can be a url or it can be an actual object</li>
+                    <li>
+                        const request = new Request('https://example.com/data', {<br>
+                            &#09;method: 'GET',<br>
+                            &#09;mode: 'cors',<br>
+                            &#09;redirect: 'follow',<br>
+                            &#09;cache: 'no-cache'<br>
+                        });
+                    </li>
+                    <li>request properties include:
+                        <ul>
+                            <li>url - (required) of requested resource</li>
+                            <li>method - default GET, <a href="https://robm.me.uk/2013/09/http-verbs/" target="_blank" rel="noopener noreferrer">HTML verbs</a> (GET, POST, PUT, PATCH, DELETE)</li>
+                            <li>headers - (Content-Type, Accept-Charset, Accept-Encoding)</li>
+                            <li>mode - CORS by default, true or false</li>
+                            <li>cache - specify how the request will use the browsers cache</li>
+                            <li>credentials - specify whether to allow cookies</li>
+                            <li>redirect - specify what to do if the response returns a redirect (follow, error, manual)</li>
+                        </ul>
+                    </li>
+                    <li>url is required, the second arguement is an object made of all the other properties</li>
+                    <li>has(), get(), set(), append(), delete(), keys(), values(), entries() are used with headers</li>
+                    <li>When a request returns success, an arrow function can do some work e.g. .then(response => response.text()) here response is passed from a previous .then return (each .then gets the return from before). response.text() is returned in this case and .then( text => outputDiv.innerText = text ) passes the previous return (now named text) to the next .then which sets the html element</li>
+                    <li><h3>FormData</h3></li>
+                    <li>1. Get a form with const form = document.forms['name of form']</li>
+                    <li>2. Create a const task = new FormData(form)</li>
+                    <li>3. The FormData instance will serialize all the data automatically</li>
+                    <li>4. Send in array to request as body: JSON.stringify(task)</li>
+                </ul>
+            </li>
+            <li>Questions
+                <ul>
+                    <li>If an error is thrown in error-first, wont the else block be skipped?</li>
+                    <li>What is 'success' in the context of a promise? It looks like it is just a condition you create to decide whether the operation succeeded or failed</li>
+                    <li>If an outer function has two inner functions and returns one, the closure would just have access to the outer variables and inner variables for just the function that was returned right ? </li>
+                    <li>Why closures are interesting, why not just create a function directly to do whatever the closure does?</li>
+                    <li>... what is the rest operator again?</li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>
