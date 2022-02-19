@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather Gallery - Ye Old Crow's Nest</title>
+    <meta name="description" content="Ahoy, community weather images from around Preston, Soda Springs 'n Fish Haven 
+                                      See pictures o' rain, snow, clouds, sun, storm 'n many more.">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    
+    <link rel="preload" href="../css/fontawesome/css/fontawesome.min.css" media="screen" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/fontawesome/css/fontawesome.min.css" media="screen"></noscript>
+
+    <link rel="stylesheet" href="../css/fontawesome/css/solid.min.css" media="screen">
+    <link rel="stylesheet" href="../css/fontawesome/css/brands.min.css" media="screen">
+    <link rel="stylesheet" href="css/small.css" media="screen">
+    <link rel="stylesheet" href="css/medium.css" media="screen">
+    <link rel="stylesheet" href="css/large.css" media="screen">
+    <script defer src="js/script.js"></script>
+    <script defer src="js/lazyload.js"></script>
+    <script defer src="js/localstorage.js"></script>
+</head>
+<body>
+    <div class="map">
+        <header>
+            <img src="images/piratelogo.webp" alt="pirate ship site logo">
+            <h1>
+                Ye Old Crow's Nest
+            </h1>
+            <div class="motto">Thar She Blows</div>
+        </header>
+        <div><a class="ham" href="#"><i class="fas fa-anchor"></i> Menu</a></div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>        
+                <li><a href="preston.html">Preston</a></li>        
+                <li><a href="sodasprings.html">Soda Springs</a></li>        
+                <li><a href="fishhaven.html">Fish Haven</a></li>        
+                <li><a href="stormcenter.html">Storm Center</a></li>
+                <li><a href="gallery.html"><i class="fas fa-skull-crossbones"></i> Gallery</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Weather Gallery</h2>
+
+            <p id="lastvisit"></p>
+
+            <div class="images">
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?cloudy" alt="'tis a cloudy sky">
+                    <figcaption>Tis a cloudy sky says I in Fish Haven</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?storm" alt="a storm be brewin'">
+                    <figcaption>Thar be storms a brewin' in Preston</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?rain" alt="rainin' cats 'n dogs">
+                    <figcaption>Arr, thar be rain in the forcast for Soda Springs</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?sunny-sky" alt="tis a sunny sky">
+                    <figcaption>Tis a sunny sky says I in Preston</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?dusk" alt="Red sky at night, sailors' delight">
+                    <figcaption>Red sky at night, sailors' delight in Soda Springs</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?snow" alt="snow">
+                    <figcaption>Avast, it be a cold one today in Fish Haven</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?sunset" alt="sunset">
+                    <figcaption>Aye, the sun be going down early tonight in Soda Springs</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?rainbow" alt="rainbow">
+                    <figcaption>Tis the kracken, nar, tis but a rainbow in Fish Haven</figcaption>
+                </figure>  
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?red-sky" alt="red sky">
+                    <figcaption>Red sky at mornin', sailors take warnin' in Preston</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?cumulu" alt="cumulu">
+                    <figcaption>Thar be clouds above in Soda Springs</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?sunrise" alt="sunrise">
+                    <figcaption>Arr, sunrise comes again in Fish Haven</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/temp.webp" data-src="https://source.unsplash.com/300x400/?lightening" alt="lightening storm">
+                    <figcaption>Thar be a lightenin' storm in Preston </figcaption>
+                </figure>
+            </div>
+
+            <div class="placeholder contact">
+                <picture>
+                    <img src="images/map.webp" alt="Map of Preston, Idaho">
+                </picture>
+                <div class="info">
+                    <ul class="fa-ul">
+                        <li><h3>Ye Old Crow's Nest</h3></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 30 N 1st E</li>
+                        <li>Preston, ID 83263</li>
+                    </ul>
+                    
+                    <ul class="fa-ul">
+                        <li><i class="fas fa-phone-alt"></i> 999 999 9999</li>
+                        <li><i class="fas fa-envelope"></i> yeoldcrowsnest@ocn.com</li>
+                    </ul>
+
+                    <ul class="fa-ul">
+                        <li>
+                            <a href="https://www.facebook.com/" rel="noreferrer" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square fa-2x"></i></a> 
+                            <a href="https://www.pinterest.com/" rel="noreferrer" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest fa-2x"></i></a>
+                            <a href="https://twitter.com/?lang=en" rel="noreferrer" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+                            <a href="https://www.whatsapp.com/" rel="noreferrer" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        &copy;
+        Ye Old Crow's Nest | 
+        Attributions:
+        <a href="https://unsplash.com/" rel="noreferrer" target="_blank" aria-label="">Unsplash</a>
+        <div id="currentdate"></div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+        google: {
+            families: ['Charm','Montserrat']
+        }
+        });
+    </script>    
+</body>
+</html>

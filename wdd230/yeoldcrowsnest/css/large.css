@@ -1,0 +1,34 @@
+@media only screen and (min-width: 60em) {
+    body {
+        max-width: 1200px;
+    }
+    header img {
+        max-width: 75%;
+        margin-left: 5em;
+    }
+    h1 {
+        font-size: 5em;
+    }
+    nav {
+        margin-top: 3em;
+    }
+    .images {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .images figure:hover {
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+        margin-bottom: 2em;
+    }
+    figcaption {
+        padding: .5em 1em 1em;
+    }
+    .towns {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .towns section {
+        display: block;
+    }
+    .towndata {
+        margin-top: 2em;
+    }    
+}

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Storm Center - Ye Old Crow's Nest</title>
+    <meta name="description" content="Let us know wha' interestin' events are brewin' in yer area due t' the weather.">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    
+    <link rel="preload" href="../css/fontawesome/css/fontawesome.min.css" media="screen" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/fontawesome/css/fontawesome.min.css" media="screen"></noscript>
+
+    <link rel="stylesheet" href="../css/fontawesome/css/solid.min.css" media="screen">
+    <link rel="stylesheet" href="../css/fontawesome/css/brands.min.css" media="screen">
+    <link rel="stylesheet" href="css/small.css" media="screen">
+    <link rel="stylesheet" href="css/medium.css" media="screen">
+    <link rel="stylesheet" href="css/large.css" media="screen">
+    <script defer src="js/script.js"></script>
+    <script defer src="js/form.js"></script>
+</head>
+<body>
+    <div class="map">
+        <header>
+            <img src="images/piratelogo.webp" alt="pirate ship site logo">
+            <h1>
+                Ye Old Crow's Nest
+            </h1>
+            <div class="motto">Thar She Blows</div>
+        </header>
+        <div><a class="ham" href="#"><i class="fas fa-anchor"></i> Menu</a></div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>        
+                <li><a href="preston.html">Preston</a></li>        
+                <li><a href="sodasprings.html">Soda Springs</a></li>        
+                <li><a href="fishhaven.html">Fish Haven</a></li>        
+                <li><a href="stormcenter.html"><i class="fas fa-skull-crossbones"></i> Storm Center</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Storm Center</h2>
+
+            <p>Avast, we wants t' know wha' interestin' weather events be brewin' in yer area.
+               T' help us track the goings 'n comings o' flash floods, hail hurricanes, thunderstorms, tornadoes 'n the like,
+               we require * yer full name, phone number 'n zip code.
+            </p>
+            
+            <form action="thanks.html" method="get" target="_blank">
+                <fieldset>
+                    <legend>Contact Information</legend>
+                    <label for="id_fullname">
+                        Full name *
+                        <input id="id_fullname" type="text" name="fullname" pattern="[A-Za-z ]{5,}" title="Yer full name wit' 5 or more letters be required" autofocus placeholder="at least 5 letters" required>
+                    </label>
+
+                    <figure class="formimage">
+                        <img src="https://source.unsplash.com/300x400/?storm" alt="a stormy sky">
+                        <figcaption>A storm be brewin' says I</figcaption>
+                    </figure>
+
+                    <label for="id_email">
+                        Email
+                        <input id="id_email" type="email" name="email" placeholder="blackbeard@pirates.com">
+                    </label>
+
+                    <label for="id_phone">
+                        Phone number *
+                        <input id="id_phone" type="tel" name="phone" pattern="[0-9]+" title="Yer phone number (only numbers) be required" required>
+                    </label>
+
+                    <label for="id_zip">
+                        Zip code *
+                        <input id="id_zip" type="number" name="zip"  title="Yer zip code  (only numbers) be required" min="0" required>
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Storm Information</legend>
+                    <label for="id_stormdate">
+                        Storm date
+                        <input id="id_stormdate" type="date" name="stormdate">
+                    </label>
+
+                    <figure class="formimage">
+                        <img src="https://source.unsplash.com/300x400/?red-sky" alt="a red sky">
+                        <figcaption>Thar be fowl winds blowin'</figcaption>
+                    </figure>
+
+                    <label for="id_stormtype">
+                        Storm type
+                        <input id="id_stormtype" list="stormtypes"  name="stormtype">
+                        <datalist id="stormtypes">
+                            <option value="Flash Flood">
+                            <option value="Hail">
+                            <option value="Hurricane">
+                            <option value="Thunderstorm">
+                            <option value="Tornado">
+                        </datalist>
+                    </label>
+
+                    <label for="id_stormseverity">
+                        Storm severity <span id="severity">5</span>
+                        <input id="id_stormseverity" type="range" name="stormseverity" value="5" min="1" max="10" step="1" list="tickmarks" oninput="adjustRating(this.value)" onchange="adjustRating(this.value)">                        
+                        <datalist id="tickmarks">
+                            <option value="1">
+                            <option value="2">
+                            <option value="3">
+                            <option value="4">
+                            <option value="5">
+                            <option value="6">
+                            <option value="7">
+                            <option value="8">
+                            <option value="9">
+                            <option value="10">
+                        </datalist>
+                    </label>
+
+                    <label for="id_stormregion">
+                        Storm region
+                        <select id="id_stormregion" name="stormregion">
+                            <option selected disabled>Select Region ...</option>
+                            <option value="preston">Preston</option>
+                            <option value="sodasprings">Soda Springs</option>
+                            <option value="fishhaven">Fish Haven</option>
+                        </select>
+                    </label>
+
+                    <span class="radio">
+                        <span>Be ye in Danger?</span>
+                        <label for="id_yes"><input type="radio" id="id_yes" name="danger" value="yes"> Aye</label>
+                        <label for="id_maybe"><input type="radio" id="id_maybe" name="danger" value="maybe"> Maybe</label>
+                        <label for="id_no"><input type="radio" id="id_no" name="danger" value="no"> Nay</label>
+                    </span>
+
+                    <label for="id_comments" class="comments">
+                        Comments
+                        <textarea id="id_comments" name="comments"></textarea>
+                    </label>
+                </fieldset>
+
+                <input type="submit" value="Arrr, make yer report?">
+            </form>
+
+            <div class="placeholder contact">
+                <picture>
+                    <img src="images/map.webp" alt="Map of Preston, Idaho">
+                </picture>
+                <div class="info">
+                    <ul class="fa-ul">
+                        <li><h3>Ye Old Crow's Nest</h3></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 30 N 1st E</li>
+                        <li>Preston, ID 83263</li>
+                    </ul>
+                    
+                    <ul class="fa-ul">
+                        <li><i class="fas fa-phone-alt"></i> 999 999 9999</li>
+                        <li><i class="fas fa-envelope"></i> yeoldcrowsnest@ocn.com</li>
+                    </ul>
+
+                    <ul class="fa-ul">
+                        <li>
+                            <a href="https://www.facebook.com/" rel="noreferrer" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square fa-2x"></i></a> 
+                            <a href="https://www.pinterest.com/" rel="noreferrer" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest fa-2x"></i></a>
+                            <a href="https://twitter.com/?lang=en" rel="noreferrer" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+                            <a href="https://www.whatsapp.com/" rel="noreferrer" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        &copy;
+        Ye Old Crow's Nest | 
+        Attributions:
+        <a href="https://unsplash.com/" rel="noreferrer" target="_blank" aria-label="">Unsplash</a>
+        <div id="currentdate"></div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+        google: {
+            families: ['Charm','Montserrat']
+        }
+        });
+    </script>    
+</body>
+</html>

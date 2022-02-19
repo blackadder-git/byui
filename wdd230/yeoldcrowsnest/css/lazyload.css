@@ -1,0 +1,21 @@
+h1 {
+    text-align: center;
+    font-family: 'Poller One', cursive;
+    font-size: 3em;
+}
+img {
+    min-width: 300px;
+    min-height:  400px;
+    background-color: salmon;
+}
+
+.images {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 300px;
+}
+
+picture {
+    margin:0 0 2em 0;
+}

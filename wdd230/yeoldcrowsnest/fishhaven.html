@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fish Haven Town Page - Ye Old Crow's Nest</title>
+    <meta name="description" content="Fish Haven, originally named Rush Creek, be an unincorporated community along the shores o' 
+    Bear Lake in Bear Lake County, Idaho, United States. 'tis 4 km (2.nigh-on two leagues) north o' the Utah border.">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    
+    <link rel="preload" href="../css/fontawesome/css/fontawesome.min.css" media="screen" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/fontawesome/css/fontawesome.min.css" media="screen"></noscript>
+
+    <link rel="stylesheet" href="../css/fontawesome/css/solid.min.css" media="screen">
+    <link rel="stylesheet" href="../css/fontawesome/css/brands.min.css" media="screen">
+    <link rel="stylesheet" href="css/small.css" media="screen">
+    <link rel="stylesheet" href="css/medium.css" media="screen">
+    <link rel="stylesheet" href="css/large.css" media="screen">
+    <script defer src="js/script.js"></script>
+    <script defer src="js/windchill.js"></script>
+    <script defer src="js/events.js"></script>
+</head>
+<body>
+    <div class="map">
+        <header>
+            <img src="images/piratelogo.webp" alt="pirate ship site logo">
+            <h1>
+                Ye Old Crow's Nest
+            </h1>
+            <div class="motto">Thar She Blows</div>
+        </header>
+        <div><a class="ham" href="#"><i class="fas fa-anchor"></i> Menu</a></div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>        
+                <li><a href="preston.html">Preston</a></li>        
+                <li><a href="sodasprings.html">Soda Springs</a></li>        
+                <li><a href="fishhaven.html"><i class="fas fa-skull-crossbones"></i> Fish Haven</a></li>        
+                <li><a href="stormcenter.html">Storm Center</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Fish Haven</h2>
+            <div class="hero">
+                <picture>
+                    <source
+                        srcset="images/cloud800.webp"
+                        media="(min-width:30em) and (max-width:59.9em)">
+                    <source
+                        srcset="images/cloud1200.webp"
+                        media="(min-width:60em)">
+                    <img src="images/cloud400.webp" alt="ship sailing on the ocean">                         
+                </picture>
+                <div class="weathersummary">
+                    <h3>Weather Summary</h3>
+                    <div>Currently:</div>
+                    <div><span class="description"></span></div>
+                    <div>High:</div>
+                    <div><span class="temperature"></span> </div>
+                    <div>Wind Chill:</div>
+                    <div><span class="windchill"></span></div>
+                    <div>Humidity:</div>
+                    <div><span class="humidity"></span></div>
+                    <div>Wind Speed:</div>
+                    <div><span class="windspeed"></span></div>
+                </div>
+            </div>
+            <div class="placeholder forecast">
+                <h3>5 Day Forecast</h3>
+                <table>
+                    <tr>
+                        <th id="weekday1">Day</th>
+                        <th id="weekday2">Day</th>
+                        <th id="weekday3">Day</th>
+                        <th id="weekday4">Day</th>
+                        <th id="weekday5">Day</th>
+                    </tr>
+                    <tr>
+                        <td><img id="icon1" src="images/crossbones.webp" alt="weather"><br><span id="day1"></span></td>
+                        <td><img id="icon2" src="images/crossbones.webp" alt="weather"><br><span id="day2"></span></td>
+                        <td><img id="icon3" src="images/crossbones.webp" alt="weather"><br><span id="day3"></span></td>
+                        <td><img id="icon4" src="images/crossbones.webp" alt="weather"><br><span id="day4"></span></td>
+                        <td><img id="icon5" src="images/crossbones.webp" alt="weather"><br><span id="day5"></span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="placeholder events"></div>
+
+            <div class="placeholder article">
+                <h3>Usin' Cell Phones as Space Weather Vanes</h3>
+                <div class="mainarticle">
+                    <picture>
+                        <source
+                            srcset="images/compassMedium.webp"
+                            media="(min-width:560px) and (max-width:899px)">
+                        <source
+                            srcset="images/compass.webp"
+                            media="(min-width:900px)">
+
+                        <img src="images/compass.webp" alt="Magnetometers 'ave turned cell phones into compasses, which are sensitive t' geomagnetic storms">
+                    </picture>
+                </div>    
+                <p>Yer smartphone may be able t' sense space weather 'n even get a wee disoriented by it, accordin' t' Odenwald, who tested how geomagnetic storms affect the magnetic sensors in cell phones. The new research suggests that apps bein' developed t' use cell phone magnetometers t' pinpoint locations could be susceptible t' space weather errors. On the other hand, millions o' phones sensin' changes in Earth’s magnetic field could potentially create a vast observatory t' help scientists understand these geomagnetic storms.
+                </p>
+                <p>Cell phone magnetometer chips are bein' explored as a backup fer GPS, which uses satellite signals t' triangulate location 'n thus be often inaccurate or unavailable in places where signals can’t penetrate, such as inside large buildings or underground.
+                </p>
+                <p>“Smartphone magnetometers are bein' commercially explored fer applications as diverse as locatin' customers in shoppin' malls fer targeted advertisin', t' precision needle-guided surgery,” wrote Sten Odenwald, o' NASA’s Space Science Education Consortium at Goddard Space Flight Center in Maryland, in Space Weather.
+                </p>
+                <p>But thar’s a catch. Geomagnetic storms can buffet 'n temporarily alter the shape o' Earth’s magnetic field. So, theoretically, they could degrade the accuracy o' magnetometer chips. This degradation could be a problem if yer target advertisin' hits in the wrong ship or ye’re performin' needle-guided surgery 'n wench the mark.
+                </p>
+                <p>T' find out whether phones are susceptible t' the vagaries o' space weather, Odenwald tested the iPhone 6S, Samsung Galaxy Note 5, Samsung Galaxy S8, 'n Samsung Galaxy S9 in simulated geomagnetic storms. Simulated storms we be needed, Odenwald said, 'cause his research took galleon durin' the recent 11-year solar minimum, when the Sun could nah be counted on t' provide mighty much in the way o' sunspots 'n coronal mass ejections that can create significant geomagnetic storms on Earth.
+                </p>
+                <p>In lieu o' the Sun’s cooperation, Odenwald used magnetic data from the powerful Halloween storms o' 2003 'n essentially ran the storms on the phones t' see whether thar magnetic signals would rise above the level o' background noise. He also simulated the storms more directly by puttin' the phones into controlled magnetic fields.
+                </p>
+                <p>Odenwald found that smartphone magnetometers are capable o' detectin' the mighty wee magnetic field changes that accompany the strongest geomagnetic storms, especially at higher latitudes in North America, where magnetic field lines converge 'n dip earthward as they nigh the magnetic north pole. Under certain circumstances, he concluded, geomagnetic storms could be a significant source o' error in compass 'n other positionin' apps. But he also noted that the ubiquity o' smartphones 'n thar magnetometers presents an unprecedented opportunity fer studyin' global changes in the geomagnetic field durin' significant solar storm events.
+                </p>
+            </div>
+            <div class="placeholder contact">
+                <picture>
+                    <img src="images/map.webp" alt="Map of Preston, Idaho">
+                </picture>
+                <div class="info">
+                    <ul class="fa-ul">
+                        <li><h3>Ye Old Crow's Nest</h3></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 30 N 1st E</li>
+                        <li>Preston, ID 83263</li>
+                    </ul>
+                    
+                    <ul class="fa-ul">
+                        <li><i class="fas fa-phone-alt"></i> 999 999 9999</li>
+                        <li><i class="fas fa-envelope"></i> yeoldcrowsnest@ocn.com</li>
+                    </ul>
+
+                    <ul class="fa-ul">
+                        <li>
+                            <a href="https://www.facebook.com/" rel="noreferrer" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square fa-2x"></i></a> 
+                            <a href="https://www.pinterest.com/" rel="noreferrer" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest fa-2x"></i></a>
+                            <a href="https://twitter.com/?lang=en" rel="noreferrer" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+                            <a href="https://www.whatsapp.com/" rel="noreferrer" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        &copy;
+        Ye Old Crow's Nest | 
+        Attributions: 
+        <a href="https://www.pexels.com" rel="noreferrer" target="_blank" aria-label="Pexels">Pexels</a>, 
+        <a href="https://openweathermap.org" rel="noreferrer" target="_blank" aria-label="Open Weather">Open Weather</a>, 
+        <a href="https://eos.org/features/the-benefits-of-better-ocean-weather-forecasting" rel="noreferrer" target="_blank" aria-label="eos">EOS</a>
+
+        <div id="currentdate"></div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+        google: {
+            families: ['Charm','Montserrat']
+        }
+        });
+    </script>    
+</body>
+</html>

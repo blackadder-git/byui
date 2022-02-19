@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Soda Springs Town Page - Ye Old Crow's Nest</title>
+    <meta name="description" content="Soda Springs be a city in Caribou County, Idaho, United States. Its population was 3,058. 
+    The city be named fer the hundreds o' natural springs o' carbonated water that are located in 'n around the city.">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    
+    <link rel="preload" href="../css/fontawesome/css/fontawesome.min.css" media="screen" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../css/fontawesome/css/fontawesome.min.css" media="screen"></noscript>
+
+    <link rel="stylesheet" href="../css/fontawesome/css/solid.min.css" media="screen">
+    <link rel="stylesheet" href="../css/fontawesome/css/brands.min.css" media="screen">
+    <link rel="stylesheet" href="css/small.css" media="screen">
+    <link rel="stylesheet" href="css/medium.css" media="screen">
+    <link rel="stylesheet" href="css/large.css" media="screen">
+    <script defer src="js/script.js"></script>
+    <script defer src="js/windchill.js"></script>
+    <script defer src="js/events.js"></script>    
+</head>
+<body>
+    <div class="map">
+        <header>
+            <img src="images/piratelogo.webp" alt="pirate ship site logo">
+            <h1>
+                Ye Old Crow's Nest
+            </h1>
+            <div class="motto">Thar She Blows</div>
+        </header>
+        <div><a class="ham" href="#"><i class="fas fa-anchor"></i> Menu</a></div>
+        <nav>
+            <ul class="navigation">
+                <li><a href="index.html">Home</a></li>        
+                <li><a href="preston.html">Preston</a></li>        
+                <li><a href="sodasprings.html"><i class="fas fa-skull-crossbones"></i> Soda Springs</a></li>        
+                <li><a href="fishhaven.html">Fish Haven</a></li>        
+                <li><a href="stormcenter.html">Storm Center</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h2>Soda Springs</h2>
+            <div class="hero">
+                <picture>
+                    <source
+                        srcset="images/snow800.webp"
+                        media="(min-width:30em) and (max-width:59.9em)">
+                    <source
+                        srcset="images/snow1200.webp"
+                        media="(min-width:60em)">
+                    <img src="images/snow400.webp" alt="snow storm in Soda Springs">                         
+                </picture>
+                <div class="weathersummary">
+                    <h3>Weather Summary</h3>
+                    <div>Currently:</div>
+                    <div><span class="description"></span></div>
+                    <div>High:</div>
+                    <div><span class="temperature"></span> </div>
+                    <div>Wind Chill:</div>
+                    <div><span class="windchill"></span></div>
+                    <div>Humidity:</div>
+                    <div><span class="humidity"></span></div>
+                    <div>Wind Speed:</div>
+                    <div><span class="windspeed"></span></div>
+                </div>
+            </div>
+            <div class="placeholder forecast">
+                <h3>5 Day Forecast</h3>
+                <table>
+                    <tr>
+                        <th id="weekday1">Day</th>
+                        <th id="weekday2">Day</th>
+                        <th id="weekday3">Day</th>
+                        <th id="weekday4">Day</th>
+                        <th id="weekday5">Day</th>
+                    </tr>
+                    <tr>
+                        <td><img id="icon1" src="images/crossbones.webp" alt="weather"><br><span id="day1"></span></td>
+                        <td><img id="icon2" src="images/crossbones.webp" alt="weather"><br><span id="day2"></span></td>
+                        <td><img id="icon3" src="images/crossbones.webp" alt="weather"><br><span id="day3"></span></td>
+                        <td><img id="icon4" src="images/crossbones.webp" alt="weather"><br><span id="day4"></span></td>
+                        <td><img id="icon5" src="images/crossbones.webp" alt="weather"><br><span id="day5"></span></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="placeholder events"></div>
+
+            <div class="placeholder article">
+                <h3>The Benefits o' Better Ocean Weather Forecastin'</h3>
+                <div class="mainarticle">
+                    <picture>
+                        <source
+                            srcset="images/floodMedium.webp"
+                            media="(min-width:560px) and (max-width:899px)">
+                        <source
+                            srcset="images/flood.webp"
+                            media="(min-width:900px)">
+
+                        <img src="images/flood.webp" alt="A van drives through a fair-weather flood durin' the mornin' high tide on a sunny day in October 2016 in downtown Miami">
+                    </picture>
+                </div>    
+                <p>Like atmospheric variability, variability in ocean conditions, such as sea surface temperature 'n salinity 'n sea ice cover 'n thickness, can 'ave major effects on human activities 'n ecosystems both at sea 'n on land. Fer example, this variability, also called “ocean weather,” can influence the occurrence o' fair-weather coastal floodin', which disrupts transportation 'n degrades coastal infrastructure around the world. Meanwhile, sea ice movement in an increasingly ice-free Arctic Ocean poses risks t' high-latitude shippin'. Elsewhere, changes in ocean upwellin' can enhance coastal commercial fishin' activity, whereas marine heat waves can disrupt fisheries 'n coral communities. As wit' atmospheric weather forecasts, knowin' about ocean weather in advance can help minimize disruptions t' everyday public 'n commercial activity, keep coastal 'n maritime workers safe, 'n aid marine conservation efforts.
+                </p>
+                <p>Unlike atmospheric weather, howe'er, which evolves on daily timescales, ocean weather typically evolves on weekly t' monthly timescales. Slowly varyin' ocean conditions can regulate atmospheric weather, so includin' ocean feedbacks in atmospheric forecastin' models can extend these models’ predictive skill by several days. Ongoin' research be continually improvin' representations o' ocean initial states (conditions at the start o' a model calculation) 'n processes in coupled ocean-atmosphere forecast models. As a result, they 'ave the potential t' forecast ocean weather accurately weeks in advance—on subseasonal t' seasonal (S2S) timescales—'n provide needed guidance t' stakeholders in communities 'n in marine 'n coastal industries, as well as t' scientists, conservationists, 'n others.
+                </p>
+                <p>Requirements o' ocean weather forecasts vary dependin' on wha' information a particular stakeholder needs fer operational decision makin'. Fully understandin' the benefits o' S2S ocean forecasts t' society requires an evaluation o' the skill o' these forecasts in the contexts o' these informational needs. These evaluations will also fundamentally improve S2S forecasts overall by advancin' knowledge o' how initial conditions in an ocean model 'n ocean model physics affect forecast skill.
+                </p>
+                <p>Here we describe recent advances in the science of ocean weather forecasting and walk through examples in which its application is increasingly important as the planet’s climate changes and human demands on Earth system services grow.
+                </p>
+            </div>
+            <div class="placeholder contact">
+                <picture>
+                    <img src="images/map.webp" alt="Map of Preston, Idaho">
+                </picture>
+                <div class="info">
+                    <ul class="fa-ul">
+                        <li><h3>Ye Old Crow's Nest</h3></li>
+                        <li><i class="fas fa-map-marker-alt"></i> 30 N 1st E</li>
+                        <li>Preston, ID 83263</li>
+                    </ul>
+                    
+                    <ul class="fa-ul">
+                        <li><i class="fas fa-phone-alt"></i> 999 999 9999</li>
+                        <li><i class="fas fa-envelope"></i> yeoldcrowsnest@ocn.com</li>
+                    </ul>
+
+                    <ul class="fa-ul">
+                        <li>
+                            <a href="https://www.facebook.com/" rel="noreferrer" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-square fa-2x"></i></a> 
+                            <a href="https://www.pinterest.com/" rel="noreferrer" target="_blank" aria-label="Pinterest"><i class="fab fa-pinterest fa-2x"></i></a>
+                            <a href="https://twitter.com/?lang=en" rel="noreferrer" target="_blank" aria-label="Twitter"><i class="fab fa-twitter-square fa-2x"></i></a>
+                            <a href="https://www.whatsapp.com/" rel="noreferrer" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp fa-2x"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        &copy;
+        Ye Old Crow's Nest | 
+        Attributions:
+        <a href="https://www.pexels.com" rel="noreferrer" target="_blank" aria-label="Pexels">Pexels</a>, 
+        <a href="https://openweathermap.org" rel="noreferrer" target="_blank" aria-label="Open Weather">Open Weather</a>, 
+        <a href="https://eos.org/features/the-benefits-of-better-ocean-weather-forecasting" rel="noreferrer" target="_blank" aria-label="eos">EOS</a>
+
+        <div id="currentdate"></div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+    <script>
+        WebFont.load({
+        google: {
+            families: ['Charm','Montserrat']
+        }
+        });
+    </script>    
+</body>
+</html>
