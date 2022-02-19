@@ -270,15 +270,15 @@ label [type=radio] {
 /* home */
 #quote {
     position:absolute;
-    bbottom: 1em;
+    bottom: 1em;
     bleft: 1em;
-    top: 50%;
-    left: 50%;
+    btop: 50%;
+    bleft: 50%;
     transform: translate(-50%, -50%);    
     bmax-width: 33%;
-    bbackground: linear-gradient(to bottom,gray, black);
-    color: var(--primary-color);
-    padding: 1em;
+    background: linear-gradient(to bottom,gray, black);
+    bcolor: var(--primary-color);
+    bpadding: 1em;
     font-family: var(--paragraph-font);    
 }
 #quote span {
