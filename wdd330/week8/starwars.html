@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Star Wars</title>
+    <meta name="description" content="WDD330 Team Activity">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+    <style>
+        body {
+            background-color: black;
+            color: yellow;
+            font-family: Montserrat;
+            text-align: center;
+            padding: .5em;
+        }
+        h1, ul {
+            border: 3px solid yellow;
+            border-radius: 5px;
+        }
+        h1 {
+            padding: 1em 0;
+            font-size: 2.5em;
+        }
+        ul {
+            padding-left: 0;
+        }
+        li {
+            list-style: none;
+            padding-top: 1em;
+            cursor: pointer;
+        }
+        li:nth-child(10) {
+            padding-bottom: 1em;
+        }
+        button {
+            border: 2px solid yellow;
+            color: white;
+            background-color: black;
+            border-radius: 5px;
+            font-size: 1.5em;
+            padding: .5em;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: yellow;
+            color: black;
+        }
+        #prev {
+            margin-right: 1em;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <h1>Star Wars Characters</h1>
+    
+    <button id="showCharacters" class="getData" data-url="https://swapi.dev/api/people">Show Star Wars Characters</button>
+    
+    
+    <ul id="people"></ul>
+
+    <button id="prev" class="getData">Previous</button>
+    <button id="next" class="getData">Next</button>
+
+
+    <script>
+
+        // get character information from SWAPI site
+        function getCharacterInformation(e) {
+            //let url = 'https://swapi.dev/api/people';
+            let url = e.target.getAttribute('data-url'); // get the url from any button that is clicked
+
+            console.log('button clicked');
+            console.log(url);
+            fetch(url)
+            .then ((response) => { 
+                if (response.ok) {
+                    console.log(response);
+                    return response.json();
+                }
+                throw Error(response.statusText);
+            })
+            .then ((json) => {
+                console.log(json); // json['results'] contains people data as an array
+
+                // get ul 
+                let ul = document.querySelector('#people');
+                // clear out list
+                ul.innerHTML = '';
+
+                json['results'].forEach(person => {
+                    // create li for the html
+                    let li = document.createElement('li');
+                    li.innerHTML = person['name'];
+                    li.setAttribute('data-birth_year', person['birth_year']);
+
+                    // add listener for character click
+                    li.addEventListener('click', (e) => {
+                        // get birth year
+                        const key = e.target.getAttribute('data-birth_year');
+
+                        json['results'].forEach(character => {
+                            if (character['birth_year'] == key) {
+                                alert('Character Details\n' +
+                                    character['name'] + 
+                                    '\nGender: ' + character['gender'] +
+                                    '\nBirth year: ' + character['birth_year'] +
+                                    '\nHair color: ' + character['hair_color'] +
+                                    '\nEye color: ' + character['eye_color'] +
+                                    '\nSkin color: ' +character['skin_color'] +
+                                    '\nHeight: ' + character['height'] +
+                                    '\nMass: ' +character['mass']
+                                );
+                                // show all data
+                            }
+                        }); 
+                    });
+
+                    // add li back into to ul
+                    ul.appendChild(li);
+                });
+
+                // create new urls to fetch more data
+                document.querySelector('#prev').setAttribute('data-url', json['previous']);
+                document.querySelector('#next').setAttribute('data-url', json['next']);
+
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        }
+
+        // get character information
+        const buttons = document.querySelectorAll('.getData');
+        buttons.forEach(button => {
+            button.addEventListener('click', getCharacterInformation);
+        });
+
+    </script>
+
+</body>
+</html>
