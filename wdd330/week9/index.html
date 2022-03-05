@@ -16,27 +16,110 @@
     <h1>WDD330 Portfolio</h1>
     <section class="weeklyItems">
         <h2><a href="../">Home</a> | Week 9</h2>
-        <!--li><a href="" target="_blank" rel="noopener noreferrer"></a></li-->
         <ul>
             <li>Notes
                 <ul>
-                    <li><h3>Chapter 8: </h3></li>
-                    <li></li>
+                    <li><h3>Chapter 9: The Window Object</h3></li>
+                    <li>Every JavaScript environment when run in a browser has a global window object</li>
+                    <li>Refer to global objects without refering to the global object</li>
+                    <li>Dialogs: alert() shows text, confirm() shows ok and cancel and returns true or false, prompt() shows text input, ok and cancel and returns text or false</li>
+                    <li>The navigator property of the window object returns a reference to a Navigator object which has a userAgent property.  This property is unreliable. Don't trust it.</li>
+                    <li>window.location</li>
                     <li>
                         <ul>
+                            <li>window.location.href identifies the current page</li>
+                            <li>window.location.protocol returns http, https, pop2, ftp, etc</li>
+                            <li>window.location.host returns the domain and port (port is often ommited if 80)</li>
+                            <li>window.location.hostname returns just the domain while window.location.port will returns the port or empty string if not explicitly stated in the URL</li>
+                            <li>window.location.search returns ? followed by the query string parameters or nothing</li>
+                            <li>window.location.hash returns # followed by frametn identifier or nothing</li>
+                            <li>window.location.origin returns protocol and domain e.g. https://www.example.com</li>
+                            <li>reload() - force reload of current page</li>
+                            <li>assign() - load resource from another page</li>
+                            <li>replace() - like assign but does not store page in session history so no back navigation</li>
+                            <li>toString() - returns entire url e.g. https://www.example.com/somepage</li>
                             <li></li>
                         </ul>
                     </li>
+                    <li>window.history</li>
+                    <li>
+                        <ul>
+                            <li>window.history.length shows how many pages have been visited</li>
+                            <li>window.history.go() takes a number 0 for current page, - to move back and + to move forward e.g. (5) goes forward 5 pages</li>
+                            <li>window.history.forward() and window.history.back() can also be use to move pages by 1</li>
+                        </ul>
+                    </li>
+                    <li>window.open() will create a new window while window.close will close a window</li>
+                    <li>window.moveTo() takes x and y coordinates to relocate a window on the screen</li>
+                    <li>window.resizeTo() takes a width and a height</li>
+                    <li>All three of the above functions are almost always a bad idea to implement</li>
+                    <li>window.screen</li>
+                    <li>
+                        <ul>
+                            <li>window.screen.height</li>
+                            <li>window.screen.width</li>
+                            <li>window.screen.availHeight - height minus operating menus</li>
+                            <li>window.screen.availWidth - width minus operating menus</li>
+                            <li>window.screen.colorDepth - color bit depth of monitor</li>
+                            <li></li>
+                        </ul>
+                    </li>
+                    <li>Every window object contains a document object</li>
+                    <li>document.write() outputs a text of string - don't use this, there are much better ways</li>
+                    <li>cookies</li>
+                    <li>
+                        <ul>
+                            <li>cookies are an early attempt to get around a browsers stateless nature (does not remember anything from one page to the next)</li>
+                            <li>cookies are limited to 4kb and can only be read by the domain that set them</li>
+                            <li>document.cookie (cookie jar) can be used to show any key/value pair that has been set</li>
+                            <li>document.cookie.splie("; ") will turn the stirng into an array</li>
+                            <li>Adding expires to a cookie will make it persistent (last beyond the browser session) e.g. document.cookie = `name=Batman; expires=${ expiryDate.toUTCString()}`;</li>
+                            <li>path and domain can also be set on a cookie</li>
+                            <li>secure will ensure the cookie is transmitted only over HTTPS</li>
+                            <li>To delete, set the cookie with a past expiration</li>
+                        </ul>
+                    </li>
+                    <li>Timing functions</li>
+                    <li>
+                        <ul>
+                            <li>window.setTimeout() accepts a callback and a countdown in ms</li>
+                            <li>Using the return value from .setTimeout(), you can stop the callback from happening by passing it to .clearTimeout(...)</li>
+                            <li>window.setInterval() is similar to .setTimeout() however it loops the callback according to the countdown</li>
+                            <li>clearInterval(...) takes the value returned by .setInterval() to cancel the repeat</li>
+                        </ul>
+                    </li>
+                    <li><h3>Chapter 15: HTML5 APIs</h3></li>
+                    <li>To embed data in a webpage, use the data- attribute</li>
+                    <li>Multiple data- attributes can be accessed via the 'dataset' property of an element e.g. element.dataset.powers where powers equals data-powers or element.getAttribute('data-powers')</li>
+                    <li>localStorage is used to level-up cookie usage with .setItem(key, value) and .getItem(key)</li>
+                    <li>removeItem(key) is used to remove an entry from localStorage or clear() to remove everything</li>
+                    <li>Get around the string only nature of localStorage using JSON.stringify() and JSON.parse()</li>
+                    <li>navigator.geolocation.getCurrentPosition(callback) sends a position object with a coords property containing latitude and logitude to the specified function</li>
+                    <li>position.speed returns groundspeed</li>
+                    <li>position.altitude returns device estimate in meters</li>
+                    <li>position.heading returns direction</li>
+                    <li>position.timestamp returns when the information was recorded</li>
+                    <li>position.accuracy to indicate the truthiness of the latitude and longitude (lower is more accurate)</li>
+                    <li>position.altituteAccuracy is similar</li>
+                    <li>geolocation.watchPosition(callback) will call a callback every time the position is updated</li>
+                    <li>clearWatch with return of watchPosition to cancel</li>
+                    <li>Websockts are a new protocol that allows two-way communication</li>
+                    <li>Notificaitons allow you to show messages using the system notifications</li>
+                    <li>Use &lt;audio&gt; and &lt;video&gt; to display multimedia</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/WebAPI" target="_blank" rel="noopener noreferrer">Other HTML5 APIs</a></li>
+                    <li><h3>Shims and Polyfills</h3></li>
+                    <li>While a shim adds missing browser functionality, a polyfill uses the native API if it exists and if not uses added code</li>
                 </ul>
             </li>
             <li>Questions
                 <ul>
-                    <li></li>
+                    <li>I didn't understand how to use webworkers</li>
                 </ul>
             </li>
             <li>Exercises
                 <ul>
-                    <li></li>
+                    <li>TODO: try out the chat appliation using websockets</li>
+                    <li>TODO: also want to try the Notification API</li>
                 </ul>
             </li>            
         </ul>
