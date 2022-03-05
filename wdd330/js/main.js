@@ -35,7 +35,7 @@ function addWeeks() {
         },
         {
             label: "Week 9",
-            url: "week8/index.html"
+            url: "week9/index.html"
         },
     ]
 
