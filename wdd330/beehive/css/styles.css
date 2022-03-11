@@ -1,0 +1,39 @@
+/* design mobile first */
+/* https://medium.com/@Vincentxia77/what-is-mobile-first-design-why-its-important-how-to-make-it-7d3cf2e29d00 */
+
+
+html {
+    background-color: white;
+}
+
+main {
+    margin: 0 auto;
+    text-align: center;
+}
+
+section {
+    border: 1px solid black;
+}
+
+/* https://material.io/design/layout/responsive-layout-grid.html#breakpoints */
+/* tablet */
+@media only screen and (min-width: 600px) {
+    html {
+        background-color: blue;
+    }
+    main {
+        max-width: 30%;
+    }
+}
+/* laptop */
+@media only screen and (min-width: 900px) {
+    html {
+        background-color: green;
+    }
+}
+/* desktop */
+@media only screen and (min-width: 1200px) {
+    html {
+        background-color: yellow;
+    }
+}

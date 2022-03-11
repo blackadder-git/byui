@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>wdd330 Portfolio</title>
+    <meta name="description" content="Week 10">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h1>WDD330 Portfolio</h1>
+    <section class="weeklyItems">
+        <h2><a href="../">Home</a> | Week 10</h2>
+        <ul>
+            <li>Notes
+                <ul>
+                    <li><h3>Client Side Validation</h3></li>
+                    <li>Should not be considered exhaustive protection but is a good step towards creating a good use experience</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Learn/Server-side/First_steps/Website_security" target="_blank" rel="noopener noreferrer">Website Security</a></li>
+                    <li>Validation is done</li>
+                    <li>
+                        <ul>
+                            <li>to get the right data in the right format</li>
+                            <li>to protect users' data</li>
+                            <li>to protect ourselves</li>
+                        </ul>
+                    </li>
+                    <li>Never trust client data</li>
+                    <li>HTML5 includes form validation - required, minlength, maxlength, min, max, type, pattern</li>
+                    <li>When an HTML element matches above, CSS sets the pseudo-class :valid otherwise, :invalid is true.  Depending on the requirement other classes like :out-of-range may also be set</li>
+                    <li>
+                        <ul>
+                            <li>required - makes input mandatory, matches :required also, :invalid</li>
+                            <li>minlength/maxlength - constrain character length</li>
+                            <li>min/max - set range of valid values</li>
+                            <li>pattern - use regex to test validity</li>
+                        </ul>
+                    </li>
+                    <li>Validation can also be done with JavaScript</li>
+                    <li>Testing on the form element looks like this:</li>
+                    <li>var input = document.querySelector("age");<br>
+                        if (input.validity.badInput) {<br>
+                            // do something<br>
+                        }
+                    </li>
+                    <li>Additional values: badInput, patternMismatch, rangeOverflow, rangeUnderflow, stepMismatch, tooLong, tooShort, typeMismatch, valueMissing, customError</li>
+                    <li>Constraint Validation API adds properties to HTML: button, fieldset, input, output, select, textarea</li>
+                    <li>validationMessage, validity, patternMismatch, tooLong, tooShort, maxlength, minlength, rangeOverflow, rangeUnderflow, typeMismatch, typeMissing</li>
+                    <li>const email = document.querySelector("#mail");<br>
+                        email.addEventListener("input", function (event) {<br>
+                          if (email.validity.typeMismatch) {<br>
+                            email.setCustomValidity("I am expecting an e-mail address!");<br>
+                            email.reportValidity();<br>
+                          } else {<br>
+                            email.setCustomValidity("");<br>
+                          }<br>
+                        });
+                    </li>
+                    <li>'novalidate' used in a form will turn off automatic form validation</li>
+                    <li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation" target="_blank" rel="noopener noreferrer">Validation contraints/Example</a></li>
+                    <li>When you can't (older browsers, customer controls) or don't want to use the built-in API, you can use JavaScript to write your own validation. Sounds painful.</li>
+
+                    <li><h3>Using the Fetch API</h3></li>
+                    <li>fetch offers a way to get at requests and responses.  It also provides a way to get resources asynchronously</li>
+                    <li>A fetch request requires at least a url.  .then() is used to get the response and if ok, transform it into something usable like json.  A second .then() can handle the data</li>
+                    <li>Alternatively, fecth can accept an init object that sets (method, mode, cache, credentials, headers, redirect, referrerPolicy, body)</li>
+                    <li>fetch can be used with method: "POST" to upload data</li>
+                    <li>fetch can be used with method: "PUT" to upload a file where formData in the init body contains fileField that points to a file input</li>
+                    <li>It is possible although not easy to process a response line by line</li>
+                    <li>To determine whether a fetch was successful, it is necessary to check the response object ok property</li>
+                    <li>In place of a url, you can create and pass a request object to fetch</li>
+                    <li>When a fetch is made, the following properties can be checked on the returned Response status, statusText, ok</li>
+                    <li>Feature detection</li>
+                    <li>Wrap window.fetch with if() to determine if the API is supported</li>
+                </ul>
+            </li>
+            <li>Questions
+                <ul>
+                    <li>fetch has a lot of optional parameters (especially header).  I should probably learn what these are all used for.</li>
+                </ul>
+            </li>
+            <li>Exercises
+                <ul>
+                    <li><a href="quakes/quakes.html">Earth quakes exercise (had to hard code location and date before this would work in my area)</a></li>
+                </ul>
+            </li>            
+        </ul>
+    </section>
+</body>
+</html>
