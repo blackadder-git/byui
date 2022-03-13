@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Family</title>
+    <title>Pantry</title>
     <meta name="description" content="Beehive food storage calculator">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
@@ -13,18 +13,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../js/family.js" type="module"></script>
+    <script src="../js/pantry.js" type="module"></script>
 </head>
 <body>
     <main>
-        <h1>Family</h1>
+        <h1>Pantry</h1>
         <a href="../">Home</a>
-        <form id="familyMember" name="familyMember" method="GET">
+        <form id="pantryItem" name="pantryItem" method="GET">
             <label for="name">Name: <input id="name" name="name" type="text" pattern="[A-Za-z]" required></label>
             <label for="age">Age: <input id="age" name="age" type="number" min="1" max="99" maxlength="3" required></label>
             <select id="sex"><option value="male">Male</option><option value="female">Female</option></select>
             <select id="activity"><option value="sedentary">sedentary</option><option value="moderate">Moderate</option><option value="active">Active</option></select>
-            <input id="addFamilyMember" type="button" value="Add Family Member">
+            <input id="addPantryItem" type="button" value="Add Pantry Item">
         </form>
         
     </main>

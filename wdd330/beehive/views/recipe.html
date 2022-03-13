@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipe</title>
+    <meta name="description" content="Beehive food storage calculator">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/recipe.js" type="module"></script>
+</head>
+<body>
+    <main>
+        <h1>Recipe</h1>
+        <a href="../">Home</a>
+        <form id="recipe" name="recipe" method="GET">
+            <label for="name">Name: <input id="name" name="name" type="text" required></label>
+            <label for="instructions">Instructions: <textarea id="instructions" name="instructions" required></textarea></label>
+            <select id="type"><option value="dessert">Dessert</option><option value="bread">Bread</option></select>
+            
+            <ul id="ingredients">
+                <li>
+                    <label for="serves1">Serves: <input id="serves" name="serves" type="number" required></label>
+                    <label for="measure1">Measure: <input id="measure" name="measure" type="text" required></label>
+                    <input id="ingredient1" type="text">
+                </li>
+            </ul>
+            <input id="newIngredient" type="button" value="New Ingredient">
+
+            <input id="addRecipe" type="button" value="Add Recipe">
+        </form>
+        
+    </main>
+</body>
+</html>

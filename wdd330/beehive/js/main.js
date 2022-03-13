@@ -1,5 +1,21 @@
-// main controller
+/********************************************
+ * Main controller
+ *******************************************/
 
+//import Model from './model.js';
+//import View from './view.js';
+import Controller from './controller.js'; // imports can only be used at the top of a module
+
+
+//const model = new Model();
+//const view = new View();
+
+const controller = new Controller();
+//controller.hello();
+
+
+// main controller
+/*
 import Recipe from './recipe.js';
 import Family from './family.js';
 import Pantry from './pantry.js';
@@ -10,7 +26,9 @@ const recipe = new Recipe();
 const family = new Family();
 const pantry = new Pantry();
 const view = new View();
+*/
 
+/*
 document.querySelector("#addFamily").addEventListener('click', () => {
     window.location.assign("views/family.html")
 });
@@ -31,3 +49,4 @@ delFamilyMembers.forEach(element => {
 
 
 // https://www.youtube.com/watch?v=-mgdxq8_a94
+*/

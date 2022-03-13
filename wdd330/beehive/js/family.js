@@ -1,25 +1,69 @@
-// family
+/********************************************
+ * Family Controller 
+ *******************************************/
+
+const DEBUG = true;
 
 import Model from './model.js';
+import View from './view.js';
 
-/****************************************
- * CONTROLLER CLASS
-*****************************************/
 export default class Family {
 
     /****************************************
     // constructor
     *****************************************/
     constructor () {
-        // const model = new Model();
         this.model = new Model();
+        this.view = new View();
 
+        // add listeners
+        this.addFamilyMemberListener();
     }
 
+    // default greeting
     hello (message = "matey") {
         alert("Hello " + message);
     }
 
+    addFamilyMemberListener() {
+        document.querySelector('#addFamilyMember').addEventListener('click', (e) => {
+            if (DEBUG) console.log('add family member listener');
+            this.addFamilyMember();
+        });
+    }
+
+    addFamilyMember() {
+        if (DEBUG) console.log('add family member');
+
+        const id = '#familyMember';
+
+        const familyMember = this.view.getFormElements(id);
+
+        if (familyMember != null && familyMember.name.value != '') {
+            const newMember = {id: Date.now(), name: familyMember.name.value, age: familyMember.age.value, sex: familyMember.sex.value, activity: familyMember.activity.value};
+            console.log(newMember);
+            
+            let family = this.model.readFromLocalStorage('family');
+            family.push(newMember);
+            this.model.writeToLocalStorage(family, 'family');
+
+            this.view.clearForm(id);
+        }
+        else {
+            // TODO: let user know there was a problem
+            console.log('could not add family member, the form is missing content');
+        }
+    }
+    
+} // END CLASS
+
+
+const family = new Family();
+
+
+
+
+/*
     addFamilyMember(name, age, sex, activity) {
         const familyMember = {id: Date.now(), name: name, age: age, sex: sex, activity: activity};
         console.log(name, age, sex, activity);
@@ -175,28 +219,5 @@ export default class Family {
         return calories;
     }
 
-
 } // END CLASS
-
-
-const family = new Family();
-
-if (document.querySelector("#addFamilyMember")) {
-    document.querySelector("#addFamilyMember").addEventListener('click', (e) => {
-        //alert("Add family member");
-        //family.hello();
-        const name = document.querySelector('#name').value;
-        const age = document.querySelector('#age').value;
-        const sex = document.querySelector('#sex').value;
-        const activity = document.querySelector('#activity').value;
-        if (name) {
-            family.addFamilyMember(name, age, sex, activity);
-        }
-        else {
-            alert('no name');
-        }
-    });
-}
-else {
-    //alert('not here');
-}
+*/
