@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poller+One&display=swap">
     <style>
         /* design mobile first */
         /* https://medium.com/@Vincentxia77/what-is-mobile-first-design-why-its-important-how-to-make-it-7d3cf2e29d00 */
         :root {
             --primary-color: MistyRose;
-            --secondary-color: #C2B280;
+            --secondary-color: blue;
             --accent1-color: #D4AF37;
             --accent2-color: #880806;
             --accent3-color: #1488CA;
@@ -33,8 +33,11 @@
         }
         h1 {
             background-color: var(--secondary-color);
-            padding: 2em;
+            padding: 1em;
             margin-top: 0;
+            font-family: 'Poller One';
+            font-size: 3em;
+            text-align: center;
         }
         img {
             width: 100%;
@@ -52,17 +55,19 @@
         }
         .feature {
             border-radius: 20px;
-            padding: 0.3em .2em;
+            padding: .5em .5em;
             margin-right: .3em;
+            margin-top: 0.5em;            
         }
         .html {
-            background-color: orange;
+            background-image: linear-gradient(to right, #e54d26 , #ef6729);
         }
         .css {
-            background-color: orange;
+            background-image: linear-gradient(to right, #0c73b8 , #2eaadd);
         }
         .js {
-            background-color: orange;
+            background-image: linear-gradient(to right, #dab92c , #ffd93c);
+            
         }
         .wave {
             background-color: orange;
@@ -72,70 +77,78 @@
         }
         .local {
             background-color: orange;
-        }        
+        }
+        .rest {
+            background-color: orange;
+        }
+        .cplusplus {
+            background-color: #27e524;
+        }
         .site-plan {
             margin: 1em 0;
         }
-
+        .hideContent{
+            max-height: 300px;
+            overflow: hidden;
+        }
+        .readmore {
+            color: var
+        }
 
         /* https://material.io/design/layout/responsive-layout-grid.html#breakpoints */
         /* tablet */
         @media only screen and (min-width: 600px) {
-            html {
-                bbackground-color: blue;
-            }
             #projects {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
                 grid-gap: 3em;
                 padding: 3em;
             }
+            h1 {
+                text-align: left;
+            }
         }
         /* laptop */
         @media only screen and (min-width: 900px) {
-            html {
-                bbackground-color: green;
-            }
             .screenshot {
-                box-shadow:rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+                box-shadow:rgba(0, 0, 0, 0.2) 10px 30px 20px -7px;
                 margin-bottom: 2em;
             }
         }
         /* desktop */
         @media only screen and (min-width: 1200px) {
-            html {
-                bbackground-color: yellow;
-            }
             #projects {
                 display: grid;
                 grid-template-columns: 1fr 1fr 1fr;
                 grid-gap: 3em;
             }
         }
-
-
     </style>
 </head>
 <body>
     <h1>Portfolio Projects</h1>
 
     <div id="projects">
-
         <section>
             <h2>Todo App</h2>
-            <h3>WDD 330: Web Development Development II</h3>
-            <div class="features">
-                <span class="html feature">HTML5</span> <span class="css feature">CSS</span> <span class="js feature">JavaScript</span> <span class="wave feature">Accessible</span> <span class="mobile feature">Responsive</span> <span class="local feature">LocalStorage</span>
-            </div>
+            <h3>WDD 330: Web Frontend Development II</h3>
             <div class="site-plan">
                 <a href="screenshots/todo-wireframe.png">Wireframe</a>
             </div>            
             <div class="screenshot">
-                <a href="https://blackadder-git.github.io/byui/wdd330/week6/todo/index.html"><img src="screenshots/todo.png" alt=""></a>
+                <a href="https://blackadder-git.github.io/byui/wdd330/week6/todo/index.html"><img src="screenshots/todo600.png" alt=""></a>
+            </div>
+            <div class="features">
+                <span class="html feature">HTML5</span> 
+                <span class="css feature">CSS</span> 
+                <span class="js feature">JavaScript</span> 
+                <span class="wave feature">Accessible</span> 
+                <span class="mobile feature">Responsive</span> 
+                <span class="local feature">LocalStorage</span>
             </div>
             <div class="details">
                 <h2>Project Requirements</h2>
-                <ul>
+                <ul class="hideContent">
                     <li>Build a simple web app to manage a ToDo list. It should allow the creation of new tasks, the viewing of tasks, a process to mark tasks as complete, ability to remove tasks, and the ability to filter by complete/not complete.</li>
                     <li>UI actions<br>
                         Show a list of tasks<br>
@@ -155,18 +168,24 @@
         <section>
             <h2>Chamber of Commerce</h2>
             <h3>WDD 230: Web Frontend Development I</h3>
-            <div class="features">
-                <span class="html feature">HTML5</span> <span class="css feature">CSS</span> <span class="js feature">JavaScript</span> <span class="wave feature">Accessible</span> <span class="mobile feature">Responsive</span>  <span class="local feature">LocalStorage</span>
-            </div>
             <div class="site-plan">
                 <a href="https://blackadder-git.github.io/byui/wdd230/camaramajorero/CamaraMajorero.pdf">Site plan</a>
             </div>
             <div class="screenshot">
-                <a href="https://blackadder-git.github.io/byui/wdd230/camaramajorero/index.html"><img src="screenshots/camara.png" alt=""></a>
+                <a href="https://blackadder-git.github.io/byui/wdd230/camaramajorero/index.html"><img src="screenshots/camara600.png" alt=""></a>
+            </div>
+            <div class="features">
+                <span class="html feature">HTML5</span> 
+                <span class="css feature">CSS</span> 
+                <span class="js feature">JavaScript</span> 
+                <span class="wave feature">Accessible</span> 
+                <span class="mobile feature">Responsive</span>
+                <span class="local feature">LocalStorage</span>
+                <span class="rest feature">Rest</span>                
             </div>
             <div class="details">
                 <h2>Project Requirements</h2>
-                <ul>
+                <ul id="commerce" class="hideContent">
                     <li>The site must be responsive to small, medium, and larger, wide screen views.</li>
                     <li>The design is consistent throughout the website providing ease of navigation and supports excellent user experiences.</li>
                     <li>Your page layouts may not be an exact replication of your weather site in terms of layout style.</li>
@@ -183,24 +202,31 @@
                     <li>Include a resource/attribution page that references outside content, if necessary, as a link in the footer.</li>
                     <li>Include the last modified date of the page in the footer using JavaScript.</li>
                 </ul>
+                <div class="readmore" data-id="commerce">Read more</div>
             </div>
         </section>
 
         <section>
             <h2>Weather API Site</h2>
             <h3>WDD 230: Web Frontend Development I</h3>
-            <div class="features">
-                <span class="html feature">HTML5</span> <span class="css feature">CSS</span> <span class="js feature">JavaScript</span> <span class="wave feature">Accessible</span> <span class="mobile feature">Responsive</span>
-            </div>
             <div class="site-plan">
                 <a href="https://blackadder-git.github.io/byui/wdd230/yeoldcrowsnest/site-plan/index.html">Site plan</a>
             </div>
             <div class="screenshot">
-                <a href="https://blackadder-git.github.io/byui/wdd230/yeoldcrowsnest/index.html"><img src="screenshots/crow.png" alt=""></a>
+                <a href="https://blackadder-git.github.io/byui/wdd230/yeoldcrowsnest/index.html"><img src="screenshots/crow600.png" alt=""></a>
+            </div>
+            <div class="features">
+                <span class="html feature">HTML5</span> 
+                <span class="css feature">CSS</span> 
+                <span class="js feature">JavaScript</span> 
+                <span class="wave feature">Accessible</span> 
+                <span class="mobile feature">Responsive</span>
+                <span class="local feature">LocalStorage</span>
+                <span class="rest feature">Rest</span>                   
             </div>
             <div class="details">
                 <h2>Project Requirements</h2>
-                <ul>
+                <ul id="weather" class="hideContent">
                     <li>The design is consistent throughout the website providing ease of navigation and supporting positive user experiences.</li>
                     <li>The header contains a logo, site title, and a site motto.</li>
                     <li>The navigation menu contains links to the six (6) main pages including: Home, Preston, Soda Springs, Fish Haven, Storm Center, and Gallery.</li>
@@ -210,24 +236,29 @@
                     <li>Images are used to reflect the current weather condition data on the town pages and the towns themselves.</li>
                     <li>The site supports responsive design techniques allowing delivery of the site and its content on all classes of devices: large-wide screens (desktop/laptop), medium-screens (tablet), and small-screens (smartphones).</li>
                 </ul>
+                <div class="readmore" data-id="weather">Read more</div>                
             </div>
         </section>
 
         <section>
             <h2>Mother Goose</h2>
             <h3>WDD 130: Web Fundamentals</h3>
-            <div class="features">
-                <span class="html feature">HTML5</span> <span class="css feature">CSS</span> <span class="js feature">JavaScript</span> <span class="wave feature">Accessible</span> <span class="mobile feature">Responsive</span>
-            </div>
             <div class="site-plan">
                 <a href="https://blackadder-git.github.io/byui/wdd130/mother-goose/site-plan.html">Site plan</a>
             </div>
             <div class="screenshot">
-                <a href="https://blackadder-git.github.io/byui/wdd130/mother-goose"><img src="screenshots/goose.png" alt=""></a>
+                <a href="https://blackadder-git.github.io/byui/wdd130/mother-goose"><img src="screenshots/goose600.png" alt=""></a>
+            </div>
+            <div class="features">
+                <span class="html feature">HTML5</span> 
+                <span class="css feature">CSS</span> 
+                <span class="js feature">JavaScript</span> 
+                <span class="wave feature">Accessible</span> 
+                <span class="mobile feature">Responsive</span>
             </div>
             <div class="details">
                 <h2>Project Requirements</h2>
-                <ul>
+                <ul class="hideContent">
                     <li>The Web site must consist of a main page and at least 2 child pages. One of the child pages should include a form. The Web site must be published to the web.</li>
                     <li>Each of the 3 pages of your Web site must satisfy the following requirements:</li>
                     <li>Significant content consisting of both text and a minimum of one image. You need to make sure this page has the appropriate content for your audience so that they can understand the meaning and message of this site.</li>
@@ -240,18 +271,21 @@
         <section>
             <h2>Pirate Oar Adventures</h2>
             <h3>WDD 130: Web Fundamentals</h3>
-            <div class="features">
-                <span class="html feature">HTML5</span> <span class="css feature">CSS</span> <span class="wave feature">Accessible</span> <span class="mobile feature">Responsive</span>
-            </div>                
             <div class="site-plan">
                 <a href="https://blackadder-git.github.io/byui/wdd130/jellyfish/site-plan.html">Site plan</a>
             </div>
             <div class="screenshot">
-                <a href="https://blackadder-git.github.io/byui/wdd130/jellyfish"><img src="screenshots/jellyfish.png" alt=""></a>
+                <a href="https://blackadder-git.github.io/byui/wdd130/jellyfish"><img src="screenshots/jellyfish600.png" alt=""></a>
+            </div>
+            <div class="features">
+                <span class="html feature">HTML5</span> 
+                <span class="css feature">CSS</span> 
+                <span class="wave feature">Accessible</span> 
+                <span class="mobile feature">Responsive</span>
             </div>
             <div class="details">
                 <h2>Project Requirements</h2>
-                <ul>
+                <ul class="hideContent">
                     <li>The web site must consist of a main page and at least 1 child page. The web site must be published to the web.</li>
                     <li>Each of the pages of your web site must satisfy the following requirements:</li>
                     <li>Significant content consisting of both text and a minimum of one image. You need to make sure this page has the appropriate content for your audience so that they can understand the meaning and message of this site.</li>
@@ -260,6 +294,58 @@
                 </ul>
             </div>
         </section>
+
+        <section>
+            <h2>Sudoku Solver</h2>
+            <h3>CS124: Intro to Software Development</h3>
+            <div class="site-plan">
+                <a href="https://blackadder-git.github.io/byui/cs124/sudoku/structure_chart.pdf">Structure Chart</a>
+            </div>
+            <div class="screenshot">
+                <a href="https://blackadder-git.github.io/byui/cs124/sudoku/sudoku_solver.html"><img src="screenshots/sudoku.png" alt=""></a>
+            </div>
+            <div class="features">
+                <span class="c++ cplusplus feature">C++</span>
+                <span class="cohesive cplusplus feature">Cohesive</span>
+                <span class="coupling cplusplus feature">Loose Coupling</span>
+                <span class="robust cplusplus feature">Robust Error Checking</span>
+                <span class="elegant cplusplus feature">Elegant Design</span>
+            </div>
+            <div class="details">
+                <h2>Project Requirements</h2>
+                <ul id="sudoku" class="hideContent">
+                    <li>Not all Sudoku boards are created equal. Some are much more difficult to solve than others. You will get awarded points according to the level of difficulty of the board you are able to solve. The boards are:<br>
+                        prjFinal85.txt<br>
+                        prjFinal90.txt<br>
+                        prjFinal100.txt
+                    </li>
+                    <li>Modify your code (Project 13 or Project Extra) so solve a Sudoku board</li>
+                    <li>You will need to add another item on the menu to allow the user to select that they want to solve the board. You can name this menu item anything you want. In fact, because there is no testBed for this challenge, feel free to make any adjustments to the user interface you want.</li>
+                    <li>"Robust" error checking. Every possible input or board configuration is handled. For example, the user could type "e5" or "5E" to specify a square. Also, the board is validated on open to ensure it is a valid board This means ensuring that there is no more than one instance of each value in a given row, column, or inside square.</li>
+                    <li>Differentiate read-only values (the ones provided by the board that the user cannot change) and read/write values (the ones the user entered). Read-only text will be rendered in green. The following example outputs green text for the word "green"</li>
+                    <li>Enforce the rules of Sudoku. This means that there can be only one instance of a given number on a row, column, or inside square.</li>
+                    <li>Create a program that performs six operations:<br>
+                        Read: Read a board from a file into our board[][] array<br>
+                        Write: Write the board[] array back to a file<br>
+                        'D' Option: Display the contents of the board[][] array on the screen<br>
+                        'E' Option: Edit a square with no verification that it is correct or valid<br>
+                        'Q' Option: Exit the interaction loop and launches the Write code<br>
+                        '?' Option: Displays the instructions on the screen
+                    </li>
+                </ul>
+                <div class="readmore" data-id="sudoku">Read more</div>
+            </div>
+        </section>
     </div>
+
+    <script>
+        const readmores = document.querySelectorAll('.readmore');
+        readmores.forEach(element => {
+            element.addEventListener('click', (e) => {
+                const id = e.currentTarget.getAttribute('data-id');
+                document.querySelector(`#${id}`).classList.toggle("hideContent");
+            });
+        });
+    </script>
 </body>
 </html>
