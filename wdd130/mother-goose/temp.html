@@ -1,0 +1,505 @@
+<!-- 
+html includes
+https://glitch.com/edit/#!/bronzed-slipper?path=index.html%3A9%3A0 
+https://css-tricks.com/the-simplest-ways-to-handle-html-includes
+nav Kevin Powell responsive nav https://www.youtube.com/watch?v=8QKOaTYvYUA
+one line layout https://www.youtube.com/watch?v=qm0IfG1GyZU
+https://1linelayouts.glitch.me
+spinner https://codepen.io/ericmusser/pen/LVyqmZ
+https://www.youtube.com/watch?v=xMTs8tAapnQ  burger menu &#9776;
+
+grid-template-columns: repeat(autofit, minmax(200, 1fr))
+-->
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mother Goose</title>
+    <style>
+      /*
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+      }
+      nav {
+        background-color: green;
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        bjustify-items:end;
+      }
+      nav a img {
+        width:50px;
+        vertical-align: middle;
+      }
+
+      .burger {
+        display: inline-block;
+        cursor: pointer;
+        float:right;
+        margin-top: 5px;
+        margin-right:1em;
+        justify-self:end;
+      }
+      .bar1,
+      .bar2,
+      .bar3 {
+        width: 35px;
+        height: 5px;
+        background-color: #333;
+        margin: 6px 0;
+        transition: 0.4s;
+      }
+      .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-9px, 6px);
+      }
+      .change .bar2 {
+        opacity: 0;
+      }
+      .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-8px, -8px);
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
+      
+      .hidden {
+        display:none;
+      }
+      .show {
+        display:block;
+      }
+      
+      #nav_links {
+        background-color:yellow;
+      }
+      
+      main {
+        margin-top:50px;
+      }
+      */
+
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: green;
+        z-index: 999;
+        text-align: center;
+      }
+      #logo img {
+        width: 50px;
+        vertical-align: middle;
+      }
+      #logo {
+        float: left;
+      }
+      #logo img,
+      #logo span {
+        padding-left: 1em;
+      }
+      nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        text-align: left;
+        width: 100%;
+        background-color: pink;
+        btransform: scale(1, 0); /* width=full, height=none */
+        btransform-origin: top;
+        btransition: transform 400ms ease-in-out;
+        /* limit transitions to: opacity, scale, translate, rotate */
+      }
+      nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      nav ul li {
+        margin-bottom: 1em;
+        margin-left: 1em;
+      }
+      nav a {
+        text-decoration: none;
+        color: green;
+        font-size: 1em;
+        opacity: 0;
+        btransition: opacity 250ms ease-in-out;
+      }
+
+      #burger {
+        display: none;
+      }
+      /* : for pseudo class, :: for pseudo element */
+      /* ~ looks for any nav sibling that comes after #burger */
+      #burger:checked ~ nav {
+        display: block;
+        btransform: scale(1, 1); /* width=full, height=full */
+      }
+      #burger:checked ~ nav a {
+        opacity: 1;
+        btransition: opacity 250ms ease-in-out 250ms; /* last 250 is a delay */
+      }
+      .burger-label {
+        position: absolute;
+        top: 0;
+        bleft: 0;
+        bmargin-left: 1em;
+        right: 0;
+        margin-right: 1em;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .burger-label span,
+      .burger-label span::before,
+      .burger-label span::after {
+        display: block;
+        position: relative;
+        background: white;
+        height: 2px;
+        width: 2em;
+      }
+
+      .burger-label span::before,
+      .burger-label span::after {
+        content: "";
+      }
+      .burger-label span::before {
+        bottom: 9px;
+      }
+      .burger-label span::after {
+        top: 7px;
+      }
+
+      @media screen and (min-width: 900px) {
+        .burger-label {
+          display: none;
+        }
+        #logo img {
+          width: 120px;
+        }
+        #logo span {
+          display: none;
+        }
+
+        header {
+          display: grid;
+          grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+        }
+        .logo {
+          grid-column: 2 / span 1;
+        }
+        nav {
+          grid-column: 3 / 4;
+          btransform: scale(1, 1);
+          position: initial;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+          btransform: none;
+          btransition: none;
+        }
+        nav ul {
+          balign-self: center;
+          display: flex;
+          justify-content: flex-end;
+        }
+        nav ul li {
+          margin-bottom: 0;
+        }
+        nav a {
+          opacity: 1;
+          color: blue;
+        }
+        #burger:checked ~ nav {
+          bdisplay: block;
+          transform: none; /* width=full, height=full */
+        }
+        #burger:checked ~ nav a {
+          opacity: 1;
+          transition: none; /* last 250 is a delay */
+        }
+      }
+    </style>
+    <script></script>
+  </head>
+  <body>
+    <header>
+      <!-- important that the checkbox comes first -->
+      <input id="burger" type="checkbox" />
+      <!--h1>Logo</h1-->
+      <a href="index.html" id="logo">
+        <img
+          src="https://cdn.glitch.com/c3dd1774-0f2b-484a-aee9-39699401a922%2Fmother%20goose.png?v=1613773162412"
+          alt="Mother Goose logo"
+        /><span>Mother Goose</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#">Derin Devlet</a></li>
+          <li><a href="#">Evidence</a></li>
+          <li><a href="#">Submit a Tip</a></li>
+        </ul>
+      </nav>
+      <!-- for looks for a label -->
+      <label for="burger" class="burger-label"><span></span></label>
+    </header>
+
+    <!--header>
+      <nav>
+        <a href="index.html" class="active">
+          <img 
+               src="https://cdn.glitch.com/c3dd1774-0f2b-484a-aee9-39699401a922%2Fmother%20goose.png?v=1613773162412"
+            alt="Mother Goose logo"
+          /> Mother Goose</a>
+        <div class="burger" onclick="myFunction(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </nav>
+        <ul id="nav_links" class="hidden">
+          <li>link 1</li>
+          <li>link 2</li>
+          <li>link 3</li>
+        </ul>   
+    </header-->
+    <main>
+      <pre>
+      Sing a Song of Six Pence
+      Sing a song of sixpence,
+      A pocket full of rye,
+      Four and twenty blackbirds
+      Baked in a pie.
+
+      When the pie was opened
+      The birds began to sing—
+      Wasn't that a dainty dish
+      To set before the king?
+
+      The king was in the counting-house
+      Counting out his money,
+      The queen was in the parlor
+      Eating bread and honey,
+
+      The maid was in the garden
+      Hanging out the clothes.
+      Along came a blackbird
+      And snipped off her nose.
+      
+      Sing a Song of Six Pence
+      Sing a song of sixpence,
+      A pocket full of rye,
+      Four and twenty blackbirds
+      Baked in a pie.
+
+      When the pie was opened
+      The birds began to sing—
+      Wasn't that a dainty dish
+      To set before the king?
+
+      The king was in the counting-house
+      Counting out his money,
+      The queen was in the parlor
+      Eating bread and honey,
+
+      The maid was in the garden
+      Hanging out the clothes.
+      Along came a blackbird
+      And snipped off her nose.
+      
+      Sing a Song of Six Pence
+      Sing a song of sixpence,
+      A pocket full of rye,
+      Four and twenty blackbirds
+      Baked in a pie.
+
+      When the pie was opened
+      The birds began to sing—
+      Wasn't that a dainty dish
+      To set before the king?
+
+      The king was in the counting-house
+      Counting out his money,
+      The queen was in the parlor
+      Eating bread and honey,
+
+      The maid was in the garden
+      Hanging out the clothes.
+      Along came a blackbird
+      And snipped off her nose.
+
+      Sing a Song of Six Pence
+      Sing a song of sixpence,
+      A pocket full of rye,
+      Four and twenty blackbirds
+      Baked in a pie.
+
+      When the pie was opened
+      The birds began to sing—
+      Wasn't that a dainty dish
+      To set before the king?
+
+      The king was in the counting-house
+      Counting out his money,
+      The queen was in the parlor
+      Eating bread and honey,
+
+      The maid was in the garden
+      Hanging out the clothes.
+      Along came a blackbird
+      And snipped off her nose.
+    </pre
+      >
+    </main>
+    <!--pre>
+    Humpty Dumpty Sat on a Wall
+      Humpty Dumpty sat on a wall,
+      Humpty Dumpty had a great fall.
+      All the king’s horses and all the king’s men
+      Couldn’t put Humpty together again. 
+  
+    Jack and Jill
+      Jack and Jill went up the hill
+      To fetch a pail of water.
+      Jack fell down and broke his crown,
+      And Jill came tumbling after.
+
+    Jack be Nimble
+      Jack be nimble,
+      Jack be quick,
+      Jack jump over
+      The candlestick. 
+
+    Little Bo Peep
+      Little Bo-Peep has lost her sheep,
+      And can’t tell where to find them;
+      Leave them alone, and they’ll come home,
+      Wagging their tails behind them. 
+
+    Little Boy Blue
+      Little Boy Blue,
+      Come blow your horn;
+      The sheep’s in the meadow,
+      The cow’s in the corn.
+      Where’s the little boy
+      That looks after the sheep?
+      He's under the haystack,
+      fast a-sleep.
+
+    Little Jack Horner
+      Little Jack Horner
+      Sat in the corner,
+      Eating a Christmas pie;
+      He put in his thumb,
+      And pulled out a plum,
+      And said “What a good boy am I!” 
+
+    Little Miss Muffet
+      Little Miss Muffet
+      Sat on a tuffet,
+      Eating her curds and whey;
+      Along came a spider,
+      Who sat down beside her
+      And frightened Miss Muffet away. 
+
+    London Bridge is Falling Down
+      London Bridge is falling down,
+      Falling down, falling down.
+      London Bridge is falling down,
+      My fair lady. 
+
+    Mary Had a Little Lamb
+      Mary had a little lamb,
+      whose fleece was white as snow.
+      And everywhere that Mary went,
+      Mary went, Mary went,
+      and everywhere that Mary went,
+      the lamb was sure to go.
+
+    Mary, Mary, Quite Contrary
+      Mary, Mary, quite contrary,
+      How does your garden grow?
+      With silver bells, and cockle shells,
+      And pretty maids all in a row. 
+
+    Old King Cole
+      Old King Cole was a merry old soul
+      And a merry old soul was he;
+      He called for his pipe, and he called for his bowl
+      And he called for his fiddlers three. 
+
+    Old Mother Hubbard
+      Old Mother Hubbard
+      Went to the cupboard
+      To get her poor dog a bone,
+      When she got there
+      The cupboard was bare
+      So the poor dog had none. 
+
+    Peter, Peter Pumpkin Eater
+      Peter, Peter pumpkin eater,
+      Had a wife but couldn't keep her;
+      He put her in a pumpkin shell
+      And there he kept her well. 
+
+    Ring Around the Rosy
+      Ring around the rosy
+      A pocketful of posies
+      Ashes, Ashes,
+      We all fall down! 
+
+    Rock-a-bye Baby
+      Rock-a-bye baby, on the treetops,
+      When the wind blows, the cradle will rock,
+      When the bough breaks, the cradle will fall,
+      And down will come baby, cradle and all.                
+
+    Sing a Song of Six Pence
+      Sing a song of sixpence,
+      A pocket full of rye,
+      Four and twenty blackbirds
+      Baked in a pie.
+
+      When the pie was opened
+      The birds began to sing—
+      Wasn't that a dainty dish
+      To set before the king?
+
+      The king was in the counting-house
+      Counting out his money,
+      The queen was in the parlor
+      Eating bread and honey,
+
+      The maid was in the garden
+      Hanging out the clothes.
+      Along came a blackbird
+      And snipped off her nose.
+
+    There was an Old Woman Who Lived in a Shoe
+      There was an old woman who lived in a shoe.
+      She had so many children, she didn't know what to do;
+      She gave them some broth without any bread;
+      Then whipped them all soundly and put them to bed. 
+
+    Three Blind Mice
+      Three blind mice. Three blind mice.
+      See how they run. See how they run.
+      They all ran after the farmer's wife,
+      Who cut off their tails with a carving knife,
+      Did you ever see such a sight in your life,
+      As three blind mice? 
+        </pre
+    -->
+
+    <footer>
+      footer
+    </footer>
+  </body>
+</html>

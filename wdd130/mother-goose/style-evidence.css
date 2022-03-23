@@ -1,0 +1,282 @@
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+@import url("https://fonts.googleapis.com/css?family=Shadows+Into+Light");
+
+/* #C6C1A9; khaki web */
+/* #664155; eggplant */
+/* #DCBCCB; thistle */
+/* #22404D; charcoal */
+/* #83A49B; morning blue */
+
+/*
+https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Background_and_Borders/Border-image_generator
+https://uxdesign.cc/create-awesome-fancy-borders-using-border-image-6d2a23840d28
+https://css-tricks.com/almanac/properties/b/border-image
+*/
+
+#evidence_board {
+  background-image: url("https://cdn.glitch.com/c3dd1774-0f2b-484a-aee9-39699401a922%2Fcork-board.jpg?v=1613646778361");
+  margin-bottom: 1.5em;
+}
+
+.evidence {
+  position: relative;
+}
+.note {
+  z-index: 5;
+}
+.note-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Shadows Into Light";
+  font-size: 12vw;
+  text-align: center;
+  z-index: 10;
+}
+
+#note-jack-beanstalk .note-text {
+  font-size: 9.5vw;
+}
+
+.landscape {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.portrait {
+  display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.pin {
+  position: absolute;
+  width: 40px;
+  left: 50%;
+  -webkit-filter: drop-shadow(-5px 5px 5px #222);
+  filter: drop-shadow(-5px 5px 5px #222);
+  z-index: 75;
+}
+
+.leader-line {
+  display: none;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) BLUE */
+@media screen and (min-width: 600px) {
+  #evidence_board {
+    margin: 0 auto;
+    padding-left: 10em;
+    padding-right: 10em;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border: solid 35px #22404D;
+  }
+  footer {
+    margin-top: 3em;
+  }
+  
+  .photo {
+    border: 10px solid #FFF;
+    outline: 1px solid #000;
+    filter: grayscale(100%);
+  }
+
+  .photo:hover,
+  .photo:hover {
+    transform: scale(1, 1) rotate(0deg) !important;
+    filter: none;
+  }
+
+  .pin {
+    width: 15px;
+  }
+
+  .leader-line {
+    display: block;
+  }
+
+  img.photo {
+    width: 100%;
+  }
+
+  #tom-thumb {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+  }
+  #tom-thumb img.photo {
+    margin-left: -5%;
+    transform: rotate(5deg);
+  }
+  #brother-sister {
+    grid-column: 3 / span 2;
+    grid-row: 1 / span 1;
+  }
+  #brother-sister img.photo {
+    margin-left: 5%;
+    transform: rotate(-5deg);
+  }
+  #jack-giant-killer {
+    grid-column: 4 / span 1;
+    grid-row: 2 / span 1;
+  }
+  #jack-giant-killer img.photo {
+  }
+  #rumpelstilzchen {
+    grid-column: 3 / span 3;
+    grid-row: 3 / span 1;
+  }
+  #rumpelstilzchen img.photo {
+    transform: rotate(5deg);
+  }
+  #beauty-beast {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+  }
+  #beauty-beast img.photo {
+    margin-left: 10%;
+    transform: rotate(5deg);
+  }
+  #snow-white-rose-red {
+    grid-column: 1 / span 2;
+    grid-row: 3 / span 1;
+  }
+  #snow-white-rose-red img.photo {
+    margin-left: 10%;
+    transform: rotate(-5deg);
+  }
+  #puss-boots {
+    grid-column: 6 / span 1;
+    grid-row: 3 / span 1;
+  }
+  #puss-boots img.photo {
+    margin-left: 10%;
+    transform: rotate(-5deg);
+  }
+  #snowdrop {
+    grid-column: 5 / span 2;
+    grid-row: 4 / span 2;
+  }
+  #snowdrop img.photo {
+    margin-left: 10%;
+    transform: rotate(5deg);
+  }
+  #cinderella {
+    grid-column: 5 / span 2;
+    grid-row: 1 / span 2;
+  }
+  #cinderella img.photo {
+    margin-left: 10%;
+    transform: rotate(5deg);
+  }
+  #fair-one-golden-locks {
+    grid-column: 1 / span 3;
+    grid-row: 4 / span 2;
+  }
+  #fair-one-golden-locks img.photo {
+  }
+  #iron-stove {
+    grid-column: 4 / span 1;
+    grid-row: 4 / span 2;
+  }
+  #iron-stove img.photo {
+    margin-left: 10%;
+    transform: rotate(-5deg);
+  }
+  #jack-beanstalk {
+    grid-column: 5 / span 2;
+    grid-row: 6 / span 2;
+  }
+  #jack-beanstalk img.photo {
+    width: 100%;
+    margin-left: 10%;
+    transform: rotate(5deg);
+  }
+  #butterfly {
+    grid-column: 1 / span 1;
+    grid-row: 6 / span 1;
+  }
+  #butterfly img.photo {
+    margin-left: -10%;
+    transform: rotate(-5deg);
+  }
+  #frog-prince {
+    grid-column: 1 / span 2;
+    grid-row: 7 / span 3;
+  }
+  #frog-prince img.photo {
+  }
+  #red-riding-hood {
+    grid-column: 3 / span 1;
+    grid-row: 7 / span 1;
+  }
+  #red-riding-hood img.photo {
+    margin-left: 10%;
+    transform: rotate(-5deg);
+  }
+  #woodcutter-daughter {
+    grid-column: 2 / span 3;
+    grid-row: 6 / span 1;
+  }
+  #woodcutter-daughter img.photo {
+  }
+
+  .note-text {
+    font-size: 2vw;
+  }
+
+  #note-3 {
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 1;
+    z-index: 5;
+  }
+  #note-3 .note-text {
+    top: 35%;
+    font-size: 1.5vw;
+  }
+
+  #note-golden-locks {
+    grid-column: 2 / span 1;
+    grid-row: 5 / span 1;
+  }
+  #note-golden-locks .note-text {
+    font-size: 1.5vw;
+  }
+
+  #note-jack-beanstalk {
+    grid-column: 5 / span 1;
+    grid-row: 7 / span 1;
+  }
+  #note-jack-beanstalk .note-text {
+    top: 35%;
+    font-size: 1vw;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media screen and (min-width: 768px) {
+  .pin {
+    width: 20px;
+  }
+}
+/* Large devices (laptops/desktops, 900px and up) GREEN */
+@media screen and (min-width: 900px) {
+  .pin {
+    width: 25px;
+  }
+}
+/* large devices (large laptops and desktops, 1200px and up) YELLOW */
+@media screen and (min-width: 1200px) {
+  .pin {
+    width: 30px;
+  }
+}
+/* Extra large devices (Large desktops, 1800px and up) RED */
+@media screen and (min-width: 1800px) {
+  .pin {
+    width: 35px;
+  }
+}

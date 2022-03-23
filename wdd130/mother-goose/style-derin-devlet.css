@@ -1,0 +1,72 @@
+#conspiracy {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+li {
+  margin: 15px 0;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) {
+  .frame {
+    max-height: 370px;
+    overflow: hidden;
+  }
+  .frame img {
+    border-radius: 15px 15px 0 0;
+  }
+  footer {
+    margin-top: 3em;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 900px and up) */
+@media screen and (min-width: 900px) {
+  #conspiracy {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    grid-gap: 2em;
+  }
+  article p {
+    text-align: justify;
+  }
+
+  [data-define]:before {
+    /* needed - do not touch */
+    content: attr(data-define);
+    position: absolute;
+    opacity: 0;
+
+    /* customizable */
+    transition: all 0.15s ease;
+    padding: 2em;
+    color: #22404D;
+    border-radius: 4px;
+    max-width: 320px;
+    text-align: justify;
+  }
+
+  [data-define]:hover:before {
+    /* needed - do not touch */
+    opacity: 1;
+
+    /* customizable */
+    background: #C6C1A9;
+  }
+}
+/* large devices (large laptops and desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  #conspiracy {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+  aside {
+    margin-top: 1em;
+  }
+}
+/* Extra large devices (Large desktops, 1800px and up) */
+@media screen and (min-width: 1800px) {
+}

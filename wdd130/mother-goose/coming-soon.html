@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/c3dd1774-0f2b-484a-aee9-39699401a922%2Funnamed.png?v=1614274959666"
+    />
+    <title>Coming Soon | Mother Goose</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-story.css" />
+    <script src="magnify.js"></script>
+  </head>
+  <body>
+    <header>
+      <!-- important that the checkbox comes first -->
+      <input id="burger" type="checkbox" />
+      <!--h1>Logo</h1-->
+      <a href="index.html" id="logo">
+        <img
+          src="https://cdn.glitch.com/c3dd1774-0f2b-484a-aee9-39699401a922%2Fmother%20goose.png?v=1613773162412"
+          alt="Mother Goose logo"
+        /><span>Mother Goose</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="derin-devlet.html" class="link">Derin Devlet</a></li>
+          <li><a href="evidence.html" class="link">Evidence Board</a></li>
+          <li><a href="tip.html" id="tip">Submit a Tip</a></li>
+        </ul>
+      </nav>
+      <!-- for looks for an id / span is styled with css -->
+      <label for="burger" class="burger-label"><span></span></label>
+    </header>
+
+    <section id="description">
+      <h1>
+        <span id="title"><a href="index.html">Mother Goose</a> | </span> Unknown ...
+      </h1>
+      <p>
+        The story you selected is unknown.  Please help us identify it and the Mother Goose connections by submitting a tip.
+      </p>
+    </section>
+
+    <main>
+      <div>
+        <div class="story-img img-magnifier-container">
+          <img
+            id="goble"
+            src="https://cdn.glitch.com/c3dd1774-0f2b-484a-aee9-39699401a922%2Ffairy.jpg?v=1617010415555"
+            alt="Unknown fairy tale"
+          />
+        </div>
+      </div>      
+
+      <aside>
+        <h3>Also Known As</h3>
+        <ul>
+          <li>?</li>
+        </ul>
+
+        <h3>Country</h3>
+        <ul>
+          <li>?</li>
+        </ul>
+
+        <h3>Published</h3>
+        <ul>
+          <li>?</li>
+        </ul>
+
+        <h3>Unanswered Questions</h3>
+        <ul>
+          <li>?</li>
+          <li>?</li>
+          <li>?</li>
+        </ul>
+
+        <h3>Related</h3>
+        <ul>
+          <li>?</li>
+        </ul>
+
+        <div>
+          <a href="tip.html" class="aside-tip">Submit a Tip</a>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <ul>
+        <li><a href="/site-plan.html" id="site-plan">Site Plan</a></li>
+        <li>About Mother Goose</li>
+        <li>Disclaimers</li>
+        <li>Privacy Policy</li>
+        <li>Cookie Statement</li>
+        <li>Statistics</li>
+      </ul>
+    </footer>
+    
+    <script>
+      /* Initiate Magnify Function
+      with the id of the image, and the strength of the magnifier glass: */
+      magnify("goble", 3);
+    </script>    
+  </body>
+</html>

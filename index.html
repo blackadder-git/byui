@@ -3,17 +3,263 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projects</title>
-    <meta name="description" content="BYU-I Projects">
-    <link rel="shortcut icon" href="../favicon.ico">
-    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <title>Project Portfolio</title>
+    <meta name="description" content="A collection of some of my projects">
+    <!--link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png"-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Montserrat&display=swap">
+    <style>
+        /* design mobile first */
+        /* https://medium.com/@Vincentxia77/what-is-mobile-first-design-why-its-important-how-to-make-it-7d3cf2e29d00 */
+        :root {
+            --primary-color: MistyRose;
+            --secondary-color: #C2B280;
+            --accent1-color: #D4AF37;
+            --accent2-color: #880806;
+            --accent3-color: #1488CA;
+            --accent4-color: #00FDFF;
+            
+            --heading-font: Charm, cursive;
+            --paragraph-font: Montserrat, sans-serif;
+        }
+
+        html {
+            background-color: radial-gradient(#eee, var(--primary-color));
+            font-family: 'Open Sans', Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1 {
+            background-color: var(--secondary-color);
+            padding: 2em;
+            margin-top: 0;
+        }
+        img {
+            width: 100%;
+        }
+        ul {
+            padding-left: 1em;
+        }
+        #projects {
+            padding: 1em;            
+        }
+        .features {
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .feature {
+            border-radius: 20px;
+            padding: 0.3em .2em;
+            margin-right: .3em;
+        }
+        .html {
+            background-color: orange;
+        }
+        .css {
+            background-color: orange;
+        }
+        .js {
+            background-color: orange;
+        }
+        .wave {
+            background-color: orange;
+        }
+        .mobile {
+            background-color: orange;
+        }
+        .local {
+            background-color: orange;
+        }        
+        .site-plan {
+            margin: 1em 0;
+        }
+
+
+        /* https://material.io/design/layout/responsive-layout-grid.html#breakpoints */
+        /* tablet */
+        @media only screen and (min-width: 600px) {
+            html {
+                bbackground-color: blue;
+            }
+            #projects {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 3em;
+                padding: 3em;
+            }
+        }
+        /* laptop */
+        @media only screen and (min-width: 900px) {
+            html {
+                bbackground-color: green;
+            }
+            .screenshot {
+                box-shadow:rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+                margin-bottom: 2em;
+            }
+        }
+        /* desktop */
+        @media only screen and (min-width: 1200px) {
+            html {
+                bbackground-color: yellow;
+            }
+            #projects {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                grid-gap: 3em;
+            }
+        }
+
+
+    </style>
 </head>
 <body>
-    <h1>Projects</h1>
+    <h1>Portfolio Projects</h1>
+
+    <div id="projects">
+
+        <section>
+            <h2>Todo App</h2>
+            <h3>WDD 330: Web Development Development II</h3>
+            <div class="features">
+                <span class="html feature">HTML5</span> <span class="css feature">CSS</span> <span class="js feature">JavaScript</span> <span class="wave feature">Accessible</span> <span class="mobile feature">Responsive</span> <span class="local feature">LocalStorage</span>
+            </div>
+            <div class="site-plan">
+                <a href="screenshots/todo-wireframe.png">Wireframe</a>
+            </div>            
+            <div class="screenshot">
+                <a href="https://blackadder-git.github.io/byui/wdd330/week6/todo/index.html"><img src="screenshots/todo.png" alt=""></a>
+            </div>
+            <div class="details">
+                <h2>Project Requirements</h2>
+                <ul>
+                    <li>Build a simple web app to manage a ToDo list. It should allow the creation of new tasks, the viewing of tasks, a process to mark tasks as complete, ability to remove tasks, and the ability to filter by complete/not complete.</li>
+                    <li>UI actions<br>
+                        Show a list of tasks<br>
+                        Add a new task<br>
+                        Complete a task<br>
+                        Remove a task<br>
+                        Filter tasks (complete/incomplete)
+                        </li>
+                    <li>Data sources: localStorage<br>
+                        todo: { id : timestamp, content: string, completed: bool }<br>
+                        toDoList = [toDo];</li>
+                    <li>Colors/Typography/specific Element styling: Student to determine</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Chamber of Commerce</h2>
+            <h3>WDD 230: Web Frontend Development I</h3>
+            <div class="features">
+                <span class="html feature">HTML5</span> <span class="css feature">CSS</span> <span class="js feature">JavaScript</span> <span class="wave feature">Accessible</span> <span class="mobile feature">Responsive</span>  <span class="local feature">LocalStorage</span>
+            </div>
+            <div class="site-plan">
+                <a href="https://blackadder-git.github.io/byui/wdd230/camaramajorero/CamaraMajorero.pdf">Site plan</a>
+            </div>
+            <div class="screenshot">
+                <a href="https://blackadder-git.github.io/byui/wdd230/camaramajorero/index.html"><img src="screenshots/camara.png" alt=""></a>
+            </div>
+            <div class="details">
+                <h2>Project Requirements</h2>
+                <ul>
+                    <li>The site must be responsive to small, medium, and larger, wide screen views.</li>
+                    <li>The design is consistent throughout the website providing ease of navigation and supports excellent user experiences.</li>
+                    <li>Your page layouts may not be an exact replication of your weather site in terms of layout style.</li>
+                    <li>Your site must meet the specifications listed on the 230 Web Frontend Development Standards page.</li>
+                    <li>Structure the site with valid, standards-based, semantic markup that is responsive to small, medium and large screen views without violating PARC principles.</li>
+                    <li>Style with valid CSS that does not contain unused and unnecessary (duplicate) declarations nor different selector notations for the same element.</li>
+                    <li>Ensure that all browsers render elements consistently by referencing a normalization or reset CSS on all pages.</li>
+                    <li>Design a logo to be used at appropriate levels and locations throughout the website.</li>
+                    <li>Follow PARC principles and typography best-practices throughout the website.</li>
+                    <li>Implement an appropriate font of your choice, using a Google Fonts reference or equivalent resource.</li>
+                    <li>Use the practice of wayfinding to improve the user experience of understanding where a user is on the website.</li>
+                    <li>Use JavaScript as needed including driving the content of the business directory page from your own JSON file.</li>
+                    <li>Ensure that there are no spelling or grammatical errors.</li>
+                    <li>Include a resource/attribution page that references outside content, if necessary, as a link in the footer.</li>
+                    <li>Include the last modified date of the page in the footer using JavaScript.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Weather API Site</h2>
+            <h3>WDD 230: Web Frontend Development I</h3>
+            <div class="features">
+                <span class="html feature">HTML5</span> <span class="css feature">CSS</span> <span class="js feature">JavaScript</span> <span class="wave feature">Accessible</span> <span class="mobile feature">Responsive</span>
+            </div>
+            <div class="site-plan">
+                <a href="https://blackadder-git.github.io/byui/wdd230/yeoldcrowsnest/site-plan/index.html">Site plan</a>
+            </div>
+            <div class="screenshot">
+                <a href="https://blackadder-git.github.io/byui/wdd230/yeoldcrowsnest/index.html"><img src="screenshots/crow.png" alt=""></a>
+            </div>
+            <div class="details">
+                <h2>Project Requirements</h2>
+                <ul>
+                    <li>The design is consistent throughout the website providing ease of navigation and supporting positive user experiences.</li>
+                    <li>The header contains a logo, site title, and a site motto.</li>
+                    <li>The navigation menu contains links to the six (6) main pages including: Home, Preston, Soda Springs, Fish Haven, Storm Center, and Gallery.</li>
+                    <li>The footer contains contact information as given in the town page example and other relevant information.</li>
+                    <li>The home page contains a current weather story with corresponding image and information sections for all three towns.</li>
+                    <li>The town weather pages contain weather conditions and other town information or relevant articles/content.</li>
+                    <li>Images are used to reflect the current weather condition data on the town pages and the towns themselves.</li>
+                    <li>The site supports responsive design techniques allowing delivery of the site and its content on all classes of devices: large-wide screens (desktop/laptop), medium-screens (tablet), and small-screens (smartphones).</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Mother Goose</h2>
+            <h3>WDD 130: Web Fundamentals</h3>
+            <div class="features">
+                <span class="html feature">HTML5</span> <span class="css feature">CSS</span> <span class="js feature">JavaScript</span> <span class="wave feature">Accessible</span> <span class="mobile feature">Responsive</span>
+            </div>
+            <div class="site-plan">
+                <a href="https://blackadder-git.github.io/byui/wdd130/mother-goose/site-plan.html">Site plan</a>
+            </div>
+            <div class="screenshot">
+                <a href="https://blackadder-git.github.io/byui/wdd130/mother-goose"><img src="screenshots/goose.png" alt=""></a>
+            </div>
+            <div class="details">
+                <h2>Project Requirements</h2>
+                <ul>
+                    <li>The Web site must consist of a main page and at least 2 child pages. One of the child pages should include a form. The Web site must be published to the web.</li>
+                    <li>Each of the 3 pages of your Web site must satisfy the following requirements:</li>
+                    <li>Significant content consisting of both text and a minimum of one image. You need to make sure this page has the appropriate content for your audience so that they can understand the meaning and message of this site.</li>
+                    <li>Working links to the all of the other pages you have created.</li>
+                    <li>Be visually appealing</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>Pirate Oar Adventures</h2>
+            <h3>WDD 130: Web Fundamentals</h3>
+            <div class="features">
+                <span class="html feature">HTML5</span> <span class="css feature">CSS</span> <span class="wave feature">Accessible</span> <span class="mobile feature">Responsive</span>
+            </div>                
+            <div class="site-plan">
+                <a href="https://blackadder-git.github.io/byui/wdd130/jellyfish/site-plan.html">Site plan</a>
+            </div>
+            <div class="screenshot">
+                <a href="https://blackadder-git.github.io/byui/wdd130/jellyfish"><img src="screenshots/jellyfish.png" alt=""></a>
+            </div>
+            <div class="details">
+                <h2>Project Requirements</h2>
+                <ul>
+                    <li>The web site must consist of a main page and at least 1 child page. The web site must be published to the web.</li>
+                    <li>Each of the pages of your web site must satisfy the following requirements:</li>
+                    <li>Significant content consisting of both text and a minimum of one image. You need to make sure this page has the appropriate content for your audience so that they can understand the meaning and message of this site.</li>
+                    <li>Working links to the all of the other pages you have created.</li>
+                    <li>Be visually appealing</li>
+                </ul>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

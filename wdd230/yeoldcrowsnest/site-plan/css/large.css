@@ -1,0 +1,11 @@
+@media only screen and (min-width: 60em) {
+    body {
+        max-width: 1200px;
+    }
+    .headings {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .colors {
+        grid-template-columns: repeat(6, 1fr);
+    }    
+}

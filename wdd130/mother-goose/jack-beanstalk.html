@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="https://cdn.glitch.com/c3dd1774-0f2b-484a-aee9-39699401a922%2Funnamed.png?v=1614274959666"
+    />
+    <title>Jack and the Beanstalk | Mother Goose</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-story.css" />
+    <script src="magnify.js"></script>
+  </head>
+  <body>
+    <header>
+      <!-- important that the checkbox comes first -->
+      <input id="burger" type="checkbox" />
+      <!--h1>Logo</h1-->
+      <a href="index.html" id="logo">
+        <img
+          src="https://cdn.glitch.com/c3dd1774-0f2b-484a-aee9-39699401a922%2Fmother%20goose.png?v=1613773162412"
+          alt="Mother Goose logo"
+        /><span>Mother Goose</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="derin-devlet.html">Derin Devlet</a></li>
+          <li><a href="evidence.html">Evidence Board</a></li>
+          <li><a href="tip.html" id="tip">Submit a Tip</a></li>
+        </ul>
+      </nav>
+      <!-- for looks for an id / span is styled with css -->
+      <label for="burger" class="burger-label"><span></span></label>
+    </header>
+
+    <section id="description">
+      <h1>
+        <span id="title"><a href="index.html">Mother Goose</a> | </span> Jack
+        and the Beanstalk
+      </h1>
+      <p>
+        The story is about boy who trades the family cow for a handful of magic
+        beans.
+      </p>
+    </section>
+
+    <main>
+      <div>
+        <div class="story-img img-magnifier-container">
+          <img
+            id="goble"
+            src="https://cdn.glitch.com/c3dd1774-0f2b-484a-aee9-39699401a922%2Fjack-and-the-bean-stalk.jpg?v=1613646112013"
+            alt="Jack and the Beanstalk"
+          />
+        </div>
+        <article>
+          <h1>Once upon a time ...</h1>  
+          <p>
+            Jack, a poor country boy, trades the family cow for a handful of
+            magic beans, which grow into an enormous beanstalk reaching up into
+            the clouds. Jack climbs the beanstalk and finds himself in the
+            castle of an unfriendly giant. The giant senses Jack's presence and
+            cries, Fee-fi-fo-fum! I smell the blood of an English man. Be he
+            alive, or be he dead, I'll grind his bones to make my bread.
+            Outwitting the giant, Jack is able to retrieve many goods once
+            stolen from his family, including a bag of gold, an enchanted goose
+            that lays golden eggs and a magic golden harp that plays and sings
+            by itself. Jack then escapes by chopping down the beanstalk. The
+            giant, who is pursuing him, falls to his death, and Jack and his
+            family prosper.
+          </p>
+          <p>
+            Many modern interpretations have made the giant a villain,
+            terrorizing smaller folk and stealing from them, so that Jack
+            becomes a legitimate protagonist. For example, the giant is blamed
+            for poverty at the foot of the beanstalk, as he has been stealing
+            food and wealth and the hen that lays golden eggs originally
+            belonged to Jack's family. In other versions, it is implied that the
+            giant had stolen both the hen and the harp from Jack's father.
+          </p>
+        </article>
+      </div>
+      <aside>
+        <h3>Also Known As</h3>
+        <ul>
+          <li>Jack Spriggins</li>
+          <li>Jack Sprat</li>
+          <li>Jack be' Nimble</li>
+        </ul>
+
+        <h3>Country</h3>
+        <ul>
+          <li>
+            England
+            <div class="map-responsive">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d2783721.390005146!2d-2.8650320055611473!3d55.043945893296524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ses!4v1615218305302!5m2!1sen!2ses"
+                width="600"
+                height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+              ></iframe>
+            </div>
+          </li>
+        </ul>
+
+        <h3>Published</h3>
+        <p>English Fairy Tales (1890)</p>
+
+        <h3>Unanswered Questions</h3>
+        <ul>
+          <li>Who exactly traded the magic beans to Jack?</li>
+          <li>What happened to the giant's wife?</li>
+          <li>Who enchanted the golden goose? and why?</li>
+        </ul>
+
+        <h3>Related</h3>
+        <ul>
+          <li><a href="jack-giant-killer.html">Jack the Giant Killer</a></li>
+        </ul>
+
+        <div>
+          <a href="tip.html" class="aside-tip">Submit a Tip</a>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      <ul>
+        <li><a href="/site-plan.html" id="site-plan">Site Plan</a></li>
+        <li>About Mother Goose</li>
+        <li>Disclaimers</li>
+        <li>Privacy Policy</li>
+        <li>Cookie Statement</li>
+        <li>Statistics</li>
+      </ul>
+    </footer>
+    
+    <script>
+      /* Initiate Magnify Function
+      with the id of the image, and the strength of the magnifier glass: */
+      magnify("goble", 3);
+    </script>    
+  </body>
+</html>

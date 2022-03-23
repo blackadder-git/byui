@@ -11,19 +11,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap"> <!-- Open+Sans -->
     <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/family.js" type="module"></script>
 </head>
 <body>
     <main>
-        <h1>Family</h1>
-        <a href="../">Home</a>
+        <h1> <a href="../">Home</a> / Family</h1>
+       
         <form id="familyMember" name="familyMember" method="GET">
-            <label for="name">Name: <input id="name" name="name" type="text" pattern="[A-Za-z]" required></label>
-            <label for="age">Age: <input id="age" name="age" type="number" min="1" max="99" maxlength="3" required></label>
-            <select id="sex"><option value="male">Male</option><option value="female">Female</option></select>
-            <select id="activity"><option value="sedentary">sedentary</option><option value="moderate">Moderate</option><option value="active">Active</option></select>
+            <label for="name">Name:</label> 
+            <input id="name" name="name" type="text" pattern="[A-Za-z]" placeholder="family member name" required>
+
+            
+            <label for="age">Age:</label> 
+            <input id="age" name="age" type="number" min="1" max="99" maxlength="3" placeholder="age" required>
+            
+            <fieldset id="sex">
+                <legend>Sex</legend>
+                <label for="male">Male</label>
+                <input type="radio" id="male" name="sex" value="male" required>
+
+                <label for="female">Female</label>
+                <input type="radio" id="female" name="sex" value="female">
+            </fieldset>
+
+            <fieldset id="activityLevel">
+                <legend>Activity level</legend>
+                <select id="activity"><option value="sedentary">Sedentary</option><option value="moderate">Moderate</option><option value="active">Active</option></select>
+
+                <ul>
+                    <li>Sedentary means a lifestyle that includes only the light physical activity associated with typical day-to-day life.</li>
+                    <li>Moderately active means a lifestyle that includes physical activity equivalent to walking about 1.5 to 3 miles per day at 3 to 4 miles per hour, in addition to the light physical activity associated with typical day-to-day life.</li>
+                    <li>Active means a lifestyle that includes physical activity equivalent to walking more than 3 miles per day at 3 to 4 miles per hour, in addition to the light physical activity associated with typical day-to-day life.</li>
+                </ul>
+            </fieldset>
+
             <input id="addFamilyMember" type="button" value="Add Family Member">
         </form>
         

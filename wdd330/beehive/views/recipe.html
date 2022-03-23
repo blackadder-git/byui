@@ -17,18 +17,41 @@
 </head>
 <body>
     <main>
-        <h1>Recipe</h1>
-        <a href="../">Home</a>
+        <h1><a href="../">Home</a> / Recipe</h1>
+        
         <form id="recipe" name="recipe" method="GET">
-            <label for="name">Name: <input id="name" name="name" type="text" required></label>
-            <label for="instructions">Instructions: <textarea id="instructions" name="instructions" required></textarea></label>
-            <select id="type"><option value="dessert">Dessert</option><option value="bread">Bread</option></select>
-            
+            <label for="name">Name:</label> 
+            <input id="name" name="name" type="text" required>
+
+            <label for="instructions">Instructions:</label> 
+            <textarea id="instructions" name="instructions" required></textarea>
+
+            <label for="type">Type</label>
+            <input list="types" id="type" name="type" />
+            <datalist id="types">
+                <option value="Bread">
+                <option value="Dessert">
+                <option value="Snack">
+            </datalist>
+
+            <label for="serves">Serves:</label> 
+            <input id="serves" name="serves" type="number" min="1" required>
+
             <ul id="ingredients">
                 <li>
-                    <label for="serves1">Serves: <input id="serves" name="serves" type="number" required></label>
-                    <label for="measure1">Measure: <input id="measure" name="measure" type="text" required></label>
-                    <input id="ingredient1" type="text">
+                    <fieldset>
+                        <legend>Ingredient</legend>
+                        <span class="quantity">
+                            <label for="amount1">Amount: </label> 
+                            <input id="amount" name="amount" type="number" required>
+
+                            <label for="measure1">Measure: </label>  
+                            <input list="measures" id="measure1" name="measure1" />
+                            <datalist id="measures"></datalist>
+                        </span>
+                        <label for="item1">Item:</label>  
+                        <input id="item1" type="text" required>
+                    </fieldset>
                 </li>
             </ul>
             <input id="newIngredient" type="button" value="New Ingredient">

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Media Card</title>
+    <style>
+      body {
+        display: relative;
+      }
+      article {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      img {
+        max-width: 100%;
+      }
+      .card {
+        width: 320px;
+        box-shadow: 1px 1px 4px 1px #888; /* default settings */
+        border-radius: 3px;
+        background-color: white;
+        font-family: Helvetica, Arial; /* the font in the image seems a bit thicker to me, but these are the fonts suggested */
+      }
+      .card p {
+        width: 320px;
+        padding: 5%;
+        color: #3D4044; /* #888; does not seem to match */
+        margin-bottom: -10px;
+        padding-top: 2px;
+        font-weight: 200; /* the font changes visually at 500 but pushes the content too far to the right.  Since we are given a fixed card width I´m not able to exactly match the font. */
+      }
+      footer {
+        padding: 1em;
+        color: #858C93; /* #eee; does not seem to match */
+      }
+      button {
+        background-color: white;
+        margin: 0;
+        border: 1.5px solid #BBC0C3;
+        color: #858C93; /* #eee; does not seem to match */
+        padding: 7px;
+        padding-top: 9px;
+      }
+      .viewButton {
+        border-radius: 4px 0 0 4px;
+      }
+      .editButton {
+        border-radius: 0 4px 4px 0;
+        margin-left: -6px;
+      }
+      span {
+        float: right;
+        font-size: smaller;
+        padding-top: 9px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--img
+      src="https://cdn.glitch.com/c3dd1774-0f2b-484a-aee9-39699401a922%2Fcard.png?v=1615825273228"
+    /-->
+
+    <article class="card">
+      <img src="https://picsum.photos/320/240" />
+
+      <p>
+        This is a wider card with supporting text below as natural lead-in to
+        additional content. This content is a little bit longer.
+      </p>
+      <footer>
+        <button class="viewButton">
+          <strong>View</strong>
+        </button>
+        <button class="editButton">
+          <strong>Edit</strong>
+        </button>
+        <span><strong>9 mins</strong></span>
+      </footer>
+    </article>
+  </body>
+</html>

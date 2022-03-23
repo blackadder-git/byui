@@ -1,18 +1,90 @@
 /* design mobile first */
 /* https://medium.com/@Vincentxia77/what-is-mobile-first-design-why-its-important-how-to-make-it-7d3cf2e29d00 */
 
+/*
+    https://css-tricks.com/better-form-inputs-for-better-mobile-user-experiences/
+*/
+
+
+*, *:after, *:before {
+	box-sizing: border-box; /* include border & padding as part of height & width: https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing */
+}
 
 html {
     background-color: white;
+    padding: .5em;
+    font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
 }
-
 main {
     margin: 0 auto;
-    text-align: center;
 }
-
 section {
     border: 1px solid black;
+    margin-bottom: .5em;
+}
+label {
+    display: block;
+}
+ul {
+    padding-left: 0;    
+}
+li {
+    list-style: none;
+    margin-bottom: 1em;
+}
+form {
+    padding: 1em;
+}
+fieldset#sex, .quantity {
+    display: flex;
+}
+.quantity label {
+    margin-right: 10px;
+}
+.quantity input:nth-child(2) {
+    margin-right: 10px;
+}
+input, textarea, select {
+    width: 100%;
+}
+input[type=text] {
+    bmargin-bottom: 1em;
+}
+textarea { 
+    resize: vertical; 
+    height: 10em;
+}
+input[type=button] {
+    margin-top: 1em;
+    padding: 1em;
+}
+.delIngredient {
+    margin-top: .5em;
+}
+#familyMember {
+    background-color: antiquewhite;
+}
+#pantryItem {
+    background-color: antiquewhite;
+}
+#recipe {
+    background-color: antiquewhite;
+}
+#familyMember label, #pantryItem label, #recipe label, fieldset {
+    margin-top: 1em;
+}
+fieldset#sex label {
+    margin-top: 0;
+}
+
+
+/* Selects any valid <input> */
+input:valid, textarea:valid {
+    background-color: powderblue;
+}
+/* Selects any invalid <input> */
+input:invalid, textarea:invalid  {
+    background-color: salmon;
 }
 
 /* https://material.io/design/layout/responsive-layout-grid.html#breakpoints */

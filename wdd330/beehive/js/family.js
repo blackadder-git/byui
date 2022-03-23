@@ -12,9 +12,9 @@ export default class Family {
     /****************************************
     // constructor
     *****************************************/
-    constructor () {
-        this.model = new Model();
-        this.view = new View();
+    constructor (model, view) {
+        this.model = model;
+        this.view = view;
 
         // add listeners
         this.addFamilyMemberListener();
@@ -57,8 +57,7 @@ export default class Family {
     
 } // END CLASS
 
-
-const family = new Family();
+const family = new Family(new Model(), new View());
 
 
 

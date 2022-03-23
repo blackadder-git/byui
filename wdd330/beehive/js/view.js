@@ -1,9 +1,12 @@
 /********************************************
  * View
  *******************************************/
+const DEBUG = true;
 
-
- export default class View {
+/****************************************
+ * VIEW CLASS
+*****************************************/
+export default class View {
  
     /****************************************
      * constructor
@@ -46,6 +49,19 @@
             }
         });
         */
+    }
+
+    // https://www.thecookierookie.com/cooking-measurements-kitchen-conversion-chart/
+    buildMeasureList(id) {
+        const us = ['tsp', 'tbsp', 'fl ounce', 'pint', 'quart', 'gallon', 'oz', 'pound'];
+        //const metric = ['ml', 'liter', 'gram'];
+        let dl = document.querySelector(id);
+        us.forEach((measure) => {
+            let option = document.createElement('option');
+            option.value = measure;
+            dl.appendChild(option);
+            console.log(measure);
+        }); 
     }
  }
  // end class

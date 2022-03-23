@@ -1,0 +1,120 @@
+/* https://htmlcolorcodes.com/color-names */
+:root {
+  --primary-color: MistyRose;
+  --secondary-color: #C2B280;
+  --accent1-color: #D4AF37;
+  --accent2-color: #880806;
+  --accent3-color: #1488CA;
+  --accent4-color: #00FDFF;
+  
+  --heading-font: Charm, cursive;
+  --paragraph-font: Montserrat, sans-serif;
+}
+
+html {
+    background-image: radial-gradient(#eee, var(--secondary-color));
+}
+body {
+    max-width: 600px;
+    margin: 0 auto;
+}
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+    font-family: Montserrat, sans-serif;    
+}
+nav ul li a {
+	display: block;
+	text-align: center;
+	padding: 0.75rem;
+	text-decoration: none;
+	font-size: 1.2em;
+    background: linear-gradient(var(--accent4-color), var(--accent3-color));
+}
+nav a:hover {
+    background: var(--accent3-color);
+    color: white;
+}
+main {
+    padding: 3em;    
+}
+img {
+    max-width: 100%;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+}
+h1 {
+    text-shadow: 2px 2px var(--accent1-color);
+}
+h2 {
+    padding: .3em;
+    color: var(--accent2-color);
+    text-shadow: 2px 2px var(--accent1-color);
+}
+h3 {
+    padding: .1em;
+}
+h4 {
+    color: var(--accent2-color);    
+}
+a {
+    color: var(--accent2-color);
+}
+header {
+    text-align: center;
+}
+p {
+    padding: 1em;
+}
+ul li, p {
+    font-family: var(--paragraph-font);
+}
+.headings {
+    display: grid;
+    grid-gap: 1em;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+.headings div {
+    border: 1px dashed;
+    padding: 2em;
+    text-align: center;
+}
+.colors {
+    display: grid;
+    grid-gap: 1em;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-content: space-evenly;
+    align-items: center;
+}
+.colors div {
+    border: 1px dashed;
+    padding: 5em;
+    text-align: center;
+    font-family: var(--paragraph-font);
+}
+.primary {
+    background-color: var(--primary-color);
+}
+.secondary {
+    background-color: var(--secondary-color);
+}
+.accent1 {
+background-color: var(--accent1-color);
+}
+.accent2 {
+    background-color: var(--accent2-color);
+    color: white; 
+}
+.accent3 {
+    background-color: var(--accent3-color);
+}
+.accent4 {
+    background-color: var(--accent4-color);
+}

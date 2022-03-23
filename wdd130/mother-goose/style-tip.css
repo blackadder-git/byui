@@ -1,0 +1,176 @@
+form {
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: #C6C1A9;
+  margin-bottom: 1em;
+  padding-bottom: 2em;
+}
+.tip-input {
+  display: inline-block;
+  width: 100%;
+}
+
+.flex {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column: 2 / span 1;
+}
+.required {
+  float: left;
+}
+.decline {
+  margin-bottom: 1em;
+}
+h2::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+label,
+.label {
+  justify-self: end;
+}
+.tip {
+  margin-right: 2em;
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  resize: none;
+  border-radius: 4px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="number"],
+input[type="color"] {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px 10px;
+  box-sizing: border-box;
+}
+
+input[type="color"] {
+  padding: 15px 50px 25px;
+}
+option {
+  padding: 6px 10px;
+}
+
+.form input::placeholder {
+  padding: 10px;
+}
+
+select {
+  width: 100%;
+  padding: 12px 0;
+  border: none;
+  border-radius: 4px;
+  background-color: #F1F1F1;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+input[type="color"]:focus {
+  background-color: #DCBCCB;
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  background-color: #664155;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#tip-submit {
+  max-width: 300px;
+  border-radius: 25px;
+  font-size: 2em;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  padding-left: 2em;
+  margin-top: 2em;
+}
+#tip-submit span {
+  padding-left: 0.5em;
+}
+
+#tip-submit img {
+  padding-left: 0.5em;
+  width: 50px;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) {
+  form {
+    border-radius: 15px 15px 0 0;
+  }
+  footer {
+    margin-top: 3em;
+  }
+  .required {
+    float: none;
+  }
+
+  .tip {
+    width: unset;
+  }
+
+  h3 {
+    margin: 0;
+  }
+  
+  legend {
+    margin-bottom: 0;
+  }
+
+  /* TODO: FIX THIS FOR LARGE SCREENS */
+  fieldset {
+    bdisplay: grid;
+    bgrid-template-columns: 0.7fr 3fr;
+    padding-left: 2em;
+    padding-right: 2em;
+    align-items: center;
+  }
+
+  #h2-content #h2-personal,
+  #h2-contact,
+  #h2-address {
+    width: 100%;
+  }
+
+  #tip-submit {
+    grid-column: 1 / span 2;
+    justify-self: center;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 900px and up) */
+@media screen and (min-width: 900px) {
+}
+/* large devices (large laptops and desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+}
+/* Extra large devices (Large desktops, 1800px and up) */
+@media screen and (min-width: 1800px) {
+}

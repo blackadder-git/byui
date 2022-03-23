@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="images/unnamed.png"
+    />
+    <title>Submit Tip | Mother Goose</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-tip.css" />
+  </head>
+  <body>
+    <header>
+      <!-- important that the checkbox comes first -->
+      <input id="burger" type="checkbox" />
+      <!--h1>Logo</h1-->
+      <a href="index.html" id="logo">
+        <img
+          src="images/mother_goose.png"
+          alt="Mother Goose logo"
+        /><span>Mother Goose</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="derin-devlet.html" class="link">Derin Devlet</a></li>
+          <li><a href="evidence.html" class="link">Evidence Board</a></li>
+          <li><a href="tip.html" id="tip">Submit a Tip</a></li>
+        </ul>
+      </nav>
+      <!-- for looks for an id / span is styled with css -->
+      <label for="burger" class="burger-label"><span></span></label>
+    </header>
+
+    <section id="description">
+      <h1>Submit a Tip</h1>
+      <p>
+        Members of the public can report suspected fairy tale, fable and nursery
+        rhyme connections by submitting information listed below. Once
+        validated, the information will be made available as part of the
+        evidence board:
+      </p>
+    </section>
+
+    <main>
+      <form action="thanks.html" method="GET" enctype="multipart/form-data">
+        <fieldset id="h2-content">
+          <legend><h2>Content</h2></legend>
+
+          <h3>
+            Itsy Bitsy Spider ... select the connected stories. Attach any files
+            that justify your theory.
+          </h3>
+
+          <!-- CONTENT -->
+          <label for="select-content" id="label-stories" class="tip"
+            >Stories</label
+          >
+          <select
+            name="select-content"
+            id="select-content"
+            class="tip-input"
+            multiple
+          >
+            <option value="beauty-beast">Beauty and the Beast</option>
+            <option value="butterfly">Butterfly</option>
+            <option value="cinderella">Cinderella</option>
+            <option value="emperor-new-clothes">Emperor New Clothes</option>
+            <option value="fair-one-golden-locks">Fair One Golden Locks</option>
+            <option value="frog-prince">Frog Prince</option>
+            <option value="gingerbread-man">Gingerbread Man</option>
+            <option value="goldilocks-three-bears"
+              >Goldilocks and the Three Bears</option
+            >
+            <option value="graciosa-percinet">Graciosa and Percinet</option>
+            <option value="hansel-gretel">Hansel and Gretel</option>
+            <option value="humpty-dumpty">Humpty Dumpty</option>
+            <option value="iron-stove">Iron Stove</option>
+            <option value="jack-jill">Jack and Jill</option>
+            <option value="jack-beanstalk">Jack and the Beanstalk</option>
+            <option value="jack-giant-killer">Jack the Giant Killer</option>
+            <option value="little-mermaid">Little Mermaid</option>
+            <option value="little-miss-muffet">Little Miss Muffet</option>
+            <option value="old-king-cole">Old King Cole</option>
+            <option value="peter-wolf">Peter and the Wolf</option>
+            <option value="puss-boots">Puss in Boots</option>
+            <option value="red-riding-hood">Red Riding Hood</option>
+            <option value="ring-around-rosie">Ring around the Rosie</option>
+            <option value="rock-bye-baby">Rock a Bye Baby</option>
+            <option value="rumpelstiltskin">Rumpelstiltskin</option>
+            <option value="sleeping-beauty">Sleeping Beauty</option>
+            <option value="snowdrop">Snowdrop</option>
+            <option value="snow-white-rose-red">Snow White and Rose Red</option>
+            <option value="snow-white-seven-dwarfs"
+              >Snow White and the Seven Dwarfs</option
+            >
+            <option value="three-billy-goats-gruff"
+              >Three Billy Goats Gruff</option
+            >
+            <option value="three-blind-mice">Three Blind Mice</option>
+            <option value="three-little-pigs">Three Little Pigs</option>
+            <option value="thumbelina">Thumbelina</option>
+            <option value="tom-thumb">Tom Thumb</option>
+            <option value="ugly-duckling">Ugly Duckling</option>
+            <option value="wolf-seven-little-lambs"
+              >Wolf and the Seven Little Lambs</option
+            >
+            <option value="woodcutters-daughter">Woodcutter's Daughter</option>
+          </select>
+
+          <!-- CONTENT -->
+          <label for="content" class="tip">Justification</label>
+          <textarea
+            name="content"
+            id="content"
+            class="tip-input"
+            rows="8"
+          ></textarea>
+
+          <label for="file" class="tip">Evidence</label>
+          <input type="file" name="file" id="file" class="tip-input" />
+        </fieldset>
+
+        <fieldset id="h2-personal">
+          <legend><h2>Personal</h2></legend>
+
+          <h3>
+            Jack and Jill went up a hill ... we promise not to sell your
+            information.
+          </h3>
+
+          <!-- FIRST NAME -->
+          <label for="name" id="label-first-name" class="tip">First Name</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="tip-input"
+          />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="name-decline" class="decline">
+              <input
+                type="checkbox"
+                name="name-decline"
+                id="name-decline"
+                class="decline"
+              />
+              Decline
+            </label>
+          </div>
+
+          <!-- LAST NAME -->
+          <label for="lname" class="tip">Last Name</label>
+          <input
+            type="text"
+            name="lname"
+            id="lname"
+            class="tip-input"
+          />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="lname-decline" class="decline">
+              <input
+                type="checkbox"
+                name="lname-decline"
+                id="lname-decline"
+                class="decline"
+              />
+              Decline
+            </label>
+          </div>
+
+          <!-- PASSWORD -->
+          <label for="password" class="tip">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            class="tip-input"
+            placeholder="&#128273; Enter at least 16 characters"
+          />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="password-decline" class="decline">
+              <input
+                type="checkbox"
+                name="password-decline"
+                id="password-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+
+          <!-- DATE OF BIRTH -->
+          <label for="date" class="tip">Date of Birth</label>
+          <input
+            type="date"
+            name="date"
+            id="date"
+            class="tip-input"
+            min="2000-12-25"
+            max="2010-12-25"
+          />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="date-decline" class="decline">
+              <input
+                type="checkbox"
+                name="date-decline"
+                id="date-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+
+          <!-- COLOR -->
+          <label for="color" class="tip">Favorite Color</label>
+          <input type="color" name="color" id="color" class="tip-input" />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="color-decline" class="decline">
+              <input
+                type="checkbox"
+                name="color-decline"
+                id="color-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+
+          <!-- NUMBER -->
+          <label for="number" class="tip">Favorite Number</label>
+          <input type="number" name="number" id="number" class="tip-input" />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="number-decline" class="decline">
+              <input
+                type="checkbox"
+                name="number-decline"
+                id="number-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><h2>Contact</h2></legend>
+
+          <h3>Humpty Dumpty sat on a wall ... how should we contact you?</h3>
+
+          <!-- PHONE -->
+          <label for="phone" class="tip">Phone</label>
+          <input type="text" name="phone" id="phone" class="tip-input" />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="phone-decline" class="decline">
+              <input
+                type="checkbox"
+                name="phone-decline"
+                id="phone-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+
+          <!-- EXTENSION -->
+          <label for="ext" class="tip">Extension</label>
+          <input type="text" name="ext" id="ext" class="tip-input" />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="ext-decline" class="decline">
+              <input
+                type="checkbox"
+                name="ext-decline"
+                id="ext-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+
+          <span class="label tip">International</span>
+          <div>
+            <input type="radio" name="int" id="yes" value="yes" />
+            <label for="yes" class="tip">Yes</label>
+            <input type="radio" name="int" id="no" value="no" /><label
+              for="no"
+              class="tip"
+              >No</label
+            >
+          </div>
+
+          <label for="phone-type" class="tip">Type</label>
+          <select name="phone-type" id="phone-type" class="tip-input">
+            <option value="home-select">Home</option>
+            <option value="work-select">Work</option>
+          </select>
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="type-decline" class="decline">
+              <input
+                type="checkbox"
+                name="type-decline"
+                id="type-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+
+          <!-- EMAIL -->
+          <label for="email" class="tip">Email</label>
+          <input type="email" name="email" id="email" class="tip-input" />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="email-decline" class="decline">
+              <input
+                type="checkbox"
+                name="email-decline"
+                id="email-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+
+          <!-- URL -->
+          <label for="url" class="tip">URL</label>
+          <input type="url" name="url" id="url" class="tip-input" />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="url-decline" class="decline">
+              <input
+                type="checkbox"
+                name="url-decline"
+                id="url-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><h2>Address</h2></legend>
+
+          <h3>London Bridge is falling down ... where do you live?</h3>
+
+          <!-- ADDRESS -->
+          <label for="address" class="tip">Address</label>
+          <input type="text" name="address" id="address" class="tip-input" />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="address-decline" class="decline">
+              <input
+                type="checkbox"
+                name="address-decline"
+                id="address-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+
+          <!-- COUNTRY -->
+          <label for="country" class="tip">Country</label>
+          <input type="text" name="country" id="country" class="tip-input" />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="country-decline" class="decline">
+              <input
+                type="checkbox"
+                name="country-decline"
+                id="country-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+
+          <!-- POSTAL CODE -->
+          <label for="zip" class="tip">Postal Code</label>
+          <input type="text" name="zip" id="zip" class="tip-input" />
+          <div class="flex">
+            <span class="required">Required</span>
+            <label for="zip-decline" class="decline">
+              <input
+                type="checkbox"
+                name="zip-decline"
+                id="zip-decline"
+                class="decline"
+              />Decline</label
+            >
+          </div>
+        </fieldset>
+
+        <button id="tip-submit" type="submit">
+          <span>Submit</span>
+          <img
+            id="quill"
+            src="images/quill.png"
+            alt="quill"
+          />
+        </button>
+      </form>
+    </main>
+
+    <footer>
+      <ul>
+        <li><a href="site-plan.html" id="site-plan">Site Plan</a></li>
+        <li>About Mother Goose</li>
+        <li>Disclaimers</li>
+        <li>Privacy Policy</li>
+        <li>Cookie Statement</li>
+        <li>Statistics</li>
+      </ul>
+    </footer>
+  </body>
+</html>

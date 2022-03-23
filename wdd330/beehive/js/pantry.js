@@ -4,6 +4,7 @@
 
 const DEBUG = true;
 
+import Conversions from './conversion.js';
 import Model from './model.js';
 import View from './view.js';
 
@@ -12,9 +13,10 @@ export default class Pantry {
     /****************************************
     // constructor
     *****************************************/
-    constructor() {
-        this.model = new Model();
-        this.view = new View();
+    constructor(model, view) {
+        this.model = model;
+        this.view = view;
+        this.view.buildMeasureList('#measures');
 
         // add listeners
         this.addPantryItemListener();
@@ -58,4 +60,4 @@ export default class Pantry {
 
 } // END CLASS
 
-const pantry = new Pantry();
+const pantry = new Pantry(new Model(), new View());

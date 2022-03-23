@@ -1,0 +1,365 @@
+/* Fonts from Google Fonts - more at https://fonts.google.com */
+/*@import url("https://fonts.googleapis.com/css?family=Emilys+Candy|Open+Sans");*/
+@import url("https://fonts.googleapis.com/css?family=Henny+Penny|Open+Sans");
+
+/* #C6C1A9; khaki web */
+/* #664155; eggplant */
+/* #DCBCCB; thistle */
+/* #22404D; charcoal */
+/* #83A49B; morning blue */
+
+html {
+  background-color: #83A49B;
+}
+
+#title {
+  display: none;
+}
+
+body {
+  background-color: white;
+  font-family: "Open Sans", Helvetica, sans-serif;
+  margin: 0;
+  color: #444;
+}
+
+h1 {
+  font-family: "Henny Penny", "Brush Script MT", cursive;
+  font-size: 2.5em;
+}
+h2 {
+  font-family: "Henny Penny", "Brush Script MT", cursive;
+  font-size: 1.5em;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #DCBCCB;
+  z-index: 999;
+  text-align: center;
+}
+#logo img {
+  width: 50px;
+  vertical-align: middle;
+}
+#logo {
+  float: left;
+}
+#logo img,
+#logo span {
+  padding-left: 1em;
+}
+nav {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  text-align: left;
+  width: 100%;
+  background-color: #DCBCCB;
+  /* limit transitions to: opacity, scale, translate, rotate */
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+nav ul li {
+  margin-bottom: 1em;
+}
+nav a {
+  display: block;
+  text-decoration: none;
+  color: #22404D;
+  font-size: 1em;
+  opacity: 0;
+}
+nav a:hover {
+  background-color: #664155;
+  color: #FFFFFF;
+}
+
+aside {
+  padding: 1em;
+  color: #FFFFFF;
+  background-image: linear-gradient(#83A49B, #445A52);
+}
+aside p {
+  text-align: justify;
+  color: #FFFFFF;
+}
+
+#burger {
+  display: none;
+}
+/* : for pseudo class, :: for pseudo element */
+/* ~ looks for any nav sibling that comes after #burger */
+#burger:checked ~ nav {
+  display: block;
+}
+#burger:checked ~ nav a {
+  opacity: 1;
+}
+.burger-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.burger-label span,
+.burger-label span::before,
+.burger-label span::after {
+  display: block;
+  position: relative;
+  background: white;
+  height: 2px;
+  width: 2em;
+}
+
+.burger-label span::before,
+.burger-label span::after {
+  content: "";
+}
+.burger-label span::before {
+  bottom: 9px;
+}
+.burger-label span::after {
+  top: 7px;
+}
+
+img {
+  width: 100%;
+}
+
+article h3::before,
+#conspiracy p::before,
+aside a p:first-of-type::before {
+  content: "credit: Public domain - Warwick Goble";
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 1em;
+  font-size: 8px;
+  text-align: center;
+}
+
+.story-img::after,
+article .frame img::after {
+  content: "credit: Public domain - Warwick Goble";
+  display: block;
+  margin-bottom: 1em;
+  font-size: 8px;
+  margin-left: 1em;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #22404D;
+}
+footer a:visited {
+  color: #FFFFFF;
+}
+footer a,
+aside a {
+  color: #FFFFFF;
+}
+
+footer {
+  background-color: #445A52;
+  color: #FFFFFF;
+  padding-top: 1em;
+}
+
+footer ul {
+  margin-top: 0;
+  padding-bottom: 1em;
+}
+
+#description {
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 2.5em;
+}
+
+/* 
+media queries
+https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+https://www.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more
+https://www.freecodecamp.org/news/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862
+https://www.mightyminnow.com/2013/11/what-is-mobile-first-css-and-why-does-it-rock (use min-width to do mobile first (progressive enhancement, build up) vs max-width which does graceful degredation)
+
+$phone-upper-boundary: 600px;
+$tablet-portrait-upper-boundary: 900px;
+$tablet-landscape-upper-boundary: 1200px;
+$desktop-upper-boundary: 1800px;
+*/
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media screen and (min-width: 600px) {
+  /* @media screen and (max-width: 1800px) { */
+  html {
+    background-color: #C6C1A9; /* khaki web */
+    min-width: 320px;
+  }
+  #title {
+    display: inline;
+  }
+
+  body {
+    font-size: 1em;
+  }
+  main,
+  #description {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  #description {
+    margin-top: 150px;
+    padding-top: 1em;
+  }
+  #tip {
+    background-color: #664155;
+    padding: 1.5em;
+    border-radius: 25px;
+    color: #FFFFFF;
+  }
+  .burger-label {
+    display: none;
+  }
+  #logo img {
+    width: 120px;
+    float: left;
+  }
+  #logo span {
+    display: none;
+  }
+  header {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+  }
+  .logo {
+    grid-column: 1 / span 1;
+  }
+  nav {
+    grid-column: 2 / 3;
+    position: initial;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1em;
+  }
+  nav a {
+    display: inline;
+  }
+  nav a:hover {
+    background-color: unset;
+    color: unset;
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1em;
+    text-align: left;
+  }
+  nav ul li {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+  }
+
+  .link {
+    position: relative;
+  }
+  .link:hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0;
+    left: 0;
+    bottom: 1px; /* Change this to increase/decrease distance */
+    border-bottom: 2px solid #22404D;
+  }
+  nav a {
+    opacity: 1;
+  }
+  #burger:checked ~ nav {
+    transform: none; /* width=full, height=full */
+  }
+  #burger:checked ~ nav a {
+    opacity: 1;
+    transition: none; /* last 250 is a delay */
+  }
+
+  footer {
+    text-align: center;
+    padding-top: 0;
+  }
+  footer ul {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 0;
+  }
+  footer li {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+  }
+  footer li:not(:last-child) {
+    margin-right: 25px;
+  }
+  #site-plan {
+    background-color:#83A49B;
+    padding-left:8px;
+    padding-right:8px;
+    border-radius: 25px;
+    color:black;
+  }
+  .aside-link {
+    font-weight:bold;
+    text-decoration:underline;
+  }  
+}
+/* Medium devices (landscape tablets, 768px and up) */
+/* Large devices (laptops/desktops, 900px and up) */
+@media screen and (min-width: 900px) {
+  /* @media screen and (max-width: 1200px) { */
+  html {
+    background-color: #83A49B; /* morning blue */
+  }
+  header {
+    grid-template-columns: 1fr 1fr;
+  }
+  #section,
+  main {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+/* large devices (large laptops and desktops, 1200px and up) */
+@media screen and (min-width: 1200px) {
+  /* @media screen and (max-width: 900px) { */
+  html {
+    background-color: #22404D; /* charcoal */
+  }
+  #logo span {
+    display: flex;
+    justify-content: start;
+    padding-top: 35px;
+    font-family: "Henny Penny";
+    font-size: 2em;
+  }
+}
+/* Extra large devices (Large desktops, 1800px and up) */
+@media screen and (min-width: 1800px) {
+  /* @media screen and (max-width: 600px) { */
+  html {
+    background-color: #664155; /* eggplant */
+  }
+}

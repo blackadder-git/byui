@@ -4,16 +4,26 @@
 
  const DEBUG = true;
 
+ import Model from './model.js';
+ import View from './view.js';
+
  export default class Controller {
  
     /****************************************
      * constructor
      *****************************************/
-    constructor() {
+    constructor(model, view) {
+        this.model = model;
+        this.view = view;
+
         // add listeners
         this.editFamilyListener();
         this.editPantryListener();
         this.editRecipeListener();
+
+        this.getFamilyMembers();
+        this.getPantryItems();
+        this.getRecipes();
     }
  
     hello () {
@@ -42,6 +52,18 @@
 
             window.location.href = 'views/recipe.html';
         });
+    }
+
+    getFamilyMembers() {
+        
+    }
+
+    getPantryItems() {
+
+    }
+
+    getRecipes() {
+
     }
  
  } // end class

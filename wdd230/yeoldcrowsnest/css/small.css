@@ -269,16 +269,11 @@ label [type=radio] {
 
 /* home */
 #quote {
-    position:absolute;
+    position: absolute;
     bottom: 1em;
-    bleft: 1em;
-    btop: 50%;
-    bleft: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);    
-    bmax-width: 33%;
     background: linear-gradient(to bottom,gray, black);
-    bcolor: var(--primary-color);
-    bpadding: 1em;
     font-family: var(--paragraph-font);    
 }
 #quote span {

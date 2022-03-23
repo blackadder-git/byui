@@ -17,13 +17,27 @@
 </head>
 <body>
     <main>
-        <h1>Pantry</h1>
-        <a href="../">Home</a>
+        <h1><a href="../">Home</a> / Pantry</h1>
+        
         <form id="pantryItem" name="pantryItem" method="GET">
-            <label for="name">Name: <input id="name" name="name" type="text" pattern="[A-Za-z]" required></label>
-            <label for="age">Age: <input id="age" name="age" type="number" min="1" max="99" maxlength="3" required></label>
-            <select id="sex"><option value="male">Male</option><option value="female">Female</option></select>
-            <select id="activity"><option value="sedentary">sedentary</option><option value="moderate">Moderate</option><option value="active">Active</option></select>
+            <label for="name">Item:</label> 
+            <input id="name" name="name" type="text" required>
+
+            <label for="quantity">Quantity:</label> 
+            <input id="quantity" name="quantity" type="number" min="1" placeholder="Number of items" required>
+
+            <fieldset>
+                <legend>Per container</legend>
+                <span class="quantity">
+                    <label for="amount1">Amount: </label> 
+                    <input id="amount" name="amount" type="number" placeholder="How much" required>
+
+                    <label for="measure">Measure: </label>  
+                    <input list="measures" id="measure" name="measure">
+                    <datalist id="measures" required></datalist>
+                </span>
+            </fieldset>
+
             <input id="addPantryItem" type="button" value="Add Pantry Item">
         </form>
         

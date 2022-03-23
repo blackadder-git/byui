@@ -11,9 +11,10 @@ export default class Recipe {
     /****************************************
     // constructor
     *****************************************/
-    constructor() {
-        this.model = new Model();
-        this.view = new View();
+    constructor(model, view) {
+        this.model = model;
+        this.view = view;
+        this.view.buildMeasureList('#measures');
 
         // add listeners
         this.addRecipeListener();
@@ -54,12 +55,23 @@ export default class Recipe {
         console.log(ingredients);
         const li = document.createElement('li');
         li.setAttribute('id', id);
-        li.innerHTML = `<label for="serves${id}">Serves: <input id="serves${id}" name="serves${id}" type="number" required></label>
-                        <label for="measure${id}">Measure: <input id="measure${id}" name="measure${id}" type="text" required></label>
-                        <input id="ingredient${id}" type="text">
-                        <span data-id=${id} class="delIngredient">X</span>`;
+        li.innerHTML = `<fieldset>
+                        <legend>Ingredient</legend>
+                        <span class="quantity">
+                            <label for="amount${id}">Amount:</label>
+                            <input id="amount${id}" name="amount${id}" type="number" required>
+                            <label for="measure${id}">Measure:</label>
+                            <input list="measures${id}" id="measure${id}" name="measure${id}" />
+                            <datalist id="measures${id}"></datalist>
+                        </span>
+                        <label for="item${id}">Item:</label>
+                        <input id="item${id}" type="text" required>
+                        <input type="button" data-id=${id} class="delIngredient" value="🗑️ Delete">
+                        </fieldset>`;
         ingredients.appendChild(li);
         this.delIngredientListener(); // wire up new ingredient for deletion
+
+        this.view.buildMeasureList(`#measures${id}`);
 
         // this.delIngredientListener();
     }
@@ -71,6 +83,8 @@ export default class Recipe {
 
         const recipe = this.view.getFormElements(id);
         console.log(recipe);
+
+        // TODO validate inputs
 
 /*
         if (familyMember != null && familyMember.name.value != '') {
@@ -98,4 +112,4 @@ export default class Recipe {
 
 } // END CLASS
 
-const recipe = new Recipe();
+const recipe = new Recipe(new Model(), new View());
