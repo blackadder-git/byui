@@ -35,6 +35,14 @@
 </head>
 <body>
     <h1>Sudoku Solver</h1>
+
+    <div>
+        <video controls="controls autoplay">
+            <source src="sudoku.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
     <h2>Rather than solve the puzzle using backtracking, I used techniques from <a href="https://www.youtube.com/watch?v=FVvL0Wk1y5o" target="_blank" rel="noopener noreferrer">this video</a> to implement:</h2>
     <ul>
         <li><h2>Crosshatching</h2>Rows and columns within each triple-box area, eliminating numbers or squares and finding situations where only a single number can fit into a single square. The scanning technique is fast and usually sufficient to solve easy puzzles all the way to the end. The scanning technique is also very useful for hard puzzles up to the point where no further progress can be made and more advanced solving techniques are required.</li>
@@ -42,11 +50,5 @@
         <li><h2>Pointed Triples</h2>If a candidate appears only three times in a block, and that candidate is also aligned in the same row or column, it is a pointing triple. You know that the candidate MUST occur in one of those three cells in that block, and because of that, you can eliminate that candidate from any other cells in the row or column that the candidate is aligned on.</li>
         <li><h2>Hidden Singles</h2>Often only one number can be in a square because the remaining eight are already used in the relevant row, column and box.</li>
     </ul>
-    <div>
-        <video controls="controls autoplay">
-            <source src="sudoku.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
 </body>
 </html>
