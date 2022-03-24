@@ -59,7 +59,7 @@ export default class Recipe {
                         <legend>Ingredient</legend>
                         <span class="quantity">
                             <label for="amount${id}">Amount:</label>
-                            <input id="amount${id}" name="amount${id}" type="number" required>
+                            <input id="amount${id}" name="amount${id}" type="number" min="0" required>
                             <label for="measure${id}">Measure:</label>
                             <input list="measures${id}" id="measure${id}" name="measure${id}" />
                             <datalist id="measures${id}"></datalist>

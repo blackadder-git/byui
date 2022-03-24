@@ -35,14 +35,14 @@ li {
 form {
     padding: 1em;
 }
-fieldset#sex, .quantity {
-    display: flex;
-}
 .quantity label {
     margin-right: 10px;
 }
 .quantity input:nth-child(2) {
     margin-right: 10px;
+}
+input, select {
+    padding: 0.5em;    
 }
 input, textarea, select {
     width: 100%;
@@ -101,6 +101,9 @@ input:invalid, textarea:invalid  {
 @media only screen and (min-width: 900px) {
     html {
         background-color: green;
+    }
+    fieldset#sex, .quantity {
+        display: flex;
     }
 }
 /* desktop */
