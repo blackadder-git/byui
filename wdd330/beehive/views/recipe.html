@@ -18,6 +18,8 @@
 <body>
     <main>
         <h1><a href="../">Home</a> / Recipe</h1>
+
+        <div id="message"></div>
         
         <form id="recipe" name="recipe" method="GET">
             <label for="name">Name:</label> 
@@ -43,14 +45,14 @@
                         <legend>Ingredient</legend>
                         <span class="quantity">
                             <label for="amount1">Amount: </label> 
-                            <input id="amount" name="amount" type="number" m,in="0" required>
+                            <input id="amount1" name="amount1" type="number" min="0" required>
 
                             <label for="measure1">Measure: </label>  
-                            <input list="measures" id="measure1" name="measure1" />
+                            <input id="measure1" list="measures" name="measure1" />
                             <datalist id="measures"></datalist>
                         </span>
                         <label for="item1">Item:</label>  
-                        <input id="item1" type="text" required>
+                        <input id="item1" data-id="1" class="food" type="text" required>
                     </fieldset>
                 </li>
             </ul>

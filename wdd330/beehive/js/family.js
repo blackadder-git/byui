@@ -18,6 +18,8 @@ export default class Family {
 
         // add listeners
         this.addFamilyMemberListener();
+        
+        //this.delFamilyMemberListener();
     }
 
     // default greeting
@@ -48,6 +50,8 @@ export default class Family {
             this.model.writeToLocalStorage(family, 'family');
 
             this.view.clearForm(id);
+
+            this.view.showMessage('Family member added');
         }
         else {
             // TODO: let user know there was a problem
@@ -55,6 +59,27 @@ export default class Family {
         }
     }
     
+
+    editFamilyMemberListener() {
+        const members = document.querySelectorAll('.editFamilyMember');
+        
+        alert(members.length);
+        
+        if (members) {
+            members.forEach(member => {
+                member.addEventListener('click', (e) => {
+                    if (DEBUG) console.log('edit family member listener');
+                    alert(e.currentTarget.getAttribute('id'));
+                });
+            });
+        }
+    }
+
+    delFamilyMemberListener() {
+
+    }
+
+
 } // END CLASS
 
 const family = new Family(new Model(), new View());

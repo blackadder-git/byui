@@ -19,7 +19,7 @@ export default class View {
     }
 
     /****************************************
-     * generic way to get form elememts
+     * generic way to get all elememts from a form
      *****************************************/
     getFormElements(id) {
         if (document.querySelector(id)) {
@@ -50,6 +50,67 @@ export default class View {
         });
         */
     }
+
+    showMessage(message) {
+        document.querySelector('#message').innerHTML = message;
+    }
+
+    // FAMILY
+    buildFamilyTable(family) {
+        let table = document.createElement('table');
+        table.setAttribute('id', 'familyData');
+ 
+        // table header
+        let thead = document.createElement('thead');
+        table.appendChild(thead);
+        let row_1 = document.createElement('tr');
+        let heading_1 = document.createElement('th');
+        heading_1.innerHTML = "Name";
+        let heading_2 = document.createElement('th');
+        heading_2.innerHTML = "Age";
+        let heading_3 = document.createElement('th');
+        heading_3.innerHTML = "Sex";
+        let heading_4 = document.createElement('th');
+        heading_4.innerHTML = "Activity";
+
+        row_1.appendChild(heading_1);
+        row_1.appendChild(heading_2);
+        row_1.appendChild(heading_3);
+        row_1.appendChild(heading_4);
+        thead.appendChild(row_1);
+
+        // table body
+        let tbody = document.createElement('tbody');
+        table.appendChild(tbody);
+        family.forEach(member => {
+            let row = document.createElement('tr');
+            let row_data_1 = document.createElement('td');
+            row_data_1.innerHTML = `<a href="" id="${member.id}" class="editFamily">${member.name}</a>`;
+            let row_data_2 = document.createElement('td');
+            row_data_2.innerHTML = member.age;
+            let row_data_3 = document.createElement('td');
+            row_data_3.innerHTML = member.sex;
+            let row_data_4 = document.createElement('td');
+            row_data_4.innerHTML = member.activity;
+            
+            row.appendChild(row_data_1);
+            row.appendChild(row_data_2);
+            row.appendChild(row_data_3);
+            row.appendChild(row_data_4);
+            tbody.appendChild(row);
+
+            console.log(member.name);
+        });
+
+        // add to view
+        document.querySelector('#familyMembers').appendChild(table);
+
+    }
+
+    // PANTRY
+
+
+    // RECIPE
 
     // https://www.thecookierookie.com/cooking-measurements-kitchen-conversion-chart/
     buildMeasureList(id) {

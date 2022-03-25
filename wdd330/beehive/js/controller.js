@@ -54,8 +54,11 @@
         });
     }
 
+    // show family members
     getFamilyMembers() {
-        
+        // get family members
+        const family = this.model.readFromLocalStorage('family');
+        this.view.buildFamilyTable(family);
     }
 
     getPantryItems() {

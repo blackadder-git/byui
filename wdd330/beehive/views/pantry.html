@@ -19,6 +19,8 @@
     <main>
         <h1><a href="../">Home</a> / Pantry</h1>
         
+        <div id="message"></div>
+
         <form id="pantryItem" name="pantryItem" method="GET">
             <label for="food">Item:</label> 
             <input id="food" name="food" type="text" required>
@@ -45,8 +47,6 @@
                     <datalist id="measures" required></datalist>
                 </span>
             </fieldset>
-
-            <input id="lookupFoodData" type="button" value="Health Lookup">
 
             <input id="addPantryItem" type="button" value="Add Pantry Item">
         </form>

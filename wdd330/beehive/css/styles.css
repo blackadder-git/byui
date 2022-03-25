@@ -76,7 +76,12 @@ input[type=button] {
 fieldset#sex label {
     margin-top: 0;
 }
-
+#familyData {
+    width: 100%;
+}
+#familyData td {
+    text-align: center;
+}
 
 /* Selects any valid <input> */
 input:valid, textarea:valid {
@@ -102,6 +107,16 @@ input:invalid, textarea:invalid  {
     html {
         background-color: green;
     }
+    main {
+        max-width: 80%;
+    }
+
+    /* index */
+    #widgets {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    /* family */
     fieldset#sex, .quantity {
         display: flex;
     }
