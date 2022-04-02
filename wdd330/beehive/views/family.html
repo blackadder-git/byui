@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Family</title>
-    <meta name="description" content="Beehive food storage calculator">
+    <title>Household</title>
+    <meta name="description" content="Manage household members">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,18 +17,17 @@
 </head>
 <body>
     <main>
-        <h1><a href="../">Home</a> / Family</h1>
+        <h1><a href="../">Home</a> / Household</h1>
        
         <div id="message"></div>
 
-        <div id="familyMemberDropDown"></div>
-        <form id="familyMember" name="familyMember" method="GET">
-            <label for="name">Name:</label> 
-            <input id="name" name="name" type="text" pattern="[A-Za-z]" placeholder="family member name" required>
+        <form id="familyMember" name="familyMember">
+            <label for="name">Name</label> 
+            <input id="name" name="name" type="text" pattern="[A-Za-z]" placeholder="Enter name" required>
 
             
-            <label for="age">Age:</label> 
-            <input id="age" name="age" type="number" min="1" max="99" maxlength="3" placeholder="age" required>
+            <label for="age">Age</label> 
+            <input id="age" name="age" type="number" min="1" max="99" maxlength="3" placeholder="Enter age" required>
             
             <fieldset id="sex">
                 <legend>Sex</legend>
@@ -50,7 +49,12 @@
                 </ul>
             </fieldset>
 
-            <input id="addFamilyMember" type="button" value="Add Family Member">
+            <input id="id" type="hidden">
+
+            <div id="controlButtons">
+                <input id="addFamilyMember" type="button" class="control" value="Add Member">
+                <input id="cancel" type="button" class="control" value="Cancel">
+            </div>
         </form>
         
     </main>

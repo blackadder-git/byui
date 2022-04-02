@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pantry</title>
-    <meta name="description" content="Beehive food storage calculator">
+    <meta name="description" content="Manage pantry items">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,11 +21,11 @@
         
         <div id="message"></div>
 
-        <form id="pantryItem" name="pantryItem" method="GET">
-            <label for="food">Item:</label> 
+        <form id="pantryItem" name="pantryItem">
+            <label for="food">Item</label>
             <input id="food" name="food" type="text" required>
 
-            <label for="quantity">Quantity:</label> 
+            <label for="quantity">Quantity</label> 
             <input id="quantity" name="quantity" type="number" min="1" placeholder="Number of items" required>
 
             <label for="type">Type</label>
@@ -39,16 +39,20 @@
             <fieldset>
                 <legend>Per container</legend>
                 <span class="quantity">
-                    <label for="amount1">Amount: </label> 
+                    <label for="amount">Amount</label> 
                     <input id="amount" name="amount" type="number" min="0" placeholder="How much" required>
 
-                    <label for="measure">Measure: </label>  
+                    <label for="measure">Measure</label>  
                     <input list="measures" id="measure" name="measure">
                     <datalist id="measures" required></datalist>
                 </span>
             </fieldset>
 
-            <input id="addPantryItem" type="button" value="Add Pantry Item">
+            <input id="id" type="hidden">
+            <div id="controlButtons">
+                <input id="addPantryItem" type="button" class="control" value="Add Item">
+                <input id="cancel" type="button" class="control" value="Cancel">
+            </div>
         </form>
         
     </main>

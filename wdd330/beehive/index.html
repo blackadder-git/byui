@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Beehive</title>
-    <meta name="description" content="Beehive food storage calculator">
+    <meta name="description" content="Emergency food planner">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,41 +13,91 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/tables.css">
     <script defer src="js/main.js" type="module"></script>
 </head>
 <body>
     <main>
-        <h1>Beehive</h1>
+        <h1>Emergency Food Planner</h1>
         <div id="widgets">
             <section>
-                <!-- overview -->
-                Overview information
-            </section>
-
-            <section>
                 <!-- family -->
-                <div id="familyMembers"></div>
-                <input id="editFamily" type="button" value="Edit Family Members">
+                <h2>Household</h2>
+                <div id="householdNumber"></div>
+                <ul>
+                    <li># of people in household: <span id="numHousehold"></span></li>
+                    <li># of recommended calories per day: <span id="numCalories"></span></li>
+                </ul>
+                <input id="addFamily" type="button" value="Add Members">
             </section>
 
             <section>
                 <!-- pantry -->
+                <h2>Pantry</h2>
                 <div id="pantryItems"></div>
-                <input id="editPantry" type="button" value="Edit Pantry">
+                <ul>
+                    <li># items in pantry: <span id="numPantryItems"></span></li>
+                    <li># shopping list (items to buy based on mealplan)</li>
+                </ul>
+                <input id="addPantry" type="button" value="Add Items">
             </section>
 
             <section>
                 <!-- recipes -->
+                <h2>Cookbook</h2>
                 <div id="recipes"></div>
-                <input id="editRecipe" type="button" value="Edit Recipes">
+                <ul>
+                    <li># of recipes: <span id="numRecipes"></span></li>
+                    <li>Upon creation, each recipe queries information about the ingredients and comes up with calorie estimate</li>
+                </ul>
+                <input id="addRecipe" type="button" value="Add Recipes">
             </section>
-        </div>>
+        </div>
 
         <section>
             <!-- mealplan -->
+            <h2>Meal Plan</h2>
             <div id="mealplan"></div>
-            <input id="editMealplan" type="button" value="Edit Meal Plan">
+            <ul>
+                <li>Using weekly increments, does the daily meal plan match the number of recommended calories given the household recommendations?</li>
+                <li># of times the weekly meal plan would be followed.  e.g. if only one week is entered, it will be eaten 52 times, if two weeks are entered, both will be eaten 26 times</li>
+                <li>Recipes are dropped onto days of the week</li>
+            </ul>
+        <input id="addMealplan" type="button" value="Edit Meal Plan">
         </section>
+
+
+        <!--div class="modal" id="pantry">
+            <div class="modal-dialog">
+                <header class="modal-header">
+                    ...
+                    <button class="close-modal" aria-label="close modal" data-close>✕</button>
+                </header>
+                <section class="modal-content">...</section>
+                <footer class="modal-footer">...</footer>
+            </div>
+        </div-->
+
+        <div class="modal" id="modal">
+            <div class="modal-dialog">
+              <header class="modal-header">
+                <h2>Title</h2>
+                <button class="closeModal" data-id="modal" aria-label="close modal" data-close>
+                  ✕  
+                </button>
+              </header>
+              <section class="modal-content">
+                <p><strong>Press ✕, ESC, or click outside of the modal to close it</strong></p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo repellendus reprehenderit accusamus totam ratione! Nesciunt, nemo dolorum recusandae ad ex nam similique dolorem ab perspiciatis qui. Facere, dignissimos. Nemo, ea.</p>
+                <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>
+                <p>Nullam vitae enim vel diam elementum tincidunt a eget metus. Curabitur finibus vestibulum rutrum. Vestibulum semper tellus vitae tortor condimentum porta. Sed id ex arcu. Vestibulum eleifend tortor non purus porta dapibus</p>
+                <p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>
+              </section>
+              <footer class="modal-footer">
+                The footer of the first modal
+              </footer>
+            </div>
+        </div>
 
     </main>
 </body>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mealplan</title>
+    <meta name="description" content="Manage mealplans">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap"> <!-- Open+Sans -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .container{
+            font-family: "Trebuchet MS", sans-serif;
+            display: flex;
+            gap: 30px;
+        }
+        .column{
+            flex-basis: 20%;
+            background: #ddd;
+            min-height: 90vh;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .column h1{
+            text-align: center;
+            font-size: 22px;
+        }
+        .item{
+            background: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .invisible{
+            display: none;
+        }
+    </style>
+
+
+    <script src="../js/mealplan.js" type="module"></script>
+
+</head>
+<body>
+    <main>
+        <h1><a href="../">Home</a> / Mealplan</h1>
+       
+        <div id="message"></div>
+
+        <form id="week" name="week"></form>
+
+            <table id="tableData" class="week">
+                <tr>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                    <th>Sunday</th>
+                </tr>
+                <tr >
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>                
+            </table>
+
+            <div class="container">
+                <div class="column">
+                    <h1>All Tasks</h1>
+                    <div class="item" draggable="true">Wash Clothes</div>
+                    <div class="item" draggable="true">Meeting at 9AM</div>
+                    <div class="item" draggable="true">Fix workshop</div>
+                    <div class="item" draggable="true">Visit the zoo</div>
+                </div>
+                <div class="column">
+                    <h1>In progress</h1>
+                </div>
+                <div class="column">
+                    <h1>Paused</h1>
+                </div>
+                <div class="column">
+                    <h1>Under Review</h1>
+                </div>
+                <div class="column">
+                    <h1>Completed</h1>
+                </div>
+            </div>
+
+            <div id="controlButtons">
+                <input id="addWeek" type="button" class="control" value="Add Week">
+                <input id="cancel" type="button" class="control" value="Cancel">
+            </div>
+        </form>
+
+    </main>
+
+
+    <script>
+        // https://stackabuse.com/drag-and-drop-in-vanilla-javascript/
+        const items = document.querySelectorAll('.item');
+        const columns = document.querySelectorAll('.column');
+        items.forEach(item => {
+            item.addEventListener('dragstart', dragStart)
+            item.addEventListener('dragend', dragEnd)
+        });
+
+        columns.forEach(column => {
+            column.addEventListener('dragover', dragOver);
+            column.addEventListener('dragenter', dragEnter);
+            column.addEventListener('dragleave', dragLeave);
+            column.addEventListener('drop', dragDrop);
+        });
+
+
+        function dragStart() {
+            console.log('drag started');
+            setTimeout(() => this.className = 'invisible', 0)
+        }
+        function dragEnd() {
+            console.log('drag ended');
+        }
+        function dragOver(e) {
+            e.preventDefault();
+            console.log('drag over');
+        }
+        function dragEnter() {
+            console.log('drag entered');
+        }
+        function dragLeave() {
+            console.log('drag left');
+        }
+        function dragDrop() {
+            console.log('drag dropped');
+        }
+
+        let dragItem = null;
+
+        function dragStart() {
+            console.log('drag started');
+            dragItem = this;
+            setTimeout(() => this.className = 'invisible', 0)
+        }
+
+        function dragEnd() {
+            console.log('drag ended');
+            this.className = 'item'
+            dragItem = null;
+        }
+
+        function dragDrop() {
+            console.log('drag dropped');
+            this.append(dragItem);
+        }
+    </script>
+        
+
+</body>
+</html>

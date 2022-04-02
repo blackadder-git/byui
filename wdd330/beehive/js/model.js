@@ -36,4 +36,14 @@ export default class Model {
         localStorage.setItem(key, JSON.stringify(data));
     }
 
+    getCalories(family) {
+        let calories = 0;
+        
+        family.forEach(member => {
+            calories += Number(member.calories);
+        });
+
+        return calories;
+    }
+
 } // END CLASS
