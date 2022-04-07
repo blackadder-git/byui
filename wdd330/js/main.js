@@ -42,9 +42,13 @@ function addWeeks() {
             url: "week10/index.html"
         },
         {
-            label: "Week 14 (Final Project)",
+            label: "Week 14 (Block Two Challenge)",
             url: "beehive/index.html"
-        },          
+        },
+        {
+            label: "Week 14 (Final Portfolio)",
+            url: "week14/index.html"
+        },               
     ]
 
     // loop weeks
