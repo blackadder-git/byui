@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mealplan</title>
-    <meta name="description" content="Manage mealplans">
+    <title>Meal Plan</title>
+    <meta name="description" content="Manage meal plans">
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="apple-touch-icon" href="../apple-touch-icon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,122 +13,93 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Charm&family=Montserrat&display=swap"> <!-- Open+Sans -->
     <link rel="stylesheet" href="../css/styles.css">
-    <style>
-        .container{
-            font-family: "Trebuchet MS", sans-serif;
-            display: flex;
-            gap: 30px;
-        }
-        .column{
-            flex-basis: 20%;
-            background: #ddd;
-            min-height: 90vh;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        .column h1{
-            text-align: center;
-            font-size: 22px;
-        }
-        .item{
-            background: #fff;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        .invisible{
-            display: none;
-        }
-    </style>
-
-
-    <script src="../js/mealplan.js" type="module"></script>
-
+    <script src="../js/mealplan.js" type="module"></script>    
 </head>
 <body>
-    <main>
-        <h1><a href="../">Home</a> / Mealplan</h1>
+    <main class="wide">
+        <h1><a href="../">Home</a> / Meal plan</h1>
        
         <div id="message"></div>
 
-        <form id="week" name="week"></form>
+        <div id="mealplan">
+            <div>
+                <form id="week" name="week">
+                    <div>
+                        <h2>New Meal Plan</h2>
+                        Create a meal plan by dragging recipes from the cookbook on the right to the days of the week below.
+                        Verify the combined calories for each day meet or exceed the <strong><span id="recCalories"></span></strong> daily recommendation for your household.
 
-            <table id="tableData" class="week">
-                <tr>
-                    <th>Monday</th>
-                    <th>Tuesday</th>
-                    <th>Wednesday</th>
-                    <th>Thursday</th>
-                    <th>Friday</th>
-                    <th>Saturday</th>
-                    <th>Sunday</th>
-                </tr>
-                <tr >
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>                
-            </table>
+                        <table class="tableData week">
+                            <tr>
+                                <th class="abbr" data-abbr="Mon">Monday</th>
+                                <th class="abbr" data-abbr="Tue">Tuesday</th>
+                                <th class="abbr" data-abbr="Wed">Wednesday</th>
+                                <th class="abbr" data-abbr="Thu">Thursday</th>
+                                <th class="abbr" data-abbr="Fri">Friday</th>
+                                <th class="abbr" data-abbr="Sat">Saturday</th>
+                                <th class="abbr" data-abbr="Sun">Sunday</th>
+                            </tr>
+                            <tr>
+                                <td id="m" class="day"></td>
+                                <td id="t" class="day"></td>
+                                <td id="w" class="day"></td>
+                                <td id="th" class="day"></td>
+                                <td id="f" class="day"></td>
+                                <td id="sa" class="day"></td>
+                                <td id="su" class="day"></td>
+                            </tr>
+                            <tr>
+                                <td id="mCal" class="calories"></td>
+                                <td id="tCal" class="calories"></td>
+                                <td id="wCal" class="calories"></td>
+                                <td id="thCal" class="calories"></td>
+                                <td id="fCal" class="calories"></td>
+                                <td id="saCal" class="calories"></td>
+                                <td id="suCal" class="calories"></td>
+                            </tr>
+                        </table>
 
-            <div class="container">
-                <div class="column">
-                    <h1>All Tasks</h1>
-                    <div class="item" draggable="true">Wash Clothes</div>
-                    <div class="item" draggable="true">Meeting at 9AM</div>
-                    <div class="item" draggable="true">Fix workshop</div>
-                    <div class="item" draggable="true">Visit the zoo</div>
-                </div>
-                <div class="column">
-                    <h1>In progress</h1>
-                </div>
-                <div class="column">
-                    <h1>Paused</h1>
-                </div>
-                <div class="column">
-                    <h1>Under Review</h1>
-                </div>
-                <div class="column">
-                    <h1>Completed</h1>
-                </div>
+                        <div id="controlButtons">
+                            <input id="addPlan" type="button" class="control" value="Add Meal Plan">
+                            <input id="cancel" type="button" class="control" value="Cancel">
+                        </div>
+
+                    </div>
+                </form>
             </div>
-
-            <div id="controlButtons">
-                <input id="addWeek" type="button" class="control" value="Add Week">
-                <input id="cancel" type="button" class="control" value="Cancel">
+            <div id="cookbook">
+                <h2>Cookbook</h2>
+                <ul id="recipes"></ul>
             </div>
-        </form>
+        </div>
 
     </main>
 
 
     <script>
+        /*
+        // make days droppable 
+        const days = document.querySelectorAll('.day');
+        days.forEach(day => {
+            day.addEventListener('dragover', dragOver);
+            day.addEventListener('dragenter', dragEnter);
+            day.addEventListener('dragleave', dragLeave);
+            day.addEventListener('drop', dragDrop);
+        });
+
         // https://stackabuse.com/drag-and-drop-in-vanilla-javascript/
         const items = document.querySelectorAll('.item');
-        const columns = document.querySelectorAll('.column');
         items.forEach(item => {
             item.addEventListener('dragstart', dragStart)
             item.addEventListener('dragend', dragEnd)
         });
 
-        columns.forEach(column => {
-            column.addEventListener('dragover', dragOver);
-            column.addEventListener('dragenter', dragEnter);
-            column.addEventListener('dragleave', dragLeave);
-            column.addEventListener('drop', dragDrop);
+        const recipes = document.querySelectorAll('.recipes');
+        recipes.forEach(recipe => {
+            recipe.addEventListener('dragover', dragOver);
+            recipe.addEventListener('dragenter', dragEnter);
+            recipe.addEventListener('dragleave', dragLeave);
+            recipe.addEventListener('drop', dragDrop);
         });
 
 
@@ -170,7 +141,24 @@
         function dragDrop() {
             console.log('drag dropped');
             this.append(dragItem);
+
+            let clone = dragItem.cloneNode(true);
+            console.log(clone);
+            clone.classList.remove('invisible');
+            clone.classList.add('item');
+            clone.setAttribute('draggable', 'true');
+
+            document.querySelector('.recipes').append(clone);
+
+            clone.addEventListener('dragstart', dragStart)
+            clone.addEventListener('dragend', dragEnd)            
+
+            clone.addEventListener('dragover', dragOver);
+            clone.addEventListener('dragenter', dragEnter);
+            clone.addEventListener('dragleave', dragLeave);
+            clone.addEventListener('drop', dragDrop);            
         }
+        */
     </script>
         
 

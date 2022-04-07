@@ -48,7 +48,6 @@ export default class Nutritionix {
                 }
                 else {
                     console.log('Avast, thar be no food here ...');
-
                 }
             //}, 2000);
         }
@@ -132,8 +131,10 @@ export default class Nutritionix {
 
             let url = `https://trackapi.nutritionix.com/v2/natural/nutrients`;
 
+            let calories = 0;
+
             // make the request
-            fetch(url, {
+            calories = await fetch(url, {
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
                 mode: 'cors', // no-cors, *cors, same-origin
                 cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -157,12 +158,18 @@ export default class Nutritionix {
             })
             .then(async (response) => {
                 // handle response data here
-                ingredient.calories = response.foods[0].nf_calories;
-                ingredient.thumb = response.foods[0].photo.thumb;
+                // console.log('ING', response);
+                console.log('INGREDIENT CALORIES', Math.floor(response.foods[0].nf_calories));
+                //ingredient.calories = Math.floor(response.foods[0].nf_calories);
+                //ingredient.thumb = response.foods[0].photo.thumb;
+                return Math.floor(response.foods[0].nf_calories);
             })
             .catch(err => {
                 throw new Error(err);
             });
+
+            console.log('CALORIES', calories);
+            return calories;
         } 
         catch (error) {
             console.log('ERROR: ', error);
@@ -238,7 +245,6 @@ export default class Nutritionix {
                     if (DEBUG) console.log(response, '__________pantry');
                     return await response;
                 }
-                
             })
             .catch(err => {
                 throw new Error(err);
@@ -251,9 +257,6 @@ export default class Nutritionix {
         // necessary return for single ingredient
         return r2;
     }
-
-
-
 
 } // END CLASS
 

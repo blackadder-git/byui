@@ -95,13 +95,13 @@ export default class Recipe {
 
             let createRecipe = true;
 
-            let calories = 0;
-
             let newRecipe = {};
 
             newRecipe.ingredients = []; // create empty array for ingredients
 
             newRecipe.id = Date.now();
+
+            let calories = 0;
 
             // convert collection to an array
             // https://bobbyhadz.com/blog/javascript-loop-through-form-elements
@@ -140,17 +140,22 @@ export default class Recipe {
         
                     // get calorie and image
                     try {
-                        await nutrition.getNutrientInfoRecipe(ingredient);
+                        // get calories
+                        let cal = await nutrition.getNutrientInfoRecipe(ingredient);
 
-                        calories += Number(ingredient.calories);
+                        // set calories for ingredient
+                        ingredient.calories = cal;
 
+                        // add to total calaries
+                        calories += Number(cal);
+
+                        // add item to ingredient array
                         newRecipe.ingredients.push(ingredient);
                     }
                     catch (err) {
                         createRecipe = false;
-                        console.log('bad ingredient ', item.value);
+                        console.log('bad ingredient ', item.value, err);
                     }
-
                 }
             });
 
@@ -161,8 +166,8 @@ export default class Recipe {
                 // wrap this in a time out ... give the promise a chance to return and update the instruction below
                 setTimeout(() => {
                     let calories = 0;
-                    console.log(newRecipe.id);
-                    console.log(newRecipe.ingredients);
+                    console.log('recipe id', newRecipe.id);
+                    console.log('INGREDIENTS', newRecipe.ingredients);
                     const ing = Object.entries(newRecipe.ingredients);
                     console.log(typeof(ing[0]));
 
@@ -170,13 +175,13 @@ export default class Recipe {
                         Object.entries(ing[i][1]).forEach(entry => {
                             const [key, value] = entry;
                             if (key == 'calories') {
-                                console.log(key, value);
+                                console.log('KEY/VALUE', key, value);
                                 calories += value;
                             }
                         });
                     }
 
-                    console.log(calories);
+                    console.log('CALORIES', calories);
 
                     newRecipe.calories = calories; // THIS WORKS
 

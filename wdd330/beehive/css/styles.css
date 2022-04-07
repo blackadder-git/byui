@@ -11,6 +11,8 @@
     --white: #fff;
     --black: rgba(0, 0, 0, 0.8);
     --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+    --background: yellow;
+    --formBackground: antiquewhite;
 }
 
 *, *:after, *:before {
@@ -59,9 +61,6 @@ input, select {
 input, textarea, select {
     width: 100%;
 }
-input[type=text] {
-    bmargin-bottom: 1em;
-}
 textarea { 
     resize: vertical; 
     height: 10em;
@@ -73,14 +72,8 @@ input[type=button] {
 .delIngredient {
     margin-top: .5em;
 }
-#familyMember {
-    background-color: antiquewhite;
-}
-#pantryItem {
-    background-color: antiquewhite;
-}
-#recipe {
-    background-color: antiquewhite;
+#familyMember, #pantryItem, #recipe, #week {
+    background-color: var(--formBackground);
 }
 #familyMember label, #pantryItem label, #recipe label, fieldset {
     margin-top: 1em;
@@ -90,24 +83,26 @@ fieldset#sex label {
 }
 
 /* TABLE */
-#tableData {
+.tableData {
     width: 100%;
+    table-layout: fixed;
 }
-#tableData td {
+.tableData td {
     text-align: center;
 }
-.week td {
-    border: 1px solid black;
-    padding: 3em;
-    width: 14%;
-}
-/* family */
+
+/* HOUSEHOLD */
 fieldset#sex, .quantity {
     display: flex;
     margin-top: 1em;
 }
 #male, #female {
     width: 10%;
+}
+
+/* PANTRY */
+.center {
+    text-align: center;
 }
 
 /* VALID, INVALID */
@@ -122,6 +117,10 @@ input:invalid, textarea:invalid  {
 .open {
     text-decoration: underline;
     cursor: pointer;
+}
+
+.invisible{
+    display: none;
 }
 
 /* MODAL
@@ -151,7 +150,6 @@ https://webdesign.tutsplus.com/tutorials/how-to-build-flexible-modal-dialogs-wit
   
   .modal-dialog {
     position: relative;
-    bmax-width: 800px;
     min: width 800px;
     width: 80%;
     max-height: 80vh;
@@ -203,42 +201,70 @@ https://webdesign.tutsplus.com/tutorials/how-to-build-flexible-modal-dialogs-wit
 /* END MODAL
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-
+th {
+    font-size: .7em;
+}
 
 /* https://material.io/design/layout/responsive-layout-grid.html#breakpoints */
 /* tablet */
 @media only screen and (min-width: 600px) {
     html {
-        background-color: blue;
+        background-image: url("../images/food.jpg");
+        background-position: center;
     }
     main {
-        max-width: 65%;
+        max-width: 50%;
+        background-color: var(--background);
+        padding: 1em;
+        max-width: 60%;
     }
     /* index */
-    #widgets {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-    }
     #controlButtons {
         text-align: center;
     }
     .control {
         width: 30%;
     }
+    #mealplan {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+    #cookbook {
+        text-align: center;
+    }
+    th {
+        font-size: 1em;
+    }
+    .week tr, .week td {
+        border: 1px solid black;
+        width: 14%;
+        overflow: hidden;
+        padding: 1em .5em;
+        height: 50px;
+    }    
+    section {
+        position: relative;
+        min-height: 300px;
+    }
+    .mainButton {
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+    }
 }
 /* laptop */
 @media only screen and (min-width: 900px) {
-    html {
-        background-color: green;
+    .wide {
+        max-width: 90%;
     }
-    main {
-        max-width: 50%;
+    #widgets {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
     }    
 }
 /* desktop */
 @media only screen and (min-width: 1200px) {
-    html {
-        background-color: yellow;
+    section {
+        min-height: 250px;
     }
-  
 }

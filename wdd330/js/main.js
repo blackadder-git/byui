@@ -40,7 +40,11 @@ function addWeeks() {
         {
             label: "Week 10",
             url: "week10/index.html"
-        },    
+        },
+        {
+            label: "Week 14 (Final Project)",
+            url: "beehive/index.html"
+        },          
     ]
 
     // loop weeks

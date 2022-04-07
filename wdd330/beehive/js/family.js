@@ -19,6 +19,8 @@ export default class Family {
         this.addFamilyMemberListener();
         this.editFamilyMemberListener();        
         this.cancelListener();
+
+
     }
 
     // default greeting
@@ -137,6 +139,8 @@ export default class Family {
 
 const family = new Family(new Model(), new View());
 
+// https://www.dietaryguidelines.gov/sites/default/files/2021-03/Dietary_Guidelines_for_Americans-2020-2025.pdf
+// https://www.apa.org/obesity-guideline/estimated-calorie-needs.pdf
 // https://www.fda.gov/media/112972/download
 function  getCalories(newMember) {
     let calories = 10;
@@ -158,11 +162,23 @@ function  getCalories(newMember) {
     }
     // female
     else {
-
+        switch (newMember.activity) {
+            case 'sedentary':
+                calories = getCaloriesSedentaryFemale(newMember.age);
+                break;
+            case 'moderate':
+                calories = getCaloriesModerateFeale(newMember.age);
+                break;
+            case 'active':
+                calories = getCaloriesActiveFeale(newMember.age);
+                break;
+            default:
+        }
     }
     return calories;
 }
 
+// sedentary male
 function getCaloriesSedentaryMale(age) {
     let calories = 0;
 
@@ -183,19 +199,31 @@ function getCaloriesSedentaryMale(age) {
         case 11: case 12:
             calories = 1800;
             break;
-        case 15: case 41: case 42: case 43: case 44: case 45: case 46: case 47: case 48: case 49: case 50: case 51: case 52: case 53: case 54: case 55: case 56: case 57: case 58: case 59: case 60:
+        case 15: 
+        case 41: case 42: case 43: case 44: case 45:
+        case 46: case 47: case 48: case 49: case 50:
+        case 51: case 52: case 53: case 54: case 55:
+        case 56: case 57: case 58: case 59: case 60:
             calories = 2200;
             break;
-        case 16: case 17: case 18: case 21: case 22: case 23: case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31: case 32: case 33: case 34: case 35: case 36: case 37: case 38: case 39: case 40:
+        case 16: case 17: case 18: 
+        case 21: case 22: case 23: case 24: case 25:
+        case 26: case 27: case 28: case 29: case 30:
+        case 31: case 32: case 33: case 34: case 35:
+        case 36: case 37: case 38: case 39: case 40:
             calories = 2400;
             break;
-        // 13, 14, > 61
+        case 19: case 20:
+            calories = 2600;
+            break;
+            // 13, 14, >= 61
         default:
             calories = 2000;
     }
     return calories;
 }
 
+// moderate male
 function getCaloriesModerateMale(age) {
     let calories = 0;
     switch(Number(age)) {
@@ -215,23 +243,32 @@ function getCaloriesModerateMale(age) {
         case 11:
             calories = 2000;
             break;
-        case 14: case 51: case 52: case 53: case 54: case 55: case 56: case 57: case 58: case 59: case 60: case 61: case 62: case 63: case 64: case 65:
+        case 14: 
+        case 51: case 52: case 53: case 54: case 55:
+        case 56: case 57: case 58: case 59: case 60: 
+        case 61: case 62: case 63: case 64: case 65:
             calories = 2400;
             break;
         case 15:
+        case 26: case 27: case 28: case 29: case 30: 
+        case 31: case 32: case 33: case 34: case 35: 
+        case 36: case 37: case 38: case 39: case 40: 
+        case 41: case 42: case 43: case 44: case 45:
             calories = 2600;
             break;
-        case 16: case 17: case 18: case 19: case 20: case 21: case 22: case 23: case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31: case 32: case 33: case 34: case 35: case 36: case 37: case 38: case 39: case 40: case 41: case 42: case 43: case 44: case 45:
+        case 16: case 17: case 18: 
+        case 19: case 20: 
+        case 21: case 22: case 23: case 24: case 25: 
             calories = 2800;
             break;
-        // 12, 13, 14, > 66
+        // 12, 13, >= 66
         default:
             calories = 2200;
     }
     return calories;
 }
 
-
+// active male
 function  getCaloriesActiveMale(age) {
     let calories = 0;
     switch(Number(age)) {
@@ -251,21 +288,150 @@ function  getCaloriesActiveMale(age) {
         case 8: case 9:
             calories = 2000;
             break;
-        case 13: case 56: case 57: case 58: case 59: case 60: case 61: case 62: case 63: case 64: case 65: case 66: case 67: case 68: case 69: case 70: case 71: case 72: case 73: case 74: case 75:
+        case 12:
+            calories = 2400;
+            break;       
+        case 13: 
+        case 56: case 57: case 58: case 59: case 60: 
+        case 61: case 62: case 63: case 64: case 65: 
+        case 66: case 67: case 68: case 69: case 70: case 71: case 72: case 73: case 74: case 75:
             calories = 2600;
             break;                
-        case 14: case 36: case 37: case 38: case 39: case 40: case 41: case 42: case 43: case 44: case 45: case 46: case 47: case 48: case 49: case 50: case 51: case 52: case 53: case 54: case 55: 
+        case 14: 
+        case 36: case 37: case 38: case 39: case 40: 
+        case 41: case 42: case 43: case 44: case 45: 
+        case 46: case 47: case 48: case 49: case 50: 
+        case 51: case 52: case 53: case 54: case 55: 
             calories = 2800;
             break;
-        case 15: case 19: case 20: case 21: case 22: case 23: case 24: case 25: case 26: case 27: case 28: case 29: case 30: case 31: case 32: case 33: case 34: case 35:
+        case 15: 
+        case 19: case 20: 
+        case 21: case 22: case 23: case 24: case 25: 
+        case 26: case 27: case 28: case 29: case 30: 
+        case 31: case 32: case 33: case 34: case 35:
             calories = 3000;
             break;
         case 16: case 17: case 18:
             calories = 3200;
             break;
-        // 10, 11, 12, > 66
+        // 10, 11, >= 76
         default:
             calories = 2200;
+    }
+    return calories;
+} 
+
+// sedentary female
+function getCaloriesSedentaryFemale(age) {
+    let calories = 0;
+
+    switch(Number(age)) {
+        //  infants (< 1) need to eat about 35-50 calories a day per pound of weight
+        case 1: case 2: case 3:
+            calories = 1000;
+            break;
+        case 4: case 5: case 6: case 7:
+            calories = 1200;
+            break;
+        case 8: case 9: case 10:
+            calories = 1400;
+            break;
+        case 14: case 15: 
+        case 16: case 17: case 18:
+        case 26: case 27: case 28: case 29: case 30:
+        case 31: case 32: case 33: case 34: case 35: 
+        case 36: case 37: case 38: case 39: case 40: 
+        case 41: case 42: case 43: case 44: case 45: 
+        case 46: case 47: case 48: case 49: case 50:
+            calories = 1800;
+            break;
+        case 19: case 20: 
+        case 21: case 22: case 23: case 24: case 25: 
+            calories = 2000;
+            break;
+        // 11, 12, 13, >= 51
+        default:
+            calories = 1600;
+    }
+    return calories;
+}
+
+// moderate female
+function getCaloriesModerateFemale(age) {
+    let calories = 0;
+    switch(Number(age)) {
+        //  infants (< 1) need to eat about 35-50 calories a day per pound of weight
+        case 1: case 2:
+            calories = 1000;
+            break;
+        case 3: 
+            calories = 1200;
+            break;
+        case 4: case 5: case 6: 
+            calories = 1300;
+            break;
+        case 7: case 8: case 9: 
+            calories = 1600;
+            break;
+        case 13: case 14: case 15: 
+        case 16: case 17: case 18: 
+        case 26: case 27: case 28: case 29: case 30: 
+        case 31: case 32: case 33: case 34: case 35: 
+        case 36: case 37: case 38: case 39: case 40: 
+        case 41: case 42: case 43: case 44: case 45: 
+        case 46: case 47: case 48: case 49: case 50:
+            calories = 2000;
+            break;
+        case 19: case 20: 
+        case 21: case 22: case 23: case 24: case 25:
+            calories = 2200;
+            break;
+        // 10, 11, 12, 13, 14, >= 51
+        default:
+            calories = 1800;
+    }
+    return calories;
+}
+
+// active female
+function  getCaloriesActiveFemale(age) {
+    let calories = 0;
+    switch(Number(age)) {
+        //  infants (< 1) need to eat about 35-50 calories a day per pound of weight
+        case 1: case 2:
+            calories = 1000;
+            break;
+        case 3:
+            calories = 1400;
+            break;
+        case 4: case 5: case 6: 
+            calories = 1600;
+            break;
+        case 7: case 8: case 9:
+            calories = 1800;
+            break;
+        case 10: case 11:
+            calories = 2000;
+            break;
+        case 12: case 13:
+        case 31: case 32: case 33: case 34: case 35:
+        case 36: case 37: case 38: case 39: case 40:
+        case 41: case 42: case 43: case 44: case 45: 
+        case 46: case 47: case 48: case 49: case 50:
+        case 51: case 52: case 53: case 54: case 55:
+        case 56: case 57: case 58: case 59: case 60:
+            calories = 2200;
+            break;
+        case 14: case 15:
+        case 16: case 17: case 18:
+        case 19: case 20: 
+        case 21: case 22: case 23: case 24: case 25: 
+        case 26: case 27: case 28: case 29: case 30: 
+            calories = 2400;
+            break;
+        // 10, 11, >= 61
+        default:
+            calories = 2000;
     }
     return calories;
 }
