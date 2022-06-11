@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>cse341 08 Personal Assignment</title> 
+    <style>
+        html, body {
+            margin: 0px;
+            height: 100%;
+            text-align: center;
+        }
+        body {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+        h1 {
+            font-size: 2em;
+        }
+        video {
+            margin-top:2em;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            width: 50%;
+        }
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>cse341 08 Personal Assignment</h1>
+    <div>
+        <video controls="controls autoplay">
+            <source src="picnic.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    This video shows endpoints manipulated via Swagger UI along with the frontend used to query, add, update and delete data in the mongoDB.
+    The application is protected by express-openid-connect and requires signup to Auth0 or via a Google account in order to access the admin page
+    Swagger doc, POST, PUT, DELETE endpoints.  I left the GET links open intentionally.
+      
+</body>
+</html>
