@@ -131,7 +131,7 @@ class Controller {
 
                         modal.textContent = `What strategy did I use to solve this problem that was helpful?`;
 
-                        footer.textContent = `Because this was a technology I knew very little about, I reach out
+                        footer.textContent = `Because this was a technology I knew very little about, I reached out
                         to my group for support. I also did a lot of searching on line. As I worked, I also tested
                         frequently making sure that I knew what I had just changed in case something broke I was 
                         quickly able to isolate and fix the problem. Good advice to start from a known position.`;

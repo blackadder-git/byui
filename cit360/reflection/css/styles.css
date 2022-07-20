@@ -93,6 +93,9 @@ img {
 .clue:hover {
     cursor: pointer;
     bcursor: url( "images/glass.png" ), auto;
+    bcursor: -moz-zoom-in; 
+    bcursor: -webkit-zoom-in; 
+    bcursor: zoom-in;    
 }
 main {
     position: relative;
