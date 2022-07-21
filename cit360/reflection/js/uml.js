@@ -125,7 +125,7 @@ class Controller {
                     case 'tv':
                         h2.textContent = 'TV';
 
-                        modal.textContent = `What strategy did I use to solve this problem that was helpful?`;
+                        modal.textContent = `What strategy did I use to solve the problems this lesson presented?`;
 
                         footer.textContent = `As with many other document related assignments, I began by reading the instructions, watching
                         the course videos and then going to Google for examples to learn what made an industry standard diagram.

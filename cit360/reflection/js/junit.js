@@ -101,10 +101,11 @@ class Controller {
                         footer.textContent = `I realized that knowing technically how to write a unit test is
                         still not the same as writing a good test. Instead, it is only the first step. I have 
                         heard that some developers write their tests first and then the program. I have a hard
-                        time visualizing this so I wonder how often this is done. I also have thought a lot 
-                        about how best to test a complex method that may put the application into a state that
-                        would not match some other part of the application. I guess you would need to create x
-                        condition before testing. Also, maybe some high level parts of the code aren't testable.
+                        time visualizing this so I wonder how often it is actually is done. I have also thought a lot 
+                        about how best to test a complex method; something that might require changing parts of the program
+                        that exist outside the scope of the method being tested. I guess I could replicate a specific
+                        condition before testing. Or that could be a sign that what I am trying to test needs to be broken
+                        and/or reorganized. Also, maybe some high level parts of the code simply aren't testable.
                         Or is everything testable? At this point I don't have an answer.`;
                     break;
                     case 'chair':
@@ -113,7 +114,7 @@ class Controller {
                         modal.textContent = `What questions will I ask myself next time I'm working these types of problems?`;
 
                         footer.textContent = `The next time I am developing a program and specifically a function or
-                        method, I will ask myself how can I test this. Ideally, I want to have a meaningful test for
+                        method, I will ask myself how can I test this. Ideally, I will want to have a meaningful test for
                         every part of the code to ensure that when I change one part, I don't break code in another.`;
                     break;                    
                     case 'screen':
@@ -123,7 +124,7 @@ class Controller {
 
                         footer.textContent = `Unit tests and methods/functions in any language go together like peanut butter
                         and jelly. I learned it's not as simple as changing the code when a test fails. Sometimes a test may 
-                        need to be modified in order to be a better test. Likewise, simply having and passing a test doesn't 
+                        need to be modified and improved in order to be a better test. Likewise, simply having and passing a test doesn't 
                         mean the code will work. Instead, the two need to support their overall intended use in the program.`;
                     break;
                     case 'bin':
@@ -133,7 +134,8 @@ class Controller {
 
                         footer.textContent = `As a learner, I realized that answering one question often raises 
                         several more. Learning feels like a never ending ocean tide. No matter how much I understand, there
-                        will always be more questions. `;
+                        will always be more questions. I accept and love the concept of life long learning. I heard this phrase often
+                        as a BYU Pathway student. The idea is comforting and carries with it implied iteration.`;
                     break;
                     case 'folders':
                         h2.textContent = 'Binders';
@@ -143,7 +145,7 @@ class Controller {
                         footer.textContent = `Being able to automate your testing opens the possibility of trying new things in a
                         program without the fear of breaking other areas. I imagine this would mostly apply to programs with 
                         larger codebases however I am just as interested in creating tests for smaller programs. In any 
-                        case, being able to run tests and write good tests makes better code for everyone.`;
+                        case, being able to run tests and write good tests is good practice and makes better code for everyone.`;
                     break;
                  }
 

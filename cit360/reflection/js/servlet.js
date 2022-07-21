@@ -129,7 +129,7 @@ class Controller {
                     case 'curtains':
                         h2.textContent = 'Curtains';
 
-                        modal.textContent = `What strategy did I use to solve this problem that was helpful?`;
+                        modal.textContent = `What strategy did I use to solve the problems this lesson presented?`;
 
                         footer.textContent = `Because this was a technology I knew very little about, I reached out
                         to my group for support. I also did a lot of searching online. As I worked, I tested my code

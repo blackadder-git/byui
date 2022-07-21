@@ -96,7 +96,7 @@ class Controller {
                     case 'art':
                         h2.textContent = 'Art';
 
-                        modal.textContent = `What strategy did I use to solve this problem that was helpful?`;
+                        modal.textContent = `What strategy did I use to solve the problems this lesson presented?`;
 
                         footer.textContent = `Wanting to really understand this technology, I signed up to present it to
                         my group a week before we had to do our assignment. I tried to come up with a good program that

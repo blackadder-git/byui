@@ -129,7 +129,7 @@ class Controller {
                     case 'light':
                         h2.textContent = 'Light';
 
-                        modal.textContent = `What strategy did I use to solve this problem?`;
+                        modal.textContent = `What strategy did I use to solve the problems this lesson presented?`;
 
                         footer.textContent = `To get this assignment working, I imagined I was a user and logically
                         walked through the steps the program and I would need to perform in order to reach the end. Looking

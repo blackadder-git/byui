@@ -120,7 +120,7 @@ class Controller {
                     case 'chair':
                         h2.textContent = 'Chair';
 
-                        modal.textContent = `What strategy did I use to solve this problem that was helpful?`;
+                        modal.textContent = `What strategy did I use to solve the problems this lesson presented?`;
 
                         footer.textContent = `I chose to present on this technology because I was unsure of how to work
                         with it. This way, I was forced to learn it. Getting the drivers installed was a bit confusing, 
