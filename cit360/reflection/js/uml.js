@@ -92,15 +92,15 @@ class Controller {
                         reason that there are so many moving parts in a program. I find it difficult to accurately
                         show all the possibilities. And using too many if/else representations or loops can quickly 
                         make the diagram difficult to read. But overall, I would like to know what value someone who
-                        didn't develop the program gets from them beyond an overall view.`;
+                        didn't develop the program gets from them beyond a high level view of the program.`;
                     break;
                     case 'bottle':
                         h2.textContent = 'Bottle';
 
                         modal.textContent = `What is confusing about this topic?`;
 
-                        footer.textContent = `How do I represent a branch in response or a loop within a loop within a loop.
-                        Also, is each interaction meant to written up as its own diagram? If so, I would hate to be the one to 
+                        footer.textContent = `How do I represent a branch in a response or a loop within a loop within a loop?
+                        Also, is each interaction meant to be written up as its own diagram? If so, I would hate to be the one to 
                         update these any time the codebase is modified.`;
                     break;
                     case 'bottles':
@@ -119,25 +119,25 @@ class Controller {
 
                         modal.textContent = `What follow-up questions do I have? `;
 
-                        footer.textContent = `I would like to know who often UML Sequence Diagrams are used and in what
-                        context. I would also like to know how to better represent branches in a sequence. `;
+                        footer.textContent = `I would like to know how often UML Sequence Diagrams are used and in what
+                        context. I would also like to know how to better represent branches in a sequence.`;
                     break;
                     case 'tv':
                         h2.textContent = 'TV';
 
                         modal.textContent = `What strategy did I use to solve the problems this lesson presented?`;
 
-                        footer.textContent = `As with many other document related assignments, I began by reading the instructions, watching
-                        the course videos and then going to Google for examples to learn what made an industry standard diagram.
+                        footer.textContent = `As with other document related assignments, I began by reading the instructions, watching
+                        the course videos and then going to Google and YouTube for examples to learn what made an industry standard diagram.
                         In the end, I created something I could present to a manager and feel comfortable describing what
-                        each part of the diagram intended to relay.`;
+                        each part of the diagram intended to show.`;
                     break;
                     case 'suitcase':
                         h2.textContent = 'Suitcase';
 
-                        modal.textContent = `What are the relationships between Use Case documents and UML Sequence Diagrams?`;
+                        modal.textContent = `What are the relationships between Use Case Documents and UML Sequence Diagrams?`;
 
-                        footer.textContent = `Both seem to target a non-technical audience. Both seem to describe a 
+                        footer.textContent = `Both types of document seem to target a non-technical audience. Both seem to describe a 
                         particular interaction of a program. And both seem as though they would be difficult to maintain. I
                         believe that while the UML Sequence Diagram is easier to read, the Use Case Document is actually easier
                         to write.`;
@@ -162,7 +162,7 @@ class Controller {
                         more. I have several projects I would like to add to my portfolio and even more I would like to build for 
                         practice. As part of my independent learning, I intend to document the little things I learned. For example, 
                         how to turn on auto imports in IntelliJ. Having a backed up repository of these details will give me peace of 
-                        mind and ensure that they do not get lost among my documents.`;
+                        mind and ensure that they do not get lost among the digital scraps of paper I create as part of each course.`;
                     break;
                     case 'shelf':
                         h2.textContent = 'Shelf';
