@@ -89,11 +89,11 @@ class Controller {
                         modal.textContent = `Do I see patterns in what I did?`;
 
                         footer.textContent = `In several previous classes, I used JSON. In a class I am 
-                        taking now, I learned to make REST calls.  This seems to essentially be what I am doing
+                        taking now, I learned to make REST calls. This seems to essentially be what I am doing
                         when I use the HTTP/URL calls to request data from an external source. In any case, having
-                        familiarity with the topic and seeing patterns the carry over from other languages in the
-                        ways that these technologies aer used enabled me to focus on the specific ways of using JSON
-                        and HTTP/URL with Java. `;
+                        familiarity with the topic and seeing patterns that carry over from other languages in the
+                        ways that these technologies are used enabled me to focus on the specific ways of using JSON
+                        and HTTP/URL with Java.`;
                     break;
                     case 'basket':
                         h2.textContent = 'Basket';

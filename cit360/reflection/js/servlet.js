@@ -88,7 +88,7 @@ class Controller {
 
                         modal.textContent = `What is confusing about this topic?`;
 
-                        footer.textContent = `Servlets seem to be a dated technology. I say that because I don't really
+                        footer.textContent = `Servlets seem to be dated technology. I say that because I don't really
                         understand how they work. But it seems to me there may be more efficient technologies to serve
                         up web pages. Certainly there are easier ways. I was happy to get my assignment working however
                         I would hate to trouble shoot a servlet.`;
@@ -110,7 +110,7 @@ class Controller {
                         modal.textContent = `Why is this idea important?`;
 
                         footer.textContent = `Understanding how and when to use servlets will benefit me as a developer.
-                        Perhaps unfairly, and due to the error messages that are shown when a servlet fails, I associate
+                        Perhaps unfairly, but due to the error messages that are shown when a servlet fails, I associate
                         complexity of implementation and lack of back button functionality with servlets. Thus far, they are
                         not my favorite.`;
                     break;
@@ -132,9 +132,9 @@ class Controller {
                         modal.textContent = `What strategy did I use to solve this problem that was helpful?`;
 
                         footer.textContent = `Because this was a technology I knew very little about, I reached out
-                        to my group for support. I also did a lot of searching on line. As I worked, I also tested
-                        frequently making sure that I knew what I had just changed in case something broke I was 
-                        quickly able to isolate and fix the problem. Good advice to start from a known position.`;
+                        to my group for support. I also did a lot of searching online. As I worked, I tested my code
+                        frequently making sure that I knew what I had just changed in case something broke. That way I was 
+                        quickly able to isolate and fix the problems that arose. Good advice to start from a known position.`;
                     break;
                     case 'vase':
                         h2.textContent = 'Vase';
@@ -142,7 +142,8 @@ class Controller {
                         modal.textContent = `How did my mindset affect how I approached my work?`;
  
                         footer.textContent = `Knowing that I didn't know this topic meant that I came to my team
-                        meeting with questions. This was easy as I started my project early. I also reviewed our presentation
+                        meeting ready to ask many questions. This was easy because I started my project early and made note
+                        of the many things I didn't know but wanted to discuss. I also reviewed our group presentation
                         several times. In the end, I was happy to create a working assignment.`;
                    break;
                  }
