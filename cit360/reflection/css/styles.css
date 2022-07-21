@@ -84,8 +84,8 @@ h1 {
 .correct {
     color: green;
 }
-.code {
-    color: white;
+.code a {
+    color: green;
 }
 img {
     width:100%;

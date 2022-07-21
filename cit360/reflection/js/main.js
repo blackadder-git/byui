@@ -44,7 +44,7 @@ function cracked( _topic, className) {
     // alert(`${className}, ${_topic.length - 1}`);
     let topic = document.querySelector( `${className}` );
     topic.classList.add( 'code' );
-    topic.innerHTML = _topic.length - 1;
+    // topic.innerHTML = _topic.length - 1;
     if (unlocked == 9) {
         document.querySelector( '.unlocked' ).style.display = 'block' ;
     }
