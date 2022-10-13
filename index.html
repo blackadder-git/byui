@@ -63,9 +63,15 @@
         }
         .css {
             background-image: linear-gradient(to right, #0c73b8 , #2eaadd);
+            color: #FFF;
         }
+        .sass {
+            background-image: linear-gradient(to right, #bf4080 , #bf4080); 
+            color: #FFF;           
+        }        
         .js {
-            background-image: linear-gradient(to right, #dab92c , #ffd93c);            
+            background-image: linear-gradient(to right, #0c73b8 , #2eaadd);
+            color: #FFF;
         }
         .wave, .mobile, .local, .rest {
             background-color: orange;
@@ -121,6 +127,38 @@
 
     <main id="projects">
         <section>
+            <h2>ZEN Garden</h2>
+            <h3>WDD 331R: Advanced CSS</h3>
+            <div class="site-plan">
+                <a href="desktop_wireframe.pdf">Desktop Wireframe</a> 
+                | 
+                <a href="mobile_wireframe.pdf">Mobile Wireframe</a>
+            </div>            
+            <div class="screenshot">
+                <a href="https://blackadder-git.github.io/byui/wdd331/"><img src="screenshots/advancedcss600.png" alt="Screenshot of zen garden written for advanced css"></a>
+            </div>
+            <div class="features">
+                <span class="html feature">HTML5</span> 
+                <span class="css feature">CSS</span> 
+                <span class="wave feature">Accessible</span> 
+                <span class="mobile feature">Responsive</span> 
+                <span class="sass feature">SASS</span>
+            </div>
+            <div class="details">
+                <h2>Project Outcomes</h2>
+                <ul class="hideContent">
+                    <li>The objective of this project was to style the content of a single web page using only CSS.</li>
+                    <li>This was a fun team assignment. We chose camping as our theme and divided up the work. In addition to 
+                        using Trello and Slack, we met weekly. I implemented a moving star background, parallax effect as you scroll down the page,
+                        moving firefly text and a campfire that was made entirely out of CSS animations. In addition, I learned to use SASS.
+                    </li>
+
+                </ul>
+                <!--div class="readmore" data-id="weather">Read more</div-->  
+            </div>
+        </section>
+
+        <section>
             <h2>Todo App</h2>
             <h3>WDD 330: Web Frontend Development II</h3>
             <div class="site-plan">
@@ -140,9 +178,19 @@
                 <span class="local feature">LocalStorage</span>
             </div>
             <div class="details">
-                <h2>Project Requirements</h2>
+                <h2>Project Outcomes</h2>
                 <ul class="hideContent">
-                    <li>Build a simple web app to manage a ToDo list. It should allow the creation of new tasks, the viewing of tasks, a process to mark tasks as complete, ability to remove tasks, and the ability to filter by complete/not complete</li>
+                    <li>
+                        This was a project with specific requirements to build a JavaScript app that could add 
+                        items to a list, remove them, mark them as complete, and also filter them for the user. 
+                    </li>
+                    <li>
+                        As with other projects, I used the console to debug my app during development. Having learned
+                        to use the localstorage object, I can now think of many projects that would benefit from being able to 
+                        save information between sessions.
+                    </li>
+
+                    <!--li>Build a simple web app to manage a ToDo list. It should allow the creation of new tasks, the viewing of tasks, a process to mark tasks as complete, ability to remove tasks, and the ability to filter by complete/not complete</li>
                     <li>UI actions<br>
                         Show a list of tasks<br>
                         Add a new task<br>
@@ -153,8 +201,9 @@
                     <li>Data sources: localStorage<br>
                         todo: { id : timestamp, content: string, completed: bool }<br>
                         toDoList = [toDo];</li>
-                    <li>Colors/Typography/specific Element styling: Determined by student</li>
+                    <li>Colors/Typography/specific Element styling: Determined by student</li-->
                 </ul>
+                <!--div class="readmore" data-id="weather">Read more</div-->  
             </div>
         </section>
 
@@ -179,9 +228,19 @@
                 <span class="rest feature">Rest</span>                
             </div>
             <div class="details">
-                <h2>Project Requirements</h2>
+                <h2>Project Outcomes</h2>
                 <ul id="commerce" class="hideContent">
-                    <li>The site must be responsive to small, medium, and larger, wide screen views</li>
+                    <li>
+                        The objective of this project was to create a fictitious site for a local chamber of commerce. In addition to meeting 
+                        industry standards, the site needed to implement wayfinding, multiple forms, follow PARC principles (proximity, alignment,
+                        repetition, contrast), and use a REST api to collect weather information. In addition, the css and js needed to be minimized
+                        and images optimized.
+                    </li>
+                    <li>
+                        In addition to building the site, I had fun collecting the images which are local to where I live.
+                    </li>
+
+                    <!--li>The site must be responsive to small, medium, and larger, wide screen views</li>
                     <li>The design is consistent throughout the website providing ease of navigation and supports excellent user experiences</li>
                     <li>Your page layouts may not be an exact replication of your weather site in terms of layout style</li>
                     <li>Your site must meet the specifications listed on the 230 Web Frontend Development Standards page</li>
@@ -195,9 +254,9 @@
                     <li>Use JavaScript as needed including driving the content of the business directory page from your own JSON file</li>
                     <li>Ensure that there are no spelling or grammatical errors</li>
                     <li>Include a resource/attribution page that references outside content, if necessary, as a link in the footer</li>
-                    <li>Include the last modified date of the page in the footer using JavaScript</li>
+                    <li>Include the last modified date of the page in the footer using JavaScript</li-->
                 </ul>
-                <div class="readmore" data-id="commerce">Read more</div>
+                <!--div class="readmore" data-id="weather">Read more</div-->  
             </div>
         </section>
 
@@ -222,18 +281,26 @@
                 <span class="rest feature">Rest</span>                   
             </div>
             <div class="details">
-                <h2>Project Requirements</h2>
+                <h2>Project Outcomes</h2>
                 <ul id="weather" class="hideContent">
-                    <li>The design is consistent throughout the website providing ease of navigation and supporting positive user experiences</li>
+                    <li>
+                        The objective of this project was to create a responsive site with pages for individual cities. Current weather conditions
+                        are pulled using a 3rd party api. An announcement is displayed depending on the day.
+                    </li>
+                    <li>
+                        For this project I used the Chrome developer tools and Lighthouse to optimize the page performance and quality. In addition
+                        I learned to use the Console to debug the site when I got the unexpected. 
+                    </li>                    
+                    <!--li>The design is consistent throughout the website providing ease of navigation and supporting positive user experiences</li>
                     <li>The header contains a logo, site title, and a site motto</li>
                     <li>The navigation menu contains links to the six (6) main pages including: Home, Preston, Soda Springs, Fish Haven, Storm Center, and Gallery</li>
                     <li>The footer contains contact information as given in the town page example and other relevant information</li>
                     <li>The home page contains a current weather story with corresponding image and information sections for all three towns</li>
                     <li>The town weather pages contain weather conditions and other town information or relevant articles/content</li>
                     <li>Images are used to reflect the current weather condition data on the town pages and the towns themselves</li>
-                    <li>The site supports responsive design techniques allowing delivery of the site and its content on all classes of devices: large-wide screens (desktop/laptop), medium-screens (tablet), and small-screens (smartphones)</li>
+                    <li>The site supports responsive design techniques allowing delivery of the site and its content on all classes of devices: large-wide screens (desktop/laptop), medium-screens (tablet), and small-screens (smartphones)</li-->
                 </ul>
-                <div class="readmore" data-id="weather">Read more</div>                
+                <!--div class="readmore" data-id="weather">Read more</div-->                
             </div>
         </section>
 
@@ -256,17 +323,29 @@
                 <span class="mobile feature">Responsive</span>
             </div>
             <div class="details">
-                <h2>Project Requirements</h2>
+                <h2>Project Outcomes</h2>
                 <ul class="hideContent">
-                    <li>The web site must consist of a main page and at least 2 child pages</li> 
+                    <li>
+                        The objective of this project was to create a responsive site with at least three pages. One of the pages needed to 
+                        include a form. 
+                    </li>
+                    <li>
+                        Using public images and content, I constructed a site around stories and their hyphothesized meaning
+                        I included CSS rollover effects on the images, a form to showcase multiple inputs and.
+                    </li>
+                    <li>
+                        For me the highlight was getting the evidence board to work correctly with jQuery and a 3rd-party library.
+                    </li>
+                    <!--li>The web site must consist of a main page and at least 2 child pages</li> 
                     <li>One of the child pages should include a form. The Web site must be published to the web</li>
                     <li>Each of the 3 pages of your Web site must satisfy the following requirements:<br>
                         Significant content consisting of both text and a minimum of one image<br>
                         You need to make sure this page has the appropriate content for your audience so that they can understand the meaning and message of this site
                     </li>
                     <li>Working links to the all of the other pages you have created</li>
-                    <li>Be visually appealing</li>
+                    <li>Be visually appealing</li-->
                 </ul>
+                <!--div class="readmore" data-id="weather">Read more</div-->  
             </div>
         </section>
 
@@ -288,17 +367,26 @@
                 <span class="mobile feature">Responsive</span>
             </div>
             <div class="details">
-                <h2>Project Requirements</h2>
+                <h2>Project Outcomes</h2>
                 <ul class="hideContent">
-                    <li>The web site must consist of a main page and at least 1 child page</li>
+                    <li>
+                        The objective of this site was to create a site with main page and a child page. While the layout was given to us, we
+                        needed to come up with the color scheme and typography.
+                    </li>
+                    <li>
+                        As part of the development process, I used a number of tools to validate my work. These included the W3C Markup Validation
+                        Service, the W3C CSS Validation Service, and the WebAIM contrast checker. I also participated in multiple peer reviews.
+                    </li>
+                    <!--li>The web site must consist of a main page and at least 1 child page</li>
                     <li>The web site must be published to the web</li>
                     <li>Each of the pages of your web site must satisfy the following requirements:<br>
                         Significant content consisting of both text and a minimum of one image<br>
                         You need to make sure this page has the appropriate content for your audience so that they can understand the meaning and message of this site
                     </li>
                     <li>Working links to the all of the other pages you created</li>
-                    <li>Be visually appealing</li>
+                    <li>Be visually appealing</li-->
                 </ul>
+                <!--div class="readmore" data-id="weather">Read more</div-->  
             </div>
         </section>
 
@@ -319,9 +407,21 @@
                 <span class="elegant cplusplus feature">Elegant Design</span>
             </div>
             <div class="details">
-                <h2>Project Requirements</h2>
+                <h2>Project Outcomes</h2>
                 <ul id="sudoku" class="hideContent">
-                    <li>Not all Sudoku boards are created equal. Some are much more difficult to solve than others. You will get awarded points according to the level of difficulty of the board you are able to solve. The boards are:<br>
+                    <li>
+                        The objective of this project was to create a sudoku solver with a menu that would allow a user to select
+                        options to see the menu, display the board, edit a square, exit. In addition, extra credit was offered if the 
+                        program could solve the puzzle on its own. Once I had the game working, I looked into using backtracing to
+                        complete the game. While this would work, it took a while for the program to solve the board. 
+                    </li>
+                    <li>
+                        I decided to look into how a human being might approach a sudoku puzzle. I soon learned about techniques 
+                        such as <a href="https://sudoku.com/sudoku-rules/hidden-singles/">hidden singles</a>, <a href="https://sudoku.com/sudoku-rules/hidden-pairs/">hidden pairs</a>,
+                        and <a href="https://sudoku.com/sudoku-rules/pointing-pairs/">pointing pairs</a>. I implemented these search
+                        techniques into my program with a temporary board and found that the puzzles were solved much quicker.
+                    </li>
+                    <!--li>Not all Sudoku boards are created equal. Some are much more difficult to solve than others. You will get awarded points according to the level of difficulty of the board you are able to solve. The boards are:<br>
                         prjFinal85.txt<br>
                         prjFinal90.txt<br>
                         prjFinal100.txt
@@ -338,9 +438,9 @@
                         'E' Option: Edit a square with no verification that it is correct or valid<br>
                         'Q' Option: Exit the interaction loop and launches the Write code<br>
                         '?' Option: Displays the instructions on the screen
-                    </li>
+                    </li-->
                 </ul>
-                <div class="readmore" data-id="sudoku">Read more</div>
+                <!--div class="readmore" data-id="sudoku">Read more</div-->
             </div>
         </section>
     </main>
