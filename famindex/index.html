@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Search Worksheet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <style>
+        .vertical-text {
+            transform: rotate(-90deg);
+            transform-origin: left top 0;
+        }
+    </style>
+</head>
+<body class="container">
+    
+<form>
+    <fieldset>
+        <legend>Parents</legend>
+        <div class="row">
+            <div class="col-1 svertical-text">Father</div>
+            <div class="col-11">
+                <div class="row">
+                    <div>
+                        <label for="fbirth" class="form-label">Birth</label>
+                        <input id="fbirth" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="fdeath" class="form-label">Death</label>
+                        <input id="fdeath" type="text" class="form-control">
+                    </div>
+                </div>                                            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Mother</div>
+            <div class="col-11">
+                <div class="row">
+                    <div>
+                        <label for="mbirth" class="form-label">Birth</label>
+                        <input id="mbirth" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="mdeath" class="form-label">Death</label>
+                        <input id="mdeath" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Marriage</div>
+            <div class="col-11">
+                <div class="row">
+                    <div>
+                        <label for="marriage" class="form-label">Date</label>
+                        <input id="marriage" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="place" class="form-label">Place</label>
+                        <input id="place" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </fieldset>
+
+    <fieldset>
+        <legend>Person</legend>
+        <div class="row">
+            <div class="col-1 svertical-text"></div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">SURNAME</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">First Name</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="middle" class="form-label">Middle Name</label>
+                        <input id="middle" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Information</legend>
+        <div class="row">
+            <div class="col-1 svertical-text">Birth</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Where</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Death</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Where</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Appearance</legend>
+        <div class="row">
+            <div class="col-1 svertical-text"></div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Eyes</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Hair</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Height</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Build</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Disabilities</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Allergies</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>    
+    
+    <fieldset>
+        <legend>Funeral</legend>
+        <div class="row">
+            <div class="col-1 svertical-text"></div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Grave</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Ordinances</legend>
+        <div class="row">
+            <div class="col-1 svertical-text">Temple</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">ID</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1 svertical-text">Baptism</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Place</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Confirmation</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Place</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Initiatory</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Place</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Endowment</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Place</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Sealed Spouse</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Place</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Sealed Parents</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Place</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Vitals</legend>
+        <div class="row">
+            <div class="col-1 svertical-text">Birth</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Source</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Adoption</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Source</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Marriage</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Source</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Divorce</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Source</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Death</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Source</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Probate/Will</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Source</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Military</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Source</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Immigration</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Source</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1 svertical-text">Patriarchal Blessing</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Source</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Checklists</legend>
+        <div class="row">
+            <div class="col-1 svertical-text">Records</div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <input id="surname" type="checkbox" class="form-check-input">
+                        <label for="surname" class="form-label">Government ID</label>
+                    </div>
+                    <div>
+                        <input id="first" type="checkbox" class="form-check-input">
+                        <label for="first" class="form-label">Voting</label>
+                    </div>
+                    <div>
+                        <input id="first" type="checkbox" class="form-check-input">
+                        <label for="first" class="form-label">Civil Action</label>
+                    </div>
+                    <div>
+                        <input id="first" type="checkbox" class="form-check-input">
+                        <label for="first" class="form-label">School/Club</label>
+                    </div>
+                    <div>
+                        <input id="first" type="checkbox" class="form-check-input">
+                        <label for="first" class="form-label">Medical</label>
+                    </div>
+                    <div>
+                        <input id="first" type="checkbox" class="form-check-input">
+                        <label for="first" class="form-label">Property</label>
+                    </div>
+                    <div>
+                        <input id="first" type="checkbox" class="form-check-input">
+                        <label for="first" class="form-label">Military</label>
+                    </div>
+                    <div>
+                        <input id="first" type="checkbox" class="form-check-input">
+                        <label for="first" class="form-label">Other</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1 svertical-text">Heirlooms</div>
+                <div class="col-11">            
+                    <div class="row">
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Letters</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Family Bible</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Journals</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Awards</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Recipes</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Jewelry</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Art</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Other</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1 svertical-text">Photos</div>
+                <div class="col-11">            
+                    <div class="row">
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Infancy</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Childhood</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Adult</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Wedding</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Military</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Grave</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Signature</label>
+                        </div>
+                        <div>
+                            <input id="surname" type="checkbox" class="form-check-input">
+                            <label for="surname" class="form-label">Other</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Spouse(s)</legend>
+        <div class="row">
+            <div class="col-1 svertical-text"></div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Name</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Birth</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Death</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Children</legend>
+        <div class="row">
+            <div class="col-1 svertical-text"></div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Name</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Birth</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Death</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Education</legend>
+        <div class="row">
+            <div class="col-1 svertical-text"></div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">School</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Study</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Where</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Occupation</legend>
+        <div class="row">
+            <div class="col-1 svertical-text"></div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Employer</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Job</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Where</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Residences</legend>
+        <div class="row">
+            <div class="col-1 svertical-text"></div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <label for="surname" class="form-label">Date</label>
+                        <input id="surname" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Address</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Age</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                    <div>
+                        <label for="first" class="form-label">Source</label>
+                        <input id="first" type="text" class="form-control">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Notes</legend>
+        <div class="row">
+            <div class="col-1 svertical-text"></div>
+            <div class="col-11">            
+                <div class="row">
+                    <div>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+
+</form>
+
+</body>
+</html>
