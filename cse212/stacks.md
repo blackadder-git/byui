@@ -63,8 +63,6 @@ Eat: 2\
 Eat: 1\
 Eat: pop() called on empty stack.
 
-![image](images/pancakes.webp)
-
 ## Problem to Solve: Notes in Reverse
 
 ![image](images/igor.png)
