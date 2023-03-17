@@ -1,6 +1,8 @@
 # Stacks
 ## Introduction
-Stacks are characterized as *"**Last In, First Out**"* data structures. Items that are **pushed** or put onto the top or back of the stack can´t be removed until other more recent elements have been **popped** or taken off.
+Stacks are characterized as *"**Last In, First Out**"* data structures. Items that are put or **pushed** onto the top or **back** of the stack can´t be removed until other more recent elements have been taken or **popped** off.
+
+![image](images/stack.png)
 
 ## Performance (big O notation)
 The performance of a stack depends on how it is implemented. 
