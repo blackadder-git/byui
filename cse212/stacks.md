@@ -4,17 +4,17 @@ Stacks are characterized as *"**Last In, First Out**"* data structures. Items th
 
 ![image](images/stack.png)
 
-## Performance (big O notation)
+## Performance (Big O Notation)
 The performance of a stack depends on how it is implemented. 
 
 If the underlying data structure uses an array or list to add and remove elements, it has O(n) notation.  As the size of the structure increases, performance degrades because more and more items need to be copied and moved. 
 
 If on the other hand, the structure uses a linked list or it adds and removes items to the back, performance is constant with O(1) notation and will not decrease as the size of the structure increases.
 
-## Used for
-+ Functions that implement backtracking often use stacks to return to previous decision points thereby allowing the program to try an alternate paths. 
-+ Likewise, when a program has an undo function, it is most likely using a stack to track and revert changes to some previous state.
-## Common errors
+## Used For
++ Functions that implement backtracking often use stacks to return to previous decision points thereby allowing a program to try alternate paths. 
++ Likewise, when a program has an undo function, it is most likely using a stack to track and revert changes back to some previous state.
+## Common Errors
 Stacks are susceptible to overflow if there is no longer space to contain more data. This can happen unintentionally when a recursive function calls itself too many times. It can also happen if the data given to a stack is too large.
 
 ## Example: 
@@ -42,11 +42,15 @@ class stack:
     else:
         return self.__index.pop()
 
+# instantiate a stack object
 pancake = stack()
+
+# add items
 pancake.push(1) # bottom
 pancake.push(2) # middle
 pancake.push(3) # top
 
+# remove items
 # the first pancake added is the last one eaten
 print("Eat: " + str(pancake.pop()))
 print("Eat: " + str(pancake.pop()))
