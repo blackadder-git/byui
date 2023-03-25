@@ -22,7 +22,7 @@ In this example, a Python list is used to implement a stack that follows the pri
 
 ```
 # create a stack class
-class stack:
+class Stack:
   def __init__(self):
     # use a list to hold items
     self.__index = []
@@ -43,7 +43,7 @@ class stack:
         return self.__index.pop()
 
 # instantiate a stack object
-pancake = stack()
+pancake = Stack()
 
 # add items
 pancake.push(1) # bottom
