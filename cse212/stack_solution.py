@@ -1,5 +1,5 @@
 ##################################################
-# a stack data structure
+# stack data structure
 ##################################################
 
 # create a stack class

@@ -14,6 +14,7 @@ If on the other hand, the structure uses a linked list or it adds and removes it
 ## Used For
 + Functions that implement backtracking often use stacks to return to previous decision points thereby allowing a program to try alternate paths. 
 + Likewise, when a program has an undo function, it is most likely using a stack to track and revert changes back to some previous state.
+
 ## Common Errors
 Stacks are susceptible to overflow if there is no longer space to contain more data. This can happen unintentionally when a recursive function calls itself too many times. It can also happen if the data given to a stack is too large.
 
@@ -79,4 +80,4 @@ efil fo kraps htiw erutaerc ezinavlaG .5\nrepap dekaos enirb htiw etarapes reppo
 
 [View Sample Solution](stack_solution.py)
 
-[Back to Index](index.md)
+[Back to Index](0-welcome.md)

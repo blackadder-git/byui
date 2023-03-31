@@ -1,5 +1,5 @@
 ##################################################
-# a tree data structure
+# tree data structure
 ##################################################
 from datetime import datetime
 

@@ -138,4 +138,4 @@ date_as_string = (datetime.strptime(date_as_timestamp, '%Y-%m-%d') - datetime(19
 
 [View Sample Solution](tree_solution.py)
 
-[Back to Index](index.md)
+[Back to Index](0-welcome.md)
