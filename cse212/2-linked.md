@@ -1,6 +1,6 @@
 # Linked Lists
 ## Introduction
-Unlike other data structures which store their information in contiguous memory, a linked list is able to store the information it has anywhere. Data is then linked together as a series of nodes. The first node in the list is referred to as the "**head**" of the list while the last node in the list is referred to as the "**tail**".
+Unlike other data structures which store their information in contiguous memory, a linked list stores its information as a series of nodes that can reside anywhere. Each node is linked together to for a series or a chain. The first node in the list is referred to as the "**head**" while the last node in the list is referred to as the "**tail**".
 
 ![image](images/linked.png)
 
