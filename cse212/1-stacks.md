@@ -42,7 +42,10 @@ class Stack:
        return "pop() called on empty stack."
     else:
         return self.__index.pop()
+```
 
+Test out the stack
+```
 # instantiate a stack object
 pancake = Stack()
 
@@ -58,12 +61,14 @@ print("Eat: " + str(pancake.pop()))
 print("Eat: " + str(pancake.pop()))
 print("Eat: " + str(pancake.pop()))
 ```
-Output:\
-Eat: 3\
-Eat: 2\
-Eat: 1\
-Eat: pop() called on empty stack.
 
+Output:
+```
+Eat: 3
+Eat: 2
+Eat: 1
+Eat: pop() called on empty stack.
+```
 ## Problem to Solve: Notes in Reverse
 
 ![image](images/igor.png)

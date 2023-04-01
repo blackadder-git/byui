@@ -5,21 +5,16 @@ Unlike other data structures which store their information in contiguous memory,
 ![image](images/linked.png)
 
 ## Performance (Big O Notation)
-The performance of a stack depends on how it is implemented. 
-
-If the underlying data structure uses an array or list to add and remove elements, it has O(n) notation.  As the size of the structure increases, performance degrades because more and more items need to be copied and moved. 
-
-If on the other hand, the structure uses a linked list or it adds and removes items to the back, performance is constant with O(1) notation and will not decrease as the size of the structure increases.
+TODO: describe performance
 
 ## Used For
-+ Functions that implement backtracking often use stacks to return to previous decision points thereby allowing a program to try alternate paths. 
-+ Likewise, when a program has an undo function, it is most likely using a stack to track and revert changes back to some previous state.
+TODO: describe common uses
 
 ## Common Errors
-Stacks are susceptible to overflow if there is no longer space to contain more data. This can happen unintentionally when a recursive function calls itself too many times. It can also happen if the data given to a stack is too large.
+TODO: describe common errors
 
 ## Example: 
-In this example, a Python list is used to implement a stack that follows the principle of **"Last In, First Out"**. Although other implementations might use a deque or linked list instead, this example uses a list. Also, to improve performance, the stack adds and removes items from the end of the list and not the beginning.
+TODO: describe example
 
 ```
 # create a linked list class
@@ -107,7 +102,6 @@ To insert a value after a match, the following function points the next link of 
 ```
 
 To remove a node from the list, the previous and next links of the surrounding nodes are reset to point around the node that is to be removed.
-
 ```
     # remove matching node
     def remove(self, value):
@@ -139,6 +133,10 @@ To remove a node from the list, the previous and next links of the surrounding n
             # traverse list
             curr = curr.next
 
+```
+
+Write out list
+```
     # turn list into string
     def __str__(self):
         output = "linkedlist["
@@ -151,31 +149,36 @@ To remove a node from the list, the previous and next links of the surrounding n
             output += str(value)
         output += "]"
         return output
+```
 
-
+Test out the list
+```
 # create list
 linkedlist = LinkedList()
 linkedlist.insert_head(1)
 linkedlist.insert_tail(3)
 linkedlist.insert_after(1, 2)
-print(linkedlist) # linkedlist[1, 2, 3]
+print(linkedlist)
 ```
-Output:\
-linkedlist[1, 2, 3]\
+
+Output:
+```
+linkedlist[1, 2, 3]
+```
 
 ## Problem to Solve: Head Bone Connected to ...
 
 ![image](images/igor.png)
 
-While the good Doctor Frankenstein is away, trusty Igor has been tasked with transcribing his secret notes into something more readable. Always one to please, Igor needs your help to write a program that will solve this problem.
+TODO: set the stage
 
-+ Use a stack to reverse the letters of the following message
++ Use a linked list to [add description]
 
 ```
-efil fo kraps htiw erutaerc ezinavlaG .5\nrepap dekaos enirb htiw etarapes reppoc dna cniz fo setalp ytrof htiw sthguort eerht esu ,elip ciatlov dliuB .4\nefil fo stnemurtsni tcelloC .3\neussit dna snagro devreserp rehtegot hctitS .2\ndrayhcruhc sarcnaP .tS morf strap ydob yrassecen erucorP .1
+TODO: add data
 ```
  
-+ **Hint:** to work correctly, try adding and removing each letter of the message to and from the stack on its own
++ **Hint:** 
 
 [View Sample Solution](stack_solution.py)
 

@@ -40,7 +40,10 @@ class Tree:
   # initialize empty tree
   def __init__(self):
     self.root = None     
+```
 
+Insert information
+```
   # add information to the tree
   def insert(self, data):
     if self.root is None:
@@ -70,7 +73,10 @@ class Tree:
       else:
         # keep looking
         self._insert(data, node.right)
+```
 
+Check for value
+```
   def __contains__(self, data):
     return self._contains(data, self.root)  # Start at the root
 
@@ -90,7 +96,10 @@ class Tree:
 
     # value was never found
     return False
+```
 
+Test out the tree
+```
 # instantiate a binary tree
 numbers = Tree()
 
@@ -103,16 +112,18 @@ numbers.insert(5)
 numbers.insert(3)
 numbers.insert(2)
 
+# print results
 print(0 in numbers)
 print(2 in numbers)
 print(9 in numbers)
-
 ```
-Output:\
-False\
-True\
-False
 
+Output:
+```
+False
+True
+False
+```
 ## Problem to Solve: Lightening Tracker
 
 ![image](images/lightening.png)
