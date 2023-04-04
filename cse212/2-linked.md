@@ -4,14 +4,17 @@ Unlike other data structures which store their information in contiguous memory,
 
 ![image](images/linked.png)
 
+*While most linked lists are bi-directional like the image above, it is possible to have a linked list that goes in just one direction.
+
 ## Performance (Big O Notation)
-TODO: describe performance
+The performance of a linked list depends on the action being taken. The size of a list makes no difference when adding a node to the beginning or ending. This results in a big O notation of O(1). When adding, removing or searching for for a specific node in the list, the time required to reach the desired node increases linearly as the size of the list grows bigger. This results in a notation of O(n).
 
 ## Used For
-TODO: describe common uses
+* Linked lists are a good underlying data structure to implment a stack or a queue because they offer efficient insertion and removal of elements.
+* 
 
-## Common Errors
-TODO: describe common errors
+## Disadvantages
+Because linked lists hold data along with information to reach the next node, they have the potential to take more space to implement. In addition, since getting from one node to another often means moving to a new location in memory, linked lists can´t take advantage of caching.
 
 ## Example: 
 TODO: describe example

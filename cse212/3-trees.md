@@ -19,7 +19,7 @@ When a tree is balanced, half of its nodes can be discarded as the tree is trave
 + Trees are good for sorting and searching data. They are also used to represent hierarchical data.
 + Operating systems use trees to store files and directories while trees are used by HTML to recreate the DOM.
 
-## Common Errors
+## Disadvantages
 Trees lose their performance advantage as they become unbalanced. Likewise, their performance decreases if for some reason every node in a tree needs to be reviewed. 
 
 ## Example: 
