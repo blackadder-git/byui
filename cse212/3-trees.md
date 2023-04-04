@@ -15,6 +15,8 @@ The performance of a tree depends on whether or not it is balanced. A tree is **
 
 When a tree is balanced, half of its nodes can be discarded as the tree is traversed. Because the time it takes to search for a node is less than the number of nodes that are added, the resulting notation is O(log n).
 
+![image](images/bigo.png)
+
 ## Used For
 + Trees are good for sorting and searching data. They are also used to represent hierarchical data.
 + Operating systems use trees to store files and directories while trees are used by HTML to recreate the DOM.

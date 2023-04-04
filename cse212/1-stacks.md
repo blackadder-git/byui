@@ -11,6 +11,8 @@ If the underlying data structure uses an array or list to add and remove element
 
 If on the other hand, the structure uses a linked list or it adds and removes items to the back, performance is constant with O(1) notation and will not decrease as the size of the structure increases.
 
+![image](images/bigo.png)
+
 ## Used For
 + Functions that implement backtracking often use stacks to return to previous decision points thereby allowing a program to try alternate paths. 
 + Likewise, when a program has an undo function, it is most likely using a stack to track and revert changes back to some previous state.
