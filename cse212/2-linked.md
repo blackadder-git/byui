@@ -80,7 +80,7 @@ deque([1, 2, 3])
 Doctor Frankenstein wants Igor to prepare the anatomy he's collected for an upcoming experiment. Igor has the parts, unfortunately, they aren't in the right order. And some are probably unnecessary. Igor needs your help to remove the items that don't belong and to put the ones that do in the correct sequence.
 
 + Do not use a deque. Instead, model your linked list on the stack you created earlier as a class within a class. This time, write functions to add and remove from both the front and back of the structure along with code to insert and iterate the data. 
-+ Use the following items, keeping the same order, to seed your list.
++ Use the following items with the same order to seed your list.
 
 ```
 + head

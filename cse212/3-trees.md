@@ -22,10 +22,10 @@ When a tree is balanced, half of its nodes can be discarded as the tree is trave
 + Operating systems use trees to store files and directories while trees are used by HTML to recreate the DOM.
 
 ## Disadvantages
-Trees lose their performance advantage as they become unbalanced. Likewise, their performance decreases if for some reason every node in a tree needs to be reviewed. 
+Trees lose their performance advantage as they become unbalanced. Likewise, their performance decreases if for some reason every node in the tree needs to be reviewed. 
 
 ## Example: 
-In this example, a binary tree is created and the tree is populated with information. The tree is then traversed to determine if the number can be found.
+In this example, a binary tree is created and the tree is populated with information. Next, the tree is traversed to determine if the number can be found.
 
 ```
 # create a binary search class
@@ -44,7 +44,7 @@ class Tree:
     self.root = None     
 ```
 
-Determine where in the tree to add information
+Add information
 ```
   # add information to the tree
   def insert(self, data):
@@ -77,7 +77,7 @@ Determine where in the tree to add information
         self._insert(data, node.right)
 ```
 
-Check the tree for a specific value
+Check for a specific value
 ```
   def __contains__(self, data):
     return self._contains(data, self.root)  # Start at the root
@@ -132,7 +132,7 @@ False
 
 In order to bring his creation to life, Doctor Frankenstein must keep meticulous records of the lightening strikes near his laboratory. He has tasked Igor with recording the year, month, and day each strike occurs. Once again, Igor needs your help to write a program.
 
-+ Record the following pre UNIX epoch timestamps in a tree for Doctor Frankenstein to reference later. Determine whether lightening struck on 1800-04-09 and 1806-06-22.
++ Record the following pre UNIX epoch timestamps in a tree for Doctor Frankenstein to reference later. Then, determine whether lightening struck on 1800-04-09 and 1806-06-22.
 
 ```
 -4846176000.0
@@ -152,4 +152,4 @@ date_as_string = (datetime.strptime(date_as_timestamp, '%Y-%m-%d') - datetime(19
 [View Sample Solution](tree_solution.py)
 
 ---
-[Previous](2-linked.md)
+[Previous](2-linked.md) | [Next](4-conclusion.md)
