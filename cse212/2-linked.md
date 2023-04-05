@@ -107,4 +107,4 @@ Doctor Frankenstein wants Igor to prepare the anatomy he's collected for an upco
 [View Sample Solution](solution_linkedlist.py)
 
 ---
-[Previous](1-stacks.md) | [Next](3-trees.md)
+[Previuos](1-stacks.md) | [Trees](3-trees.md)

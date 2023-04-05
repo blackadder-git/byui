@@ -95,4 +95,4 @@ efil fo kraps htiw erutaerc ezinavlaG .5\nrepap dekaos enirb htiw etarapes reppo
 [View Sample Solution](solution_stack.py)
 
 ---
-[Previous](0-welcome.md) | [Next](2-linked.md)
+[Previous](0-welcome.md) | [Linked Lists](2-linked.md)
