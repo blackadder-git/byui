@@ -6,6 +6,6 @@ Since even the right structure if implmented poorly can cause performance issues
 
 It's hard enough to bring an appliation to life, knowing how to use "**stacks**", "**linked lists**" and "**trees**" gives you three more tools in your programming tool belt and makes it that much easier.
 
-![image](images/alive.webp)
+## It's Alive!!
 
-# It's Alive!!
+![image](images/alive.webp)
