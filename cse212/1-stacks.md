@@ -79,9 +79,9 @@ Eat: pop() called on empty stack.
 ```
 ## Problem to Solve: Notes in Reverse
 
-![image](images/igor.png)
+![image](images/igor.webp)
 
-While the good Doctor Frankenstein is away, trusty Igor has been tasked with transcribing the doctor's secret notebook into something more ledgable. Always one to please, Igor needs your help to write a program before the doctor returns.
+While the good Doctor Frankenstein is away, trusty Igor has been tasked with transcribing the doctor's secret notebook into something more ledgible. Always one to please, Igor needs your help to write a program before the doctor returns.
 
 + Use a stack to reverse the letters of the following message
 

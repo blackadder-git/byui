@@ -13,7 +13,7 @@ Trees are non-linear data structures that begin with a single node. From this to
 ## Performance (Big O Notation)
 The performance of a tree depends on whether or not it is balanced. A tree is **"balanced"** When the distance from the root to each leaf is consistent or "**has the same height**".
 
-When a tree is balanced, half of its nodes can be discarded as the tree is traversed. Because the additional time it takes to search for a node is less than the number of nodes that are added, the resulting notation is logrithmic or O(log n).
+When a tree is balanced, half of its nodes can be discarded as the tree is traversed. Because the additional time it takes to search for a node is less than the number of nodes that are added, the resulting notation is logarithmic or O(log n).
 
 ![image](images/bigo.png)
 
@@ -126,7 +126,7 @@ False
 True
 False
 ```
-## Problem to Solve: Catch Ligtening in a Bottle
+## Problem to Solve: Lightening in a Bottle
 
 ![image](images/lightening.webp)
 

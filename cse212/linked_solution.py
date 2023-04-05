@@ -1,5 +1,5 @@
 ##################################################
-# linked list structure
+# linked list data structure
 ##################################################
 
 class LinkedList:
@@ -14,6 +14,11 @@ class LinkedList:
         # initialize empty list
         self.head = None
         self.tail = None
+
+    # When adding a node to the beginning of the list, the "**previous**" link of the 
+    # former head is pointed back to the new node and the "**next**" link of the new 
+    # head is pointed forward to the previous head. The "**previous**" link of the new 
+    # head remains null.
 
     # add to beginning of list
     def insert_head(self, value):
@@ -122,7 +127,7 @@ class LinkedList:
 
     # iterate linked list
     def __iter__(self):
-        curr = self.head  # Start at the begining since this is a forward iteration.
+        curr = self.head  # start at the beginning since this is a forward iteration
         while curr is not None:
             # store up values, return all at once
             yield curr.data

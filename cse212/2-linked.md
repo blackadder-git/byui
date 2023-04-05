@@ -12,122 +12,73 @@ The performance of a linked list depends on the action being taken. Because the 
 ![image](images/bigo.png)
 
 ## Used For
-* Linked lists are a good underlying data structure to implment a stack or a queue because they offer efficient insertion and removal of elements.
+* Linked lists are a good underlying data structure to implement a stack or a queue because they offer efficient insertion and removal of elements.
 * Linked lists are also good for implementing structures that you know will grow and decrease in size over time.
 
 ## Disadvantages
 Because nodes in a linked list hold data along with information linking them to other nodes, they have the potential to take up more space when compared with structures which only contain data. In addition, since getting from one node to another often means moving to a new space in memory, linked lists can´t take advantage of caching.
 
 ## Example: 
-Although Python has its own version of a linked list implemented as a "**deque**", this example creates a linked list using a class within a class and functions.
+Python has its own version of a linked list called a "**deque**", this example uses the built in collection to add and remove numbers.
 
+Test out the linked list
 ```
-# create a linked list class
-class LinkedList:
-    class Node:
-        def __init__(self, data):
-            # initialize new node
-            self.data = data
-            self.next = None
-            self.prev = None
+import collections
 
-    def __init__(self):
-        # initialize empty list
-        self.head = None
-        self.tail = None
-```
-
-When adding a node to the beginning of the list, the "**previous**" link of the former head is pointed back to the new node and the "**next**" link of the new head is pointed forward to the previous head. The "**previous**" link of the new head remains null.
-
-```
-    # add to beginning of list
-    def insert_head(self, value):
-        # add head node
-        new_node = LinkedList.Node(value)  
-        
-        # if head is empty, set as new node
-        if self.head is None:
-            self.head = new_node
-            self.tail = new_node
-        else:
-            # otherwise, point new node (next) to old head 
-            new_node.next = self.head
-            # point old head (prev) to new node
-            self.head.prev = new_node
-            # set new head
-            self.head = new_node
-```
-
-When adding a node to the end of the list, the "**next**" link of the former tail is pointed forward to the new node and the "**previous**" link of the new tail is pointed back to the previuos node. The "**next**" link of the new tail remains null.
-
-```
-    # add to end of list
-    def insert_tail(self, value):
-        # add tail node
-        new_node = LinkedList.Node(value)
-
-        # if tail is empty, set as new node
-        if self.tail is None:
-            self.head = new_node
-            self.tail = new_node
-        else :
-           # otherwise, point old tail (next) to new node
-            self.tail.next = new_node
-            # point new tail (prev) to old tail
-            new_node.prev = self.tail
-            # set new tail
-            self.tail = new_node
-```
-
-Iterate over items in the list
-```
-    # iterate linked list
-    def __iter__(self):
-        curr = self.head  # Start at the begining since this is a forward iteration.
-        while curr is not None:
-            # store up values, return all at once
-            yield curr.data
-            # traverse list
-            curr = curr.next
-```
-
-Write out items in the list
-```
-    # turn list into string
-    def __str__(self):
-        output = "["
-        first = True
-        for value in self:
-            if first:
-                first = False
-            else:
-                output += ", "
-            output += str(value)
-        output += "]"
-        return output
-```
-
-Test out the list
-```
-# create list
-linkedlist = LinkedList()
-linkedlist.insert_head(1)
-linkedlist.insert_tail(3)
+linkedlist = collections.deque([1, 2, 4])
 print(linkedlist)
 ```
 
-Output:
+Add to the deque
 ```
-[1, 3]
+# to the back
+linkedlist.append(5)
+print(linkedlist)
+
+# to the front 
+linkedlist.appendleft(0)
+print(linkedlist)
+
+# after an existing index
+linkedlist.insert(3, 3)
+print(linkedlist)
+```
+
+Remove from the deque
+```
+# from the back
+linkedlist.pop()
+print(linkedlist)
+
+# from the front
+linkedlist.popleft()
+print(linkedlist)
+
+# remove existing value
+linkedlist.remove(4)
+print(linkedlist)
+```
+
+Output
+
+```
+deque([1, 2, 4])
+deque([1, 2, 4, 5])
+deque([0, 1, 2, 4, 5])
+deque([0, 1, 2, 3, 4, 5])
+deque([0, 1, 2, 3, 4])
+deque([1, 2, 3, 4])
+deque([1, 2, 3])
 ```
 
 ## Problem to Solve: Head Bone Connected to ...
 
 ![image](images/aihead.webp)
 
-Doctor Frankenstein wants Igor to prepare the anatomy he's collected for an upcoming experiment. Igor has the parts, unfortunately, they aren´t in the right order. Some are also unnecessary. He needs your help to remove the items that don´t belong and link the ones that do in the correct order.
+Doctor Frankenstein wants Igor to prepare the anatomy he's collected for an upcoming experiment. Igor has the parts, unfortunately, they aren't in the right order. Some are also unnecessary. He needs your help to remove the items that don't belong and link the ones that do in the correct position.
 
-+ Create a linked list with functions to remove and add items. Use the following list and order to seed your data structure.
++ Do not use a deque. Instead, model your list on the stack you created earlier as a class within a class. This time, write functions to add and remove from both the front and back of the data structure along with code to insert and iterate. 
++ Use the following items, keeping the same order, to seed your data structure.
 
 ```
 + head
