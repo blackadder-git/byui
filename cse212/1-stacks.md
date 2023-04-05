@@ -78,7 +78,7 @@ Eat: 2
 Eat: 1
 Eat: pop() called on empty stack.
 ```
-## Problem to Solve: I Can´t Read That
+## Problem to Solve: I Can´t Read That ...
 
 ![image](images/igor.webp)
 

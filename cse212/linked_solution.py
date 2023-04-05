@@ -1,5 +1,5 @@
 ##################################################
-# linked list data structure
+# SAMPLE SOLUTION: linked list
 ##################################################
 
 class LinkedList:
@@ -173,7 +173,7 @@ linkedlist.remove("bolts")
 linkedlist.remove("heart")
 linkedlist.remove("chewing gum")
 
-# remove and add items in proper order
+# remove existing parts / add them in proper order
 linkedlist.remove("neck")
 linkedlist.insert_after("head", "neck")
 linkedlist.remove("shoulder")

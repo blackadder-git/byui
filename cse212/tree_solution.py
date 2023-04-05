@@ -1,5 +1,5 @@
 ##################################################
-# tree data structure
+# SAMPLE SOLUTION: tree
 ##################################################
 from datetime import datetime
 

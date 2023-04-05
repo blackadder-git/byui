@@ -1,5 +1,5 @@
 ##################################################
-# stack data structure
+# SAMPLE SOLUTION: stack
 ##################################################
 
 # create a stack class
