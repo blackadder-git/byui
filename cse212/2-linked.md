@@ -7,7 +7,9 @@ Unlike other data structures which store their information in contiguous memory,
 While most linked lists are bi-directional like the one above, it is possible to have a linked list that goes in just one direction.
 
 ## Performance (Big O Notation)
-The performance of a linked list depends on the action being taken. Because the size of a list makes no difference when adding or removing a node at the beginning or end, the performance is a constant big O with a notation of O(1). On the other hand, when adding, removing or searching for a specific node in the list, the time required to reach the desired node increases linearly as the size of the list grows bigger. This results in a notation of O(n).
+The performance of a linked list depends on the action being taken. Because the size of a list makes no difference when adding or removing a node at the beginning or end, the performance is a constant big O with a notation of O(1). 
+
+On the other hand, when adding, removing or searching for a specific node in the list, the time required to reach the desired node increases linearly as the size of the list grows bigger. This results in a notation of O(n).
 
 ![image](images/bigo.png)
 
