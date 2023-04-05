@@ -1,6 +1,6 @@
 # Trees
 ## Introduction
-Trees are non-linear data structures that begin with a single node. From this top or **"root"** node, other nodes are connected to form a tree. When a tree is traversed from top to bottom, the nodes are referred to as **"children"**. When the tree is climbed from bottom to top, the same nodes become **"parents"**. Any node that does not link to a child node is known as a **"leaf"**.
+Trees are non-linear data structures that begin with a single node. From this top or **"root"** node, other nodes are connected to form a tree. When a tree is traversed from top to bottom, its nodes are referred to as **"children"**. When the tree is climbed from bottom to top, the same nodes become **"parents"**. Any node that does not link to a child node is known as a **"leaf"**.
 
 ![image](images/tree.png)
 
@@ -11,9 +11,9 @@ Trees are non-linear data structures that begin with a single node. From this to
 + (B, D, E) and (C, F, G) = subtrees
 
 ## Performance (Big O Notation)
-The performance of a tree depends on whether or not it is balanced. A tree is **"balanced"** When the distance from the root to each leaf is consistent or has the same height.
+The performance of a tree depends on whether or not it is balanced. A tree is **"balanced"** When the distance from the root to each leaf is consistent or "**has the same height**".
 
-When a tree is balanced, half of its nodes can be discarded as the tree is traversed. Because the time it takes to search for a node is less than the number of nodes that are added, the resulting notation is O(log n).
+When a tree is balanced, half of its nodes can be discarded as the tree is traversed. Because the additional time it takes to search for a node is less than the number of nodes that are added, the resulting notation is logrithmic or O(log n).
 
 ![image](images/bigo.png)
 
@@ -25,7 +25,7 @@ When a tree is balanced, half of its nodes can be discarded as the tree is trave
 Trees lose their performance advantage as they become unbalanced. Likewise, their performance decreases if for some reason every node in a tree needs to be reviewed. 
 
 ## Example: 
-In this example, a tree is used to store numbers. A series of checks are then made to determine if the number exists in the tree.
+In this example, a binary tree is created and the tree is populated with information. The tree is then traversed to determine if the number can be found.
 
 ```
 # create a binary search class
@@ -44,7 +44,7 @@ class Tree:
     self.root = None     
 ```
 
-Insert information
+Determine where in the tree to add information
 ```
   # add information to the tree
   def insert(self, data):
@@ -77,7 +77,7 @@ Insert information
         self._insert(data, node.right)
 ```
 
-Check for value
+Check the tree for a specific value
 ```
   def __contains__(self, data):
     return self._contains(data, self.root)  # Start at the root
@@ -126,11 +126,11 @@ False
 True
 False
 ```
-## Problem to Solve: Lightening Tracker
+## Problem to Solve: Catch Ligtening in a Bottle
 
-![image](images/lightening.png)
+![image](images/lightening.webp)
 
-In order to finally bring his creation to life, Doctor Frankenstein must keep meticulous records of the lightening strikes near his laboratory. He has tasked Igor with recording the information. Once again, Igor needs your help to write a program.
+In order to bring his creation to life, Doctor Frankenstein must keep meticulous records of the lightening strikes near his laboratory. He has tasked Igor with recording the year, month, and day each strike occurs. Once again, Igor needs your help to write a program.
 
 + Record the following pre UNIX epoch timestamps in a tree for Doctor Frankenstein to reference later. Determine whether lightening struck on 1800-04-09 and 1806-06-22.
 

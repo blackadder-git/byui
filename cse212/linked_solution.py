@@ -131,7 +131,7 @@ class LinkedList:
 
     # turn list into string
     def __str__(self):
-        output = "linkedlist["
+        output = "["
         first = True
         for value in self:
             if first:
@@ -145,19 +145,54 @@ class LinkedList:
 
 # create list
 linkedlist = LinkedList()
-linkedlist.insert_head(1)
-linkedlist.insert_tail(3)
-linkedlist.insert_after(1, 2)
-print(linkedlist) # linkedlist[1, 2, 3]
+linkedlist.insert_head("head")
+linkedlist.insert_head("brain")
+linkedlist.insert_head("foot")
+linkedlist.insert_head("back")
+linkedlist.insert_head("ankle")
+linkedlist.insert_head("bolts")
+linkedlist.insert_head("hip")
+linkedlist.insert_head("neck")
+linkedlist.insert_head("leg")
+linkedlist.insert_head("heart")
+linkedlist.insert_head("knee")
+linkedlist.insert_head("heel")
+linkedlist.insert_head("thigh")
+linkedlist.insert_head("chewing gum")
+linkedlist.insert_head("toe")
+linkedlist.insert_head("shoulder")
 
-linkedlist.insert_head(0)
-linkedlist.insert_tail(4)
-print(linkedlist) # linkedlist[0, 1, 2, 3, 4]
+# remove extra parts
+linkedlist.remove("brain")
+linkedlist.remove("bolts")
+linkedlist.remove("heart")
+linkedlist.remove("chewing gum")
 
-linkedlist.insert_after(3, 9)
-print(linkedlist) # linkedlist[0, 1, 2, 3, 9, 4]
+# remove and add items in proper order
+linkedlist.remove("neck")
+linkedlist.insert_after("head", "neck")
+linkedlist.remove("shoulder")
+linkedlist.insert_after("neck", "shoulder")
+linkedlist.remove("back")
+linkedlist.insert_after("shoulder", "back")
+linkedlist.remove("hip")
+linkedlist.insert_after("back", "hip")
+linkedlist.remove("thigh")
+linkedlist.insert_after("hip", "thigh")
+linkedlist.remove("knee")
+linkedlist.insert_after("thigh", "knee")
+linkedlist.remove("leg")
+linkedlist.insert_after("knee", "leg")
+linkedlist.remove("ankle")
+linkedlist.insert_after("leg", "ankle")
+linkedlist.remove("heel")
+linkedlist.insert_after("ankle", "heel")
+linkedlist.remove("foot")
+linkedlist.insert_after("heel", "foot")
+linkedlist.remove("toe")
+linkedlist.insert_after("foot", "toe")
 
-linkedlist.remove(0)
-linkedlist.remove(2)
-linkedlist.remove(4)
-print(linkedlist) # linkedlist[1, 3, 9]
+print(linkedlist)
+
+# correct output
+# [head, neck, shoulder, back, hip, thigh, knee, leg, ankle, heel, foot, toe]

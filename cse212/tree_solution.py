@@ -82,5 +82,9 @@ lightening.insert(-5356195200.0)
 lightening.insert(-4773600000.0)
 
 # did lightening strike these days ?
-print('1800-04-09' in lightening) # yes
-print('1806-06-22' in lightening) # no
+print('1800-04-09' in lightening)
+print('1806-06-22' in lightening)
+
+# correct output
+# True
+# False

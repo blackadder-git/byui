@@ -1,25 +1,25 @@
 # Linked Lists
 ## Introduction
-Unlike other data structures which store their information in contiguous memory, a linked list stores its information as a series of nodes that can reside anywhere. Each node is linked together to for a series or a chain. The first node in the list is referred to as the "**head**" while the last node in the list is referred to as the "**tail**".
+Unlike other data structures which store their information in contiguous memory, a linked list stores its information as a series of nodes that can reside anywhere. Each node is linked together and forms a series or chain. The first node in the list is referred to as the "**head**" while the last node in the list is referred to as the "**tail**".
 
 ![image](images/linked.png)
 
-*While most linked lists are bi-directional like the image above, it is possible to have a linked list that goes in just one direction.
+While most linked lists are bi-directional like the one above, it is possible to have a linked list that goes in just one direction.
 
 ## Performance (Big O Notation)
-The performance of a linked list depends on the action being taken. The size of a list makes no difference when adding a node to the beginning or ending. This results in a big O notation of O(1). When adding, removing or searching for for a specific node in the list, the time required to reach the desired node increases linearly as the size of the list grows bigger. This results in a notation of O(n).
+The performance of a linked list depends on the action being taken. Because the size of a list makes no difference when adding a node to the beginning or ending the resulting performance is constant with a notation of O(1). When adding, removing or searching for a specific node in the list, the time required to reach the desired node increases linearly as the size of the list grows bigger. This results in a notation of O(n).
 
 ![image](images/bigo.png)
 
 ## Used For
 * Linked lists are a good underlying data structure to implment a stack or a queue because they offer efficient insertion and removal of elements.
-* 
+* Linked lists are also good for implementing structures that you know will grow and decrease in size over time.
 
 ## Disadvantages
-Because linked lists hold data along with information to reach the next node, they have the potential to take more space to implement. In addition, since getting from one node to another often means moving to a new location in memory, linked lists can´t take advantage of caching.
+Because nodes in a linked list hold data along with information linking them to other nodes, they have the potential to take up more space when compared with structures which only contain data. In addition, since getting from one node to another often means moving to a new space in memory, linked lists can´t take advantage of caching.
 
 ## Example: 
-TODO: describe example
+Although Python has its own version of a linked list implemented as a "**deque**", this example creates a linked list using a class within a class and functions.
 
 ```
 # create a linked list class
@@ -37,7 +37,7 @@ class LinkedList:
         self.tail = None
 ```
 
-When adding a node to the beginning of the list, the previous link of the former head is pointed forward to the new node and the next link of the new head is pointed to the previuos head. The previous link of the new head remains null.
+When adding a node to the beginning of the list, the "**previous**" link of the former head is pointed back to the new node and the "**next**" link of the new head is pointed forward to the previous head. The "**previous**" link of the new head remains null.
 
 ```
     # add to beginning of list
@@ -58,7 +58,7 @@ When adding a node to the beginning of the list, the previous link of the former
             self.head = new_node
 ```
 
-When adding a node to the end of the list, the next link of the former tail is pointed back to the new node and the previous link of the new tail is pointed back to the previuos node. The next link of the new tail remains null.
+When adding a node to the end of the list, the "**next**" link of the former tail is pointed forward to the new node and the "**previous**" link of the new tail is pointed back to the previuos node. The "**next**" link of the new tail remains null.
 
 ```
     # add to end of list
@@ -79,7 +79,7 @@ When adding a node to the end of the list, the next link of the former tail is p
             self.tail = new_node
 ```
 
-Go through list
+Iterate over items in the list
 ```
     # iterate linked list
     def __iter__(self):
@@ -89,14 +89,13 @@ Go through list
             yield curr.data
             # traverse list
             curr = curr.next
-
 ```
 
-Write out list
+Write out items in the list
 ```
     # turn list into string
     def __str__(self):
-        output = "linkedlist["
+        output = "["
         first = True
         for value in self:
             if first:
@@ -119,23 +118,39 @@ print(linkedlist)
 
 Output:
 ```
-linkedlist[1, 3]
+[1, 3]
 ```
 
 ## Problem to Solve: Head Bone Connected to ...
 
-![image](images/igor.png)
+![image](images/aihead.webp)
 
-TODO: set the stage
+Doctor Frankenstein wants Igor to prepare the anatomy he's collected for an upcoming experiment. Igor has the parts, unfortunately, they aren´t in the right order. Some are also unnecessary. He needs your help to remove the items that don´t belong and link the ones that do in the correct order.
 
-+ Use a linked list to [add description]
++ Create a linked list with functions to remove and add items. Use the following list and order to seed your data structure.
 
 ```
-TODO: add data
++ head
++ brain
++ foot
++ back
++ ankle
++ bolts
++ hip
++ neck
++ leg
++ heart
++ knee
++ heel
++ thigh
++ chewing gum
++ toe
++ shoulder
 ```
  
-+ **Hint:** 
++ **Hint:** The correct list and order of parts can be found in [Dem Bones](https://en.wikipedia.org/wiki/Dem_Bones)
 
-[View Sample Solution](stack_solution.py)
+
+[View Sample Solution](linked_solution.py)
 
 [Back to Index](0-welcome.md)

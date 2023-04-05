@@ -26,7 +26,7 @@ class stack:
 
 # instantiate a stack
 notebook = stack()
-notes = "efil fo kraps htiw erutaerc ezinavlaG .5\nrepap dekaos enirb htiw etarapes reppoc dna cniz fo setalp ytrof htiw sthguort eerht esu ,elip ciatlov dliuB .4\nefil fo stnemurtsni tcelloC .3\neussit dna snagro devreserp rehtegot hctitS .2\ndrayhcruhc sarcnaP .tS morf strap ydob yrassecen erucorP .1"
+notes = "efil fo kraps htiw erutaerc ezinavlaG .5\nrepap dekaos enirb htiw etarapes reppoc dna cniz fo setalp ytrof htiw sthguort eerht esu ,elip ciatlov dliuB .4\nefil fo stnemurtsni tcelloC .3\neussit dna snagro devreserp rehtegot hctitS .2\ndrayhcruhc sarcnaP .tS morf ymotana yrassecen erucorP .1"
 
 # add each letter from the book
 for letter in notes:
@@ -35,3 +35,10 @@ for letter in notes:
 # get each letter from the stack
 for letter in range(len(notebook)):
     print(notebook.pop(), end=" ")
+
+# correct output
+# 1. Procure necessary anatomy from St. Pancras churchyard
+# 2. Stitch together preserved organs and tissue
+# 3. Collect instruments of life
+# 4. Build voltaic pile, use three troughts with forty plates of zinc and copper separate with brine soaked paper
+# 5. Galvanize creature with spark of life
