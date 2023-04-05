@@ -10,7 +10,7 @@ Learning to program requires learning to use various data structures. In this tu
 + [Linked Lists](2-linked.md)
 + [Trees](3-trees.md)
 
-Each module of the tutorial contains a definition, performance information, use cases, disadvantages and an example. At the end of each module, there is a problem to solve. Do not look at the solution until after you have tried to solve the problem.
+Each module of the tutorial contains a definition, performance indication, use cases, disadvantages and example of a different data structure. At the end of each module, there is also a problem to solve. Do not look at the solution until after you have tried to solve the problem.
 
 ## Contact
 For questions or comments, please reach out to:

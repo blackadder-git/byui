@@ -1,4 +1,5 @@
 # Stacks
+
 ## Introduction
 Stacks are characterized as "**Last In, First Out**" data structures. Items put or "**pushed**" onto the top or "**back**" of the stack can´t be removed until other more recent elements have been taken or "**popped**" off.
 
@@ -93,4 +94,5 @@ efil fo kraps htiw erutaerc ezinavlaG .5\nrepap dekaos enirb htiw etarapes reppo
 
 [View Sample Solution](stack_solution.py)
 
-[Back to Index](0-welcome.md)
+---
+[Previous](0-welcome.md) | [Next](2-linked.md)
