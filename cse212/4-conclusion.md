@@ -4,7 +4,7 @@ In summary, choosing the right structure to hold your information requires knowi
 
 Since even the right structure if implmented poorly can cause performance issues, also ask yourself whether the language you're using has a build in construct or will you need to implement the behavior you require.
 
-It's hard enough to bring an appliation to life, knowing how to use "**stacks**", "**linked lists**" and "**trees**" gives you three more tools in your programming tool belt and makes it that much easier.
+It's hard enough to bring an appliation to life. Knowing how and when to use "**stacks**", "**linked lists**" and "**trees**" makes it that much easier by giving you three more tools for your programming tool belt.
 
 ## It's Alive!!
 
