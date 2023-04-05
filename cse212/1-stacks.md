@@ -6,24 +6,24 @@ Stacks are characterized as "**Last In, First Out**" data structures. Items put 
 
 + Element 1 is pushed onto an empty stack
 + Element 2 is pushed onto element 1
-+ Element 3 is then pushed onto element 2
++ Element 3 is pushed onto element 2
 + Finally, element 3 is popped off the stack
 
 ## Performance (Big O Notation)
 The performance of a stack depends on how it is implemented. 
 
-If the underlying data structure uses an array or list to add and remove elements, it has O(n) notation. This reflects the linear nature of how growing the data set also increases time required by the algorithm to process elements in the array. Likewise, as the size of the structure increases, performance degrades since more and more items need to be copied and moved. 
+If the underlying data structure adds and removes elements from the back of the stack it has a constant notation of O(1). Adding more elements to the stack doesn't make it any slower. Likewise, performance remains the same if a linked list is used and operations are performed on the front of the data structure.
 
-If on the other hand, the structure uses a linked list to add and remove items from the stack, performance is constant with O(1) notation and does not decrease as the structure increases.
+On the other hand, performance becomes O(n) when the front of a list or array is used to push and pop elements. This reflects the linear nature of how growing and shrinking the data set also increases the time required by the algorithm to copy and move its items.
 
 ![image](images/bigo.png)
 
 ## Used For
-+ Functions that implement backtracking often use stacks to return to previous decision points thereby allowing a program to try an alternate path. 
-+ Likewise, when a program has an undo function, it is most likely using a stack to track and revert changes back to some previous state.
++ Functions that implement backtracking often use stacks to return to previous decision points and take an alternate path. 
++ Likewise, when a program has an undo function, it most likely uses a stack to track and revert changes back to a previous state.
 
 ## Disadvantages
-Stacks are susceptible to overflow if there is no more space. This can happen unintentionally when a recursive function calls itself too many times. It can also happen if the data given to a stack is too large for the stack to hold.
+Stacks are susceptible to error and can cause a buffer to overflow intentionally or unintentionally when a recursive function calls itself too many times. It can also happen if the data given to a stack is too large for the stack to hold.
 
 ## Example: 
 In this example, a Python list is used to implement a stack that follows the principle of **"Last In, First Out"**. Although other implementations might use a deque or linked list to do this, this example uses a list. Also, to improve performance, the stack adds and removes items from the end of the list and not the beginning.
