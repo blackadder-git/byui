@@ -1,7 +1,7 @@
 # Stacks
 
 ## Introduction
-Stacks are characterized as "**Last In, First Out**" data structures. Items put or "**pushed**" onto the top or "**back**" of the stack can´t be removed until other more recent elements have been taken or "**popped**" off.
+Stacks are characterized as "**Last In, First Out**" data structures. Items put or "**pushed**" onto the top or "**back**" of the stack can't be removed until the more recent elements have been taken or "**popped**" off.
 
 ![image](images/stack.png)
 
@@ -13,18 +13,18 @@ Stacks are characterized as "**Last In, First Out**" data structures. Items put 
 ## Performance (Big O Notation)
 The performance of a stack depends on how it is implemented. 
 
-If the underlying data structure adds and removes elements from the back of the stack it has a constant notation of O(1). Adding more elements to the stack doesn't make it any slower. Likewise, performance remains the same if a linked list is used and operations are performed on the front of the data structure.
+When the underlying data structure adds and removes elements from the back of the stack, it has a constant big O notation of O(1). Adding more elements to the stack doesn't make it any slower. Likewise, performance remains the same if a linked list is used and operations are performed on the front of the data structure.
 
-On the other hand, performance becomes O(n) when the front of a list or array is used to push and pop elements. This reflects the linear nature of how growing and shrinking the data set also increases the time required by the algorithm to copy and move its items.
+On the other hand, performance becomes O(n) when the front of a list or array is used to push and pop elements. This reflects the linear nature of how growing and shrinking the data set also increases the time required by the algorithm to copy and move more items.
 
 ![image](images/bigo.png)
 
 ## Used For
-+ Functions that implement backtracking often use stacks to return to previous decision points and take an alternate path. 
-+ Likewise, when a program has an undo function, it most likely uses a stack to track and revert changes back to a previous state.
++ Functions that implement backtracking often use stacks to return to a previous decision point and take an alternate path. 
++ Likewise, when a program has an undo function, it most likely uses a stack to track and revert those changes back to a previous state.
 
 ## Disadvantages
-Stacks are susceptible to error and can cause a buffer to overflow intentionally or unintentionally when a recursive function calls itself too many times. It can also happen if the data given to a stack is too large for the stack to hold.
+Stacks are susceptible to error and can cause a buffer to overflow intentionally or unintentionally when a recursive function calls itself too many times. This can also happen if the data given to a stack is too large for the structure to hold.
 
 ## Example: 
 In this example, a Python list is used to implement a stack that follows the principle of **"Last In, First Out"**. Although other implementations might use a deque or linked list to do this, this example uses a list. Also, to improve performance, the stack adds and removes items from the end of the list and not the beginning.
@@ -78,13 +78,13 @@ Eat: 2
 Eat: 1
 Eat: pop() called on empty stack.
 ```
-## Problem to Solve: Notes in Reverse
+## Problem to Solve: I Can´t Read That
 
 ![image](images/igor.webp)
 
 While the good Doctor Frankenstein is away, trusty Igor has been tasked with transcribing the doctor's secret notebook into something more ledgible. Always one to please, Igor needs your help to write a program before the doctor returns.
 
-+ Use a stack to reverse the letters of the following message
++ Use a stack to reverse the words and letters in the following message
 
 ```
 efil fo kraps htiw erutaerc ezinavlaG .5\nrepap dekaos enirb htiw etarapes reppoc dna cniz fo setalp ytrof htiw sthguort eerht esu ,elip ciatlov dliuB .4\nefil fo stnemurtsni tcelloC .3\neussit dna snagro devreserp rehtegot hctitS .2\ndrayhcruhc sarcnaP .tS morf ymotana yrassecen erucorP .1
