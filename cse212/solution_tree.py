@@ -1,5 +1,5 @@
 ##################################################
-# SAMPLE SOLUTION: tree
+# SAMPLE SOLUTION: Lightening in a Bottle
 ##################################################
 from datetime import datetime
 
@@ -20,7 +20,7 @@ class Tree:
   # add information to the tree
   def insert(self, data):
     if self.root is None:
-      print("add root: " + str(data))
+      # print("add root: " + str(data))
       self.root = Tree.Node(data)
     else:
       self._insert(data, self.root) # start at the root
@@ -33,7 +33,7 @@ class Tree:
     elif data < node.data:
       if node.left is None:
         # empty, create new node
-        print("add left: " + str(data))
+        # print("add left: " + str(data))
         node.left = Tree.Node(data)
       else:
         # keep looking
@@ -41,7 +41,7 @@ class Tree:
     else:
       if node.right is None:
         # empty, create new node
-        print("add right: " + str(data))
+        # print("add right: " + str(data))
         node.right = Tree.Node(data)
       else:
         # keep looking

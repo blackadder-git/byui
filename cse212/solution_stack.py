@@ -1,5 +1,5 @@
 ##################################################
-# SAMPLE SOLUTION: stack
+# SAMPLE SOLUTION: I Can't Read This ...
 ##################################################
 
 # create a stack class

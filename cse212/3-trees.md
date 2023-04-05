@@ -149,7 +149,7 @@ In order to bring his creation to life, Doctor Frankenstein must keep meticulous
 date_as_string = (datetime.strptime(date_as_timestamp, '%Y-%m-%d') - datetime(1970, 1, 1)).total_seconds()
 ```
 
-[View Sample Solution](tree_solution.py)
+[View Sample Solution](solution_tree.py)
 
 ---
 [Previous](2-linked.md) | [Next](4-conclusion.md)

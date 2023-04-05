@@ -1,5 +1,5 @@
 ##################################################
-# SAMPLE SOLUTION: linked list
+# SAMPLE SOLUTION: Head Bone Connected to ...
 ##################################################
 
 class LinkedList:

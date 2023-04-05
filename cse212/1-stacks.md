@@ -78,7 +78,7 @@ Eat: 2
 Eat: 1
 Eat: pop() called on empty stack.
 ```
-## Problem to Solve: I Can´t Read That ...
+## Problem to Solve: I Can´t Read This ...
 
 ![image](images/igor.webp)
 
@@ -92,7 +92,7 @@ efil fo kraps htiw erutaerc ezinavlaG .5\nrepap dekaos enirb htiw etarapes reppo
  
 + **Hint:** to work correctly, try adding and removing each letter of the message to and from the stack on its own
 
-[View Sample Solution](stack_solution.py)
+[View Sample Solution](solution_stack.py)
 
 ---
 [Previous](0-welcome.md) | [Next](2-linked.md)

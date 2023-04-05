@@ -104,7 +104,7 @@ Doctor Frankenstein wants Igor to prepare the anatomy he's collected for an upco
 + **Hint:** The correct list and order of parts can be found in verse 2 of [Dem Bones](https://en.wikipedia.org/wiki/Dem_Bones)
 
 
-[View Sample Solution](linked_solution.py)
+[View Sample Solution](solution_linkedlist.py)
 
 ---
 [Previous](1-stacks.md) | [Next](3-trees.md)
