@@ -79,6 +79,12 @@
         .cplusplus {
             background-color: #27e524;
         }
+        .csharp {
+            background-color: #27e524;
+        }
+        .dotnet {
+            background-color: #27e524;
+        }
         .site-plan {
             margin: 1em 0;
         }
@@ -126,6 +132,94 @@
     <h1>JC - Projects Portfolio</h1>
 
     <main id="projects">
+
+        <section>
+            <h2>Sacrament Planner</h2>
+            <h3>CS124: Intro to Software Development</h3>
+            <div class="site-plan">
+                <a href="https://blackadder-git.github.io/byui/c++/sudoku/structure_chart.pdf">Structure Chart</a>
+            </div>
+            <div class="screenshot">
+                <a href="https://blackadder-git.github.io/byui/c++/sudoku/index.html"><img src="screenshots/planner.png" alt="Screenshot of c# sacrament planner screen created for .NET"></a>
+            </div>
+            <div class="features">
+                <span class="csharp feature">C#</span>
+                <span class="dotnet feature">.NET</span>
+            </div>
+            <div class="details">
+                <h2>Project Outcomes</h2>
+                <ul id="sudoku" class="hideContent">
+                    <li>
+                        The objective of this project was to create a sudoku solver with a menu that would allow a user to select
+                        options to see the menu, display the board, edit a square, exit. In addition, extra credit was offered if the 
+                        program could solve the puzzle on its own. Once I had the game working, I looked into using backtracing to
+                        complete the game. While this would work, it took a while for the program to solve the board. 
+                    </li>
+                    <li>
+                        I decided to look into how a human being might approach a sudoku puzzle. I soon learned about techniques 
+                        such as <a href="https://sudoku.com/sudoku-rules/hidden-singles/">hidden singles</a>, <a href="https://sudoku.com/sudoku-rules/hidden-pairs/">hidden pairs</a>,
+                        and <a href="https://sudoku.com/sudoku-rules/pointing-pairs/">pointing pairs</a>. I implemented these search
+                        techniques into my program with a temporary board and found that the puzzles were solved much quicker.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        
+        <section>
+            <h2>Sudoku Solver</h2>
+            <h3>CS124: Intro to Software Development</h3>
+            <div class="site-plan">
+                <a href="https://blackadder-git.github.io/byui/c++/sudoku/structure_chart.pdf">Structure Chart</a>
+            </div>
+            <div class="screenshot">
+                <a href="https://blackadder-git.github.io/byui/c++/sudoku/index.html"><img src="screenshots/sudoku.png" alt="Screenshot of c++ sudoku solver screen created for intro to programming"></a>
+            </div>
+            <div class="features">
+                <span class="c++ cplusplus feature">C++</span>
+                <span class="cohesive cplusplus feature">Cohesive</span>
+                <span class="coupling cplusplus feature">Loose Coupling</span>
+                <span class="robust cplusplus feature">Robust Error Checking</span>
+                <span class="elegant cplusplus feature">Elegant Design</span>
+            </div>
+            <div class="details">
+                <h2>Project Outcomes</h2>
+                <ul id="sudoku" class="hideContent">
+                    <li>
+                        The objective of this project was to create a sudoku solver with a menu that would allow a user to select
+                        options to see the menu, display the board, edit a square, exit. In addition, extra credit was offered if the 
+                        program could solve the puzzle on its own. Once I had the game working, I looked into using backtracing to
+                        complete the game. While this would work, it took a while for the program to solve the board. 
+                    </li>
+                    <li>
+                        I decided to look into how a human being might approach a sudoku puzzle. I soon learned about techniques 
+                        such as <a href="https://sudoku.com/sudoku-rules/hidden-singles/">hidden singles</a>, <a href="https://sudoku.com/sudoku-rules/hidden-pairs/">hidden pairs</a>,
+                        and <a href="https://sudoku.com/sudoku-rules/pointing-pairs/">pointing pairs</a>. I implemented these search
+                        techniques into my program with a temporary board and found that the puzzles were solved much quicker.
+                    </li>
+                    <!--li>Not all Sudoku boards are created equal. Some are much more difficult to solve than others. You will get awarded points according to the level of difficulty of the board you are able to solve. The boards are:<br>
+                        prjFinal85.txt<br>
+                        prjFinal90.txt<br>
+                        prjFinal100.txt
+                    </li>
+                    <li>Modify your code (Project 13 or Project Extra) so solve a Sudoku board</li>
+                    <li>You will need to add another item on the menu to allow the user to select that they want to solve the board. You can name this menu item anything you want. In fact, because there is no testBed for this challenge, feel free to make any adjustments to the user interface you want</li>
+                    <li>"Robust" error checking. Every possible input or board configuration is handled. For example, the user could type "e5" or "5E" to specify a square. Also, the board is validated on open to ensure it is a valid board This means ensuring that there is no more than one instance of each value in a given row, column, or inside square</li>
+                    <li>Differentiate read-only values (the ones provided by the board that the user cannot change) and read/write values (the ones the user entered). Read-only text will be rendered in green. The following example outputs green text for the word "green"</li>
+                    <li>Enforce the rules of Sudoku. This means that there can be only one instance of a given number on a row, column, or inside square</li>
+                    <li>Create a program that performs six operations:<br>
+                        Read: Read a board from a file into our board[][] array<br>
+                        Write: Write the board[] array back to a file<br>
+                        'D' Option: Display the contents of the board[][] array on the screen<br>
+                        'E' Option: Edit a square with no verification that it is correct or valid<br>
+                        'Q' Option: Exit the interaction loop and launches the Write code<br>
+                        '?' Option: Displays the instructions on the screen
+                    </li-->
+                </ul>
+                <!--div class="readmore" data-id="sudoku">Read more</div-->
+            </div>
+        </section>
+        
         <section>
             <h2>ZEN Garden</h2>
             <h3>WDD 331R: Advanced CSS</h3>
@@ -225,7 +319,7 @@
                 <span class="wave feature">Accessible</span> 
                 <span class="mobile feature">Responsive</span>
                 <span class="local feature">LocalStorage</span>
-                <span class="rest feature">Rest</span>                
+                <span class="rest feature">REST API</span>                
             </div>
             <div class="details">
                 <h2>Project Outcomes</h2>
@@ -278,7 +372,7 @@
                 <span class="wave feature">Accessible</span> 
                 <span class="mobile feature">Responsive</span>
                 <span class="local feature">LocalStorage</span>
-                <span class="rest feature">Rest</span>                   
+                <span class="rest feature">REST API</span>                   
             </div>
             <div class="details">
                 <h2>Project Outcomes</h2>
@@ -390,59 +484,6 @@
             </div>
         </section>
 
-        <section>
-            <h2>Sudoku Solver</h2>
-            <h3>CS124: Intro to Software Development</h3>
-            <div class="site-plan">
-                <a href="https://blackadder-git.github.io/byui/c++/sudoku/structure_chart.pdf">Structure Chart</a>
-            </div>
-            <div class="screenshot">
-                <a href="https://blackadder-git.github.io/byui/c++/sudoku/index.html"><img src="screenshots/sudoku.png" alt="Screenshot of c++ sudoku solver screen created for intro to programming"></a>
-            </div>
-            <div class="features">
-                <span class="c++ cplusplus feature">C++</span>
-                <span class="cohesive cplusplus feature">Cohesive</span>
-                <span class="coupling cplusplus feature">Loose Coupling</span>
-                <span class="robust cplusplus feature">Robust Error Checking</span>
-                <span class="elegant cplusplus feature">Elegant Design</span>
-            </div>
-            <div class="details">
-                <h2>Project Outcomes</h2>
-                <ul id="sudoku" class="hideContent">
-                    <li>
-                        The objective of this project was to create a sudoku solver with a menu that would allow a user to select
-                        options to see the menu, display the board, edit a square, exit. In addition, extra credit was offered if the 
-                        program could solve the puzzle on its own. Once I had the game working, I looked into using backtracing to
-                        complete the game. While this would work, it took a while for the program to solve the board. 
-                    </li>
-                    <li>
-                        I decided to look into how a human being might approach a sudoku puzzle. I soon learned about techniques 
-                        such as <a href="https://sudoku.com/sudoku-rules/hidden-singles/">hidden singles</a>, <a href="https://sudoku.com/sudoku-rules/hidden-pairs/">hidden pairs</a>,
-                        and <a href="https://sudoku.com/sudoku-rules/pointing-pairs/">pointing pairs</a>. I implemented these search
-                        techniques into my program with a temporary board and found that the puzzles were solved much quicker.
-                    </li>
-                    <!--li>Not all Sudoku boards are created equal. Some are much more difficult to solve than others. You will get awarded points according to the level of difficulty of the board you are able to solve. The boards are:<br>
-                        prjFinal85.txt<br>
-                        prjFinal90.txt<br>
-                        prjFinal100.txt
-                    </li>
-                    <li>Modify your code (Project 13 or Project Extra) so solve a Sudoku board</li>
-                    <li>You will need to add another item on the menu to allow the user to select that they want to solve the board. You can name this menu item anything you want. In fact, because there is no testBed for this challenge, feel free to make any adjustments to the user interface you want</li>
-                    <li>"Robust" error checking. Every possible input or board configuration is handled. For example, the user could type "e5" or "5E" to specify a square. Also, the board is validated on open to ensure it is a valid board This means ensuring that there is no more than one instance of each value in a given row, column, or inside square</li>
-                    <li>Differentiate read-only values (the ones provided by the board that the user cannot change) and read/write values (the ones the user entered). Read-only text will be rendered in green. The following example outputs green text for the word "green"</li>
-                    <li>Enforce the rules of Sudoku. This means that there can be only one instance of a given number on a row, column, or inside square</li>
-                    <li>Create a program that performs six operations:<br>
-                        Read: Read a board from a file into our board[][] array<br>
-                        Write: Write the board[] array back to a file<br>
-                        'D' Option: Display the contents of the board[][] array on the screen<br>
-                        'E' Option: Edit a square with no verification that it is correct or valid<br>
-                        'Q' Option: Exit the interaction loop and launches the Write code<br>
-                        '?' Option: Displays the instructions on the screen
-                    </li-->
-                </ul>
-                <!--div class="readmore" data-id="sudoku">Read more</div-->
-            </div>
-        </section>
     </main>
 
     <script>
