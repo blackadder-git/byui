@@ -1,0 +1,190 @@
+@import url( 'https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins&display=swap' );
+:root {
+    --lightgray: #efefef;
+    --blue: steelblue;
+    --white: #fff;
+    --black: rgba(0, 0, 0, 0.8);
+    --bounceEasing: cubic-bezier(0.51, 0.92, 0.24, 1.15);
+    --background: yellow;
+    --formBackground: antiquewhite;
+}
+* {
+    margin: 0; 
+    padding: 0;
+}
+body {
+    background: #000;
+    font-family: 'Poppins', sans-serif;
+}
+canvas {
+    display: block;
+}
+.topic {
+    z-index: 10;
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+.topic a {
+    color: red;
+    text-decoration: none;
+}
+.collections {
+    left: 8%;
+    top: 40%;
+}
+.json {
+    left: 15%;
+    top: 20%;
+}
+.error {
+    left: 25%;
+    top: 60%;
+}
+.junit {
+    left: 35%;
+    top: 40%;
+}
+.servlets {
+    left: 45%;
+    top: 10%;
+}
+.threads {
+    left: 55%;
+    top: 30%;
+}
+.hibernate {
+    left: 70%;
+    top: 70%;
+}
+.usecase {
+    left: 80%;
+    top: 20%;
+}
+.uml {
+    left: 90%;
+    top: 40%;
+}
+h1 {
+    margin-left: 1em;
+    color: white;
+}
+.lock {
+    width: 25px;
+    font-size: 12px;
+}
+.key {
+    margin-right: 1em;
+    float: right;
+    color: red;
+}
+.key::before {
+    content: "🔑";
+}
+.correct {
+    color: green;
+}
+.code a {
+    color: green;
+}
+img {
+    width:100%;
+}
+.clue:hover {
+    cursor: pointer;
+    bcursor: url( "images/glass.png" ), auto;
+    bcursor: -moz-zoom-in; 
+    bcursor: -webkit-zoom-in; 
+    bcursor: zoom-in;    
+}
+main {
+    position: relative;
+}
+.unlocked {
+    font-family: 'Permanent Marker', cursive;
+    display: none;
+    text-align: center;
+    font-size: 4em;
+    color: white;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+/* MODAL
+https://webdesign.tutsplus.com/tutorials/how-to-build-flexible-modal-dialogs-with-html-css-and-javascript--cms-33500
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--black);
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.35s ease-in;
+  }
+  
+  .modal.is-visible {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .modal-dialog {
+    position: relative;
+    min: width 800px;
+    width: 50%;
+    max-height: 80vh;
+    border-radius: 5px;
+    background: var(--white);
+    overflow: auto;
+    cursor: default;
+  }
+  
+  .modal-dialog > * {
+    padding: 1rem;
+  }
+  
+  .modal-header,
+  .modal-footer {
+    background: var(--lightgray);
+  }
+  
+  .modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .modal-header .closeModal {
+    font-size: 1.5rem;
+  }
+  
+  .modal p + p {
+    margin-top: 1rem;
+  }
+  
+  section.modal-content {
+      border: none;
+  }
+
+  /* FOOTER
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .page-footer {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .page-footer span {
+    color: #e31b23;
+  }
+
+/* END MODAL
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
